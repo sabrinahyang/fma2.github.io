@@ -310,3 +310,8 @@ footer:after {
   font-weight: normal;
   font-style: normal;
 }
+/** Tablet View **/
+@media screen and (max-width: 960px) {
+  h1 {font-size: 1.1em; line-height: 40px}
+  header nav li{line-height: 40px}
+}
