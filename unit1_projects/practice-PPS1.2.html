@@ -1,0 +1,495 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <title>Women in Computing</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/reset.css" charset="utf-8"/>
+    <style>
+    /* General Styles */
+body {
+  background-color: rgb(241, 241, 241);
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.2em;
+  margin: 0px auto;
+  min-width: 960px;
+  width: 100%;
+}
+
+p {
+  margin: 1em;
+}
+
+a {
+  color: #1D766F;
+  text-decoration: none;
+
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+a:hover {
+  color: #BC2F36;
+}
+
+h1 {
+  font-family: 'Audiowide', cursive;
+  font-size: 2.2em;
+  float: left;
+  line-height: 75px;
+  text-shadow: 2px 2px rgba(255, 255, 255, 0.25);
+}
+
+h2 {
+  background-color: rgb(60, 60, 60);
+  color: #FFF;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2.4em;
+  font-weight: 400;
+  line-height: 80px;
+  margin: 0 0 0.5em 0;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.4em;
+  font-weight: 700;
+  margin: 0 0 0.3em 0;
+  text-align: center;
+}
+
+h4 {
+  color: rgb(120, 120, 120);
+  font-size: 1em;
+  text-align: center;
+}
+
+
+/* Navigation */
+nav li {
+  float: left;
+}
+nav li a {
+  color: #fff;
+  margin: 0 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+nav li a:hover {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  color: #FB000D;
+}
+
+.jump {
+  color: #565656;
+  font-family: 'EntypoRegular';
+  font-size: 70px;
+  line-height: 80px;
+  position: absolute;
+  text-decoration: none;
+  top: 0;
+}
+.jump.up {
+  left: 15px;
+}
+.jump.down {
+  right: 15px;
+}
+.jump:hover {
+  color: #BC2F36;
+}
+
+
+/* Header */
+header {
+  background-color: #009D92;
+  padding: 10px;
+}
+header h1 {
+  color: #FFEECC;
+  background: url('../images/icons/it.png') no-repeat 0 50%;
+  padding-left: 40px;
+}
+header nav {
+  float: right;
+  font-size: 1.2em;
+  margin-left: 20px;
+}
+header nav li {
+  line-height: 75px;
+}
+header nav a {
+  border-radius: 6px;
+}
+header nav a:hover {
+  background-color: #fff;
+}
+
+header:after {
+  /* clearfix hack */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Main */
+#main section {
+  margin-bottom: 1em;
+  position: relative;
+}
+#main div.wrapper{
+    width: 100%;
+    max-width:1400px;
+    margin: 0 auto;
+}
+
+
+#main section:after {
+  /* clearfix hack */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Famous Women */
+#famous h2 {
+  text-shadow: 1px 1px 2px #009D92;
+}
+#famous article.woman {
+  background-color: white;
+  float: left;
+  min-height: 250px;
+  margin: 1%;
+  opacity: 0.8;
+  padding: 2%;
+  width: 27.33%;
+}
+
+#famous article:hover {
+  opacity: 1;
+}
+
+#famous article:nth-child(4n) {
+  clear: both;
+}
+
+#famous article img {
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px #000;
+  display: block;
+  margin: 1em auto;
+  width: 100%;
+}
+#famous article img:hover {
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+
+
+/* Organizations */
+#organizations {
+  clear: both;
+  height: 500px;
+}
+
+#organizations h2 {
+  text-shadow: 1px 1px 2px #FB000D;
+}
+
+#organizations ul {
+  margin: 50px;
+  position: relative;
+}
+#organizations ul li {
+  font-size: 1.2em;
+  line-height: 1.3em;
+  margin-bottom: 1em;
+  padding-left: 5px;
+  max-width: 50%;
+}
+#organizations ul li:before {
+  color: #FB000D;
+  content: '6';
+  font-family: 'EntypoRegular';
+  font-size: 40px;
+  opacity: 0.5;
+  padding-right: 10px;
+  text-shadow: 0px 0px 2px #888;
+}
+#organizations ul li:hover:before {
+  opacity: 1;
+}
+
+#organizations img {
+  border-radius: 20px;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  max-width: 40%;
+  opacity: 0;
+
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  transition: opacity 1s;
+}
+#organizations li:hover img {
+  opacity: 1;
+}
+
+
+/* Fun Facts */
+#facts h2 {
+  text-shadow: 1px 1px 2px #FFA700;
+}
+#facts ul {
+  margin: 50px;
+}
+#facts ul li {
+  font-size: 1.2em;
+  line-height: 1.3em;
+  margin-bottom: 1em;
+  padding-left: 5px;
+
+  -webkit-transition: background-color 1s;
+  -moz-transition: background-color 1s;
+  transition: background-color 1s;
+}
+#facts ul li:hover {
+  background-color: #fff;
+  border-radius: 10px;
+}
+#facts ul li:before {
+  color: #FFA700;
+  content: '7';
+  font-family: 'EntypoRegular';
+  font-size: 30px;
+  padding-right: 10px;
+  text-shadow: 1px 1px 1px #CCC;
+}
+#facts ul li:hover:before {
+  color: #FF6F00;
+}
+
+
+/* Footer */
+footer {
+  background-image: -webkit-linear-gradient(#00665F, #1D766F, #00665F);
+  background-image: -moz-linear-gradient(#00665F, #1D766F, #00665F);
+  background-image: linear-gradient(#00665F, #1D766F, #00665F);
+}
+
+footer nav {
+  float: left;
+  font-size: 1.1em;
+  margin: 10px;
+}
+
+footer nav a:hover {
+  box-shadow: none;
+  color: #FFEECC;
+}
+
+footer:after {
+  /* clearfix hack */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Fonts */
+@font-face {
+  font-family: 'EntypoRegular';
+  src: url('font/Entypo-webfont.eot');
+  src: url('font/Entypo-webfont.eot?#iefix') format('embedded-opentype'),
+       url('font/Entypo-webfont.woff') format('woff'),
+       url('font/Entypo-webfont.ttf') format('truetype'),
+       url('font/Entypo-webfont.svg#EntypoRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+    </style>
+  <body>
+      <div id="header">
+        <header>Women in Computing</header> 
+        <div class="nav">
+          <ul>
+            <li>
+              <a href="#FW">Famous Women</a>
+            </li>
+            <li>
+              <a href="#O">Organizations</a>
+            </li>
+            <li>
+              <a href="#FF">Fun Facts</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="main">
+        <div id="famous">
+          <a name="famous"></a>
+          <h2><a id="FW">Famous Women</a></h2>
+          <a class="jump up" href="#">&igrave;</a>
+          <a class="jump down" href="#organizations">&iacute;</a>
+          <div class ="wrapper">
+            <div class = "woman">
+              <h3>
+                <a href="http://en.wikipedia.org/wiki/Ada_Lovelace">Ada Lovelace</a>
+              </h3>
+
+              <h4>(1815&ndash;1852)</h4>
+              <img src="images/ada_lovelace.jpg" alt="Ada Lovelace" />
+              <p>An analyst of Charles Babbage's analytical engine and is often
+                described as the "first computer programmer."</p>
+            </div>
+            <div class = "woman">
+              <h3>
+                <a href="http://en.wikipedia.org/wiki/Grace_Hopper">Grace Hopper</a>
+              </h3>
+              <h4>(1906&ndash;1992)</h4>
+              <img src="images/grace_hopper.jpg" alt ="Grace Hopper" />
+              <article>A United States Navy officer and the first programmer of the
+                Harvard Mark I, known as the "Mother of COBOL". She developed the
+                first ever compiler for an electronic computer, known as A-0.</article>
+            </div>
+            <div class = "woman">
+              <h3>
+                <a href="http://en.wikipedia.org/wiki/Frances_E._Allen">Frances Allen</a>
+              </h3>
+              <h4>(1932&ndash;)</h4>
+              <img src="images/frances_allen.jpg" alt="Frances Allen" />
+              <p>The first female IBM Fellow in 1989. In 2006 she became the first
+                female recipient of the ACM's Turing Award.</p>
+            </div>
+            <div class="break woman">
+              <h3>
+                <a href="http://en.wikipedia.org/wiki/Barbara_Liskov">Barbara Liskov</a>
+              </h3>
+              <h4>(1939&ndash;)</h4>
+              <img src="images/barbara_liskov.png" alt="Barbara Liskov" />
+              <p>Developed the Liskov substitution principle. Liskov was also the
+                winner of the Turing Prize in 2008.</p>
+            </div>
+            <div class = "woman">
+              <h3>
+                <a href="http://en.wikipedia.org/wiki/Anita_Borg">Anita Borg</a>
+              </h3>
+              <h4>(1949&ndash;2003)</h4>
+              <img src="images/anita_borg.jpg" alt="Anita Borg" />
+              <p>The founding director of the Institute for Women and Technology
+                (IWT)</p>
+            </div>
+            <div class = "woman">
+              <h3>
+                <a href="http://en.wikipedia.org/wiki/Maria_Klawe">Maria Klawe</a>
+              </h3>
+              <h4>(1951&ndash;)</h4>
+              <img src="images/maria_klawe.jpg" alt="Maria Klawe" />
+              <p>The first woman to become President of Harvey Mudd College since
+                its founding in 1955 and was ACM president from 2002 until 2004.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="organizations">
+          <a name="organizations"></a>
+          <h2><a id="O">Organizations</a></h2>
+          <a class="jump up" href="#famous">&igrave;</a>
+          <a class="jump down" href="#facts">&iacute;</a>
+          <div class = "wrapper">
+            <p>These are some awesome organizations that help women in computing.
+              This is a brief list and there are many more out there.</p>
+
+            <ul>
+              <li>
+                <a href="http://www.ncwit.org/">National Center for Women &amp; Information Technology</a>
+                <img src="images/logos/ncwit.png" alt="National Center for Women &amp; Information Technology logo" />
+              </li>
+              <li>
+                <a href="http://anitaborg.org/">Anita Borg Institute for Women and Technology</a>
+                <img src="images/logos/anitaborg.gif" alt="Anita Borg Institute for Women and Technology logo" />
+              </li>
+              <li>
+                <a href="http://adainitiative.org/">The Ada Initiative</a>
+                <img src="images/logos/adainitiative.png" alt="The Ada Initiative logo" />
+              </li>
+              <li>
+                <a href="http://girldevelopit.com/">Girl Develop It</a>
+                <img src="images/logos/gdi.png" alt="Girl Develop It logo" />
+              </li>
+              <li>
+                <a href="http://www.blackgirlscode.com/">Black Girls Code</a>
+                <img src="images/logos/blackgirlscode.jpg" alt="Black Girls Code logo" />
+              </li>
+              <li>
+                <a href="http://railsgirls.com/">Rails Girls</a>
+                <img src="images/logos/railsgirls.png" alt="Rails Girls logo" />
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="facts">
+          <a name="facts"></a>
+          <h2><a id="FF">Fun Facts</FF></h2>
+          <a class="jump up" href="#organizations">&igrave;</a>
+          <a class="jump down" href="#bottom">&iacute;</a>
+          <div class = "wrapper">
+            <ul>
+              <li>Every year the Anita Borg Institute holds the
+                <a href="http://anitaborg.org/initiatives/ghc/">Grace Hopper
+                Celebration of Women in Computing</a> conference to bring the
+                research and career interests of women in computing to the
+                forefront</li>
+              <li>25% of the computing workforce were women in 2011
+                <a href="http://www.bls.gov/cps/cpsaat11.htm">reference</a></li>
+              <li>The <a href="https://twitter.com/DevChix">DevChix</a> google group has over 1000 members.</li>
+              <li>Girl Develop It has <a href="http://girldevelopit.com/chapters">chapters</a> in eleven cities.</li>
+              <li>Women eared 18% of the Computer and Information Sciences
+                undergraduate degrees in 2010. <a href="http://www.ncwit.org/sites/default/files/resources/2012bythenumbers_web.pdf">
+                reference</a></li>
+              <li>The U.S. Bureau of Labor Statistics projects that by 2018, there
+                will be a total of nearly 1.4 million computing-related jobs added
+                in the U.S., an increase of 22% from 2008.
+                <a href="http://www.ncwit.org/sites/default/files/resources/scorecard2010_printversion_web.pdf">reference</a></li>
+              <li>The median age of women in computing and mathematical occupations
+                is 42. <a href="http://www.ncwit.org/blog/did-you-know-demographics-technical-women">reference</a></li>
+              <li>Of the 20 occupations with the highest median earnings for women,
+                5 are computing occupations: computer software engineers, computer
+                and information systems managers, computer programmers, computer
+                scientists and systems analysts, and network systems and data
+                communications analysts. <a href="http://www.ncwit.org/blog/did-you-know-demographics-technical-women">reference</a></li>
+            </ul>
+            </div>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="nav">
+          <ul>
+            <li>
+              <a href="#">Famous Women</a>
+            </li>
+            <li>
+              <a href="#">Organizations</a>
+            </li>
+            <li>
+              <a href="#">Fun Facts</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a name="bottom"></a>
+  </body>
+</html>
