@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="stylesheets/technicalblog.css"/>
+	<title>FM's Blog: Week 2 Technical Blog</title>
+</head>
+<body>
+<div id="container">
+<div id="navbar">
+</div>
+<div id="header">
+	<h1>farheen malik | blog</h1>
+</div>
+<div id="left">
+	<font size = "2">
+	<p><a href="http://fma2.github.io/">home</a></p>
+	<p><a href="http://fma2.github.io/unit1_projects/dbc.html">about</a></p>
+	<p><a href="http://fma2.github.io/unit1_projects/wireframes_sites.html">comparing wireframes</a></p>
+	<p><a href="http://fma2.github.io/unit1_projects/week1_technical_blog.html">week 1 technical blog</a></p>
+	<p><a href="http://fma2.github.io/unit1_projects/week1_cultural_blog.html">week 1 cultural blog</a></p>
+	<p><a href="http://fma2.github.io/unit1_projects/week2_technical_blog.html">week 2 technical blog</a></p>
+	 </font>
+</div>
+<div id="content">
+	<h2>week 2 technical blog</h2>
+		<p>This blog post will discuss <em> the differences between relative, absolute, and fixed positioning.</em></p>
+		<p>The <strong>position</strong> property is important for making more complex web page layouts.  Possible values for this property include: 
+			<ul>
+				<li>static</li><li>relative</li><li>absolute</li><li>fixed</li>
+			</ul>
+		</p>
+
+	<h4>Static Positioning</h4>
+		<p>
+			Static positioning is the default position value for any element on a website.  Elements with this positioning or no positioning will fall where they are found in the standard flow of a document.  These elements scroll normally.
+		</p>
+		<p>Here is an example of how it is written:</p>
+		<small><p>p {<br>
+			position: static<br>
+		}
+		</p></small>
+		<p>
+			Each element in the sample below is in the standard flow of how the HTML was written.  The elements either have no positioning or <em><small>position: static</em></small>.<br>
+			<img src="http://designshack.co.uk/wp-content/uploads/fixedvsrelative-2.jpg" alt="static positioning">
+		</p>
+
+	<h4>Relative Positioning</h4>
+		<p>
+			Relative positioning means an element will fall relative to their origin or starting point.  Elements with this positioning follow the flow of the document.  These elements scroll normally.
+		</p> 
+		<p>Here is an example of how it is written:</p>
+		<small><p>p {<br>
+			position: relative<br>
+		}
+		</p></small>
+		<p>Notice in the sample below element Four has relative positioning. It does not look different from the sample above under static positioning.  However, note that its starting point has been explicated as <em><small>left:0px; top:0px</em></small><br>
+		<img src = "http://designshack.co.uk/wp-content/uploads/fixedvsrelative-7.jpg" alt="relative positioning 1">
+
+		<p>Now, if we were to change the starting point to <small><em>left:20px; top:20px</em></small>, notice how element Four moves!  Also, notice how it is still in the flow of the document.<br>
+		<img src="http://designshack.co.uk/wp-content/uploads/fixedvsrelative-8.jpg" alt="relative positioning">
+
+	<h4>Absolute Positioning</h4>
+		<p>
+			Absolute positioning can remove an element from the flow of the document, allowing you to position an item exactly where you want it.  Elements with this positioning are <u>not</u> affected by other elements or by the standard flow of the document.  These elements scroll normally.
+		</p>
+		<p>Here is an example of how it is written:</p>
+			<small><p>p {<br>
+			position: absolute<br>
+		}
+		</p></small>
+		<p>In the example below, element Four has absolute positioning.  Notice how it is no longer in the flow of the document.  It has been placed at <small><em>left:0; top:0</em></small><br>
+		<img src="http://designshack.co.uk/wp-content/uploads/fixedvsrelative-4.jpg" alt="absolute positioning">
+		</p>
+	<h4>Fixed Positioning</h4>
+		<p>
+			Like absolute positioning, fixed positioning allows you to position an element exactly where you want it and can remove an element from the flow of the document.  These elements will not scroll normally.  
+		</p>
+<p>Here is an example of how it is written:</p>
+			<small><p>p {<br>
+			position: fixed<br>
+		}
+		</p></small>		
+		<p>In the example below, the sidebar has fixed positioning.  While the rest of the content can scroll with the page, it will stay in one spot.<br>
+			<img src="http://designshack.co.uk/wp-content/uploads/fixedvsrelative-1.jpg" alt="fixed positioning">
+		</p>
+<h4></h4>
+<p>For a visual on the scrolling differences between the different positioning values see here: <a href="http://www.yorku.ca/nmw/facs1939f13/week02/css_relVSabsVSfixed.html">Static v. Relative v. Absolute v. Fixed Positioning</a>
+<p><small>source for images: <a href="http://designshack.net/articles/css/the-lowdown-on-absolute-vs-relative-positioning/">Design Shack</a></small></p>
+</div>
+</body>
