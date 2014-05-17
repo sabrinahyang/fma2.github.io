@@ -1,5 +1,5 @@
 head,body {
-	background-color:#339966;
+	background-color: #B2B2B2;
 }
 body {
   font-size: 1em;
@@ -8,7 +8,7 @@ body {
   margin: 0px auto;
   min-width: 960px;
   width: 960px;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Pacifico', cursive;
 
 }
 
@@ -29,7 +29,7 @@ body {
 	padding-top:35px;
 	font-size: 1.25em;
 	position:fixed;
-	background-color: #339966;
+	background-color: #B2B2B2;
 
 }
 ul {
@@ -46,7 +46,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #CCCCCC;}
+  color: #336495;}
 
 #subtitle {
 	float:left;
@@ -75,3 +75,35 @@ h4 {
 	color:#999999;
 	padding-bottom: 300px
 }
+
+/** Tablet view **/
+@media screen and (max-width: 960px){
+  h1, h4, li, ul, body, #nav, {
+    font-size: 1.1em;
+    line-height: 40px;
+  }
+  header nav li{
+    line-height: 40px;
+  }
+}
+/** Mobile view **/
+@media screen and (max-width: 480px){
+  h1{
+    padding: 20px;
+    line-height: 40px;
+  }
+  h1 span{
+      display: none;
+  }
+  header nav{
+    margin-left: 5px;
+  }
+ header nav li{
+    line-height: 40px;
+  }
+  header nav li a {
+    font-size: 0.9em;
+    margin: 3px;
+    padding: 1px;
+  }
+
