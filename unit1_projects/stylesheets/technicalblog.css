@@ -36,6 +36,7 @@ h1 {
 	left: 142px;
 	position:absolute; left:142px; top:81px;
 	width: 848px;
+	height: 100%;
 }
 h1,h2,h3, h4, h6, p,ul, ol, table,big {
     font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
