@@ -36,7 +36,13 @@ li {
 /* Header */
 
 .nav {
-      float:right;
+    float:right;
+    font-size: 150%;
+}
+
+
+#logot a {
+   font-size: 250%;
 }
       
 .nav li {
