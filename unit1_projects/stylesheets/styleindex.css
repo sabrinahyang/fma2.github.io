@@ -69,21 +69,6 @@ li {
       color:#ddd;
 } 
       
-/* Subnav */
-/*
-.subnav {
-  padding:5% 0 5% 0;
-  border-bottom:1px solid #eee;
-  overflow: auto;
-  }
-
-.subnav li {
-  float:left;
-  }
-  
-.subnav li  span {    
-  color:#ddd;
-  }*/
 
 /* Body */
 
@@ -96,7 +81,6 @@ li {
   color:#000;
   padding:7% 0;
   line-height: 1.5;
-  margin-left:50px;
   border-bottom:1px solid #eee;
 }
 
@@ -118,7 +102,6 @@ li {
 	color:#999999;
 	padding-bottom: 300px;
   padding:7% 0;
-  margin-left:50px;
   margin-right: 50px;
   background-color: #FFFFFF;
 }
