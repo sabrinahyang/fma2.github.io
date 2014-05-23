@@ -98,28 +98,24 @@ li {
 
 .work {
 	position:relative;
-	width:960px;
+	width:900px;
 	font-size:1.6em;
 	color:#999999;
 	padding-bottom: 300px;
   padding:7% 0;
-  margin-right: 55px;
+  padding-left:7%;
+  margin-right: 60px;
+  margin-top: 7%;
+  border:none;
+  border-width: 1px;
+  background-color: #EEF1F8;
   
 }
 
 .technical, .cultural {
   padding:1%;
   margin-bottom: 3%;
-  color:#FFFFFF; 
   border:none;
-}
-
-.technical h3, .cultural h3 {
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000; 
 }
 
 .culturalposts, .techposts{
