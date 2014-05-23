@@ -104,15 +104,28 @@ li {
 	padding-bottom: 300px;
   padding:7% 0;
   margin-right: 55px;
-  background-color: #FFFFFF;
+  
 }
 
-#technical, #cultural {
-  border:dotted;
-  border-width: 2px;
-  padding:2%;
-  margin-bottom: 2%;
+.technical, .cultural {
+  padding:1%;
+  margin-bottom: 3%;
+  color:#FFFFFF; 
+  border:none;
 }
+
+.technical h3, .cultural h3 {
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+.culturalposts, .techposts{
+  font-size: 80%;
+}
+
 /*Footer*/
 
 .footer {
