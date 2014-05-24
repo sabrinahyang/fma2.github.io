@@ -26,15 +26,7 @@ a:hover {
   color: #336495;
   border-bottom:2px solid #000;
 }
-ul {
-	list-style-type: none;
-	margin:0;
-}
 
-li {
-	display:inline;
-  text-align: left;
-}
 
 img {
   width:100%;
@@ -76,7 +68,16 @@ img {
 .nav li span {
   color:#ddd;
 } 
-      
+
+ul {
+  list-style-type: none;
+  margin:0;
+}
+
+li {
+  display:inline;
+  text-align: left;
+}
 
 /* Body */
 
@@ -101,6 +102,18 @@ img {
 
 .content a:hover {
   border-bottom: 2px solid #000;
+}
+
+.content ul {
+  margin:0;
+  list-style-type: "★"; 
+}
+.content li {
+  display:inline-block;
+
+}
+.content ol {
+   list-style: symbols("*" "\2020" "\2021" "\A7"); 
 }
 
 .photo {
