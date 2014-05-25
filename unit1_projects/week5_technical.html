@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="stylesheets/technicalblog-v2.css"/>
 	<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Oswald:700,400|Pacifico|Special+Elite' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Lora|PT+Mono|Roboto+Slab|Raleway+Dots|Share+Tech+Mono|Inconsolata|Cuprum|Text+Me+One' rel='stylesheet' type='text/css'>
-	<title>fmhub: cultural blog, k-12 computer science education</title>
+	<title>fmhub: technical blog, instance and class variables</title>
 </head>
 
 <body>
@@ -47,58 +47,51 @@
 	<p><a href="http://fma2.github.io/unit1_projects/week4_technical.html">previous post</a> <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">all technical blog entries</a> <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">next post</a></p>
 </div>
 <div class="content">
-	<h1>wk 5 cultural: challenges with computer science education</h1>
+	<h1>wk 5 technical: instance variable v. class variable</h1>
 		<p><em>Saturday, May 24, 2014</em></p>
+		<p>This post will discuss when and how to use instance variables and class variables with Class in Ruby. </p>
+		<p>Ruby is an object-oriented language in which everything is an object.  A class is the factory that builds an object.  To create a class, define the characteristics of the class through methods.  Then, make an instance of it; an object can be built by a certain class and is called 'an instance of that class.'</p>
+		<p>Here is a class definition with one instance method for the class Welcome:</p>
+		<p><img src="https://fma2.github.io/unit1_projects/images/simple_class_example.png" alt="simple class example"></p>
+		<p>Here is an instance of Welcome:</p>
+
+		<p><img src="https://fma2.github.io/unit1_projects/images/create_instance_example.png" alt="create instance example"></p>
+
+		<p>Now, we can call the method week_five within class Welcome:
+		</p>
+		<p><img src="https://fma2.github.io/unit1_projects/images/call_method_example.png" alt="call method example"></p>
+
+		<p>Both instance variables and class variables are variables found only in instance and class methods.  How are they different?  Let’s take a look at a few ways!
+		</p>
+		<h2>Instance Variable</h2>
+		<p>An instance variable begins with  @.   Instance variables can be referenced by any method of a particular class.  They are bound to the instance of the particular class.   Instance variables are initialized through the instance method initialize.</p>  
+
+		<p><img src="https://fma2.github.io/unit1_projects/images/instance_variable_example.png" alt="instance variable example"></p>
+
+		<p>In the example, there are two instances explicated -- see comments.  This makes two different objects, because both objects set different values for their instance variables.  Remember that how an instance variable is defined is bound to a particular instance of the class. </p> 
+
+		<h2>Class Variable</h2>
+		<p>A class variable begins with @@.  They are shared across all instances of a class--they are found in instance methods, class methods, and in the class definition itself, outside of any method.  They are initialized in the class definition itself.  Class Variable is important to pay attention to when using inheritance with classes.  
+		</p>
 		
-		<p>
-			Society demands "a higher level and different set of skills than schools were designed to teach"<sup>1</sup>.  Even with the addition of computers in the classroom, teaching and school structures largely remain unchanged.  There are many changes that could and should be made.  In general, there continue to be ongoing challenges of access, adequacy and equity of technology in schools<sup>2</sup>.  In this post, I want to focus on K-12 computer science education.
-		</p>
+		<p><img src="https://fma2.github.io/unit1_projects/images/class_variable_example.png" alt="class variable example"></p>
 
-		<p>
-			In a 2013 report entitled "Bugs in the System: Computer Science Teacher Certification in the U.S.", the Computer Science Teachers Association (CSTA) and the Association for Computing Machinery (ACM) describe a disconnect between the number of US jobs in computing and teacher credentialing in K-12 computer science education.  They reference the Bureau of Labor and Statistics which found that by 2020 there will be 9.2 million jobs in the areas of Science, Technology, Engineering, and Mathematics (STEM) with more than half of these jobs in computing.  They claim, "The economic well-being of of the United States depends on computing, which in turns depends on a robust computing workforce"<sup>3</sup>.  We need to provide all students with the opportunity to "develop a fundamental understanding of the principles of Computer Science as a scientific discipline"<sup>3</sup>.  In a recent report, a team at the University of Chicago found five major challenges to computer science education: a lack of shared understanding of what computer science is; a need for more comprehensive, quality instructional resources; a lack of prioritization of computer science in schools; a dearth of computer science teachers; and isolation fo computer science teachers<sup>4</sup>.
-		</p>
+		<p>In the example, one class (FamilyWithNewBaby) inherits from another (Family).  And, though there are two instances of the class, @@members is able to be changed between them.  </p>
 
-		<p>
-			While efforts could be made to include computer science in required coursework for high school graduation, preparing teachers for these courses deserves attention as well.  Computer Science teacher certification/licensure requirements differ state-by-state, with some states lacking any requirements, or even a certification option, at all.  Further, the report "Bugs in the System" calls it a “deeply flawed system” with several problematic symptoms: confusion about Computer Science as a discipline, a dearth of clear and relevant certification/licensure requirements, and a lack of agreement about what teachers should know and understanding in order to be exemplary teachers<sup>3</sup>.  
-		</p>
+		<p>Hopefully, this helped you understand instance variables and class variables a bit more. Other resources to explore are listed below.  Enjoy!</p>
 
-		<p>
-			Let’s say we convince K-12 school systems to require computer science coursework, based on present and future job demands, at least.  How can we ensure there are well-prepared teachers for these courses?  It would be a monumental task to try to change credentialing/licensure requirements nationwide, but it should likely begin sooner rather than later.  We could also begin to consider the following to at least begin to counter the multitude of challenges with K-12 computer science education:
-		</p>
 		<ul>
-			<li>
-				Assess K-12 curricula to find opportunities to include CS principles and/or specific lessons.
-			</li>
-			<li>
-				Modify K-12 curricula to include critical thinking exercises and project-based learning opportunities.
-			</li>
-			<li>
-				Work with localities and districts to reconfigure the work day to include consistent, effective professional development for teachers on technology.  
-			</li>
-			<li>
-				Partner teachers and school districts with tech companies.
-			</li>
-			<li>
-				For the short term, the team at University of Chicago recommends there be strategies to help existing teachers become excellent CS teachers.  Existing teachers could  include teachers already teaching computer science or even those teaching related subject areas (math, science, etc.).  Strategies could include consistent professional development or training opportunities<sup>4</sup>.
-			</li>
+			<li>Class and Instance Variables in Ruby: <a href="http://www.railstips.org/blog/archives/2006/11/18/class-and-instance-variables-in-ruby/">http://www.railstips.org/blog/archives/2006/11/18/class-and-instance-variables-in-ruby/</a></li>
+			<li>Ruby User's Guide: <a href="http://www.rubyist.net/~slagell/ruby/index.html">http://www.rubyist.net/~slagell/ruby/index.html</a></li>
+			<li>Class Variables: A Ruby Gotcha: <a href="http://www.sitepoint.com/class-variables-a-ruby-gotcha/">http://www.sitepoint.com/class-variables-a-ruby-gotcha/</a></li>
+			<li>Instance Variables: <a href="http://ruby.about.com/od/variables/a/Instance-Variables.htm">http://ruby.about.com/od/variables/a/Instance-Variables.htm</a></li>
+			<li>Class Variables: <a href="http://ruby.about.com/od/variables/a/Class-Variables.htm">http://ruby.about.com/od/variables/a/Class-Variables.htm</a></li>
 		</ul>
-		<p>
-		<small>
-			<ol>
-				<li>1) Preparing Students for Their Technological Future: <a href:"http://www.leadered.com/pdf/Preparing%20Students%20for%20Tech%20Future%20white%20paper.pdf">http://www.leadered.com/pdf/Preparing%20Students%20for%20Tech%20Future%20white%20paper.pdf</a></li>
-				<li>2) Technology in Schools: The Ongoing Challenge 
-of Access, Adequacy and Equity: <a href: "http://www.nea.org/assets/docs/PB19_Technology08.pdf">http://www.nea.org/assets/docs/PB19_Technology08.pdf</a></li>
-				<li>3) Bugs in the System: Computer Science Teacher Certification in the U.S: <a href="http://csta.acm.org/ComputerScienceTeacherCertification/sub/CSTA_BugsInTheSystem.pdf">http://csta.acm.org/ComputerScienceTeacherCertification/sub/CSTA_BugsInTheSystem.pdf</a></li>
-				<li>4) Building an Operating System for Computer Science Education: <a href="http://outlier.uchicago.edu/computerscience/OS4CS/challenges/">http://outlier.uchicago.edu/computerscience/OS4CS/challenges/</a></li>
-			</ol>
-		</small>
-		</p>
-</p>
 </div>
 
 <!-- Navigation between posts -->
 <div class="forward-backward">
-	<p><a href="http://fma2.github.io/unit1_projects/week4_technical.html">previous post</a> <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">all technical blog entries</a> <span>&nbsp;/&nbsp;</span> next post</p>
+	<p><a href="http://fma2.github.io/unit1_projects/week4_technical.html">previous post</a> <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">all technical blog entries</a> <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">next post</a></p>
 </div>
 
 <!-- Footer -->
