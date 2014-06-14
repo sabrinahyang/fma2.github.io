@@ -1,212 +1,175 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<link rel="stylesheet" type="text/css" href="stylesheets/technicalblog-v2.css"/>
-	<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Oswald:700,400|Pacifico|Special+Elite' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Lora|PT+Mono|Roboto+Slab|Raleway+Dots|Share+Tech+Mono|Inconsolata|Cuprum|Text+Me+One' rel='stylesheet' type='text/css'>
-	<title>fmhub: technical blog, test-driven development</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/technicalblog-v2.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Oswald:700,400|Pacifico|Special+Elite' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lora|PT+Mono|Roboto+Slab|Raleway+Dots|Share+Tech+Mono|Inconsolata|Cuprum|Text+Me+One' rel='stylesheet' type='text/css'>
+    <title>fmhub: technical blog, test-driven development</title>
 </head>
 
 <body>
 
-<!-- Navigation Bar -->
-	<div class="wrapper">
-		<div class="header">
-			<a href="http://fma2.github.io/" class="logo" id="#home">
-				<h1>
-					fmhub
-				</h1>
-			</a>
-			<ul class ="nav">
-				<li><a href="http://fma2.github.io/" class="selected">home</a>
-				<span>&nbsp;/&nbsp;</span>
-				</li>
+    <!-- Navigation Bar -->
+    <div class="wrapper">
+        <div class="header">
+            <a href="http://fma2.github.io/" class="logo" id="#home">
+                <h1>
+                    fmhub
+                </h1>
+            </a>
+            <ul class="nav">
+                <li><a href="http://fma2.github.io/" class="selected">home</a>
+                    <span>&nbsp;/&nbsp;</span>
+                </li>
 
-				<li><a href="http://fma2.github.io/#about">about</a>
-				<span>&nbsp;/&nbsp;</span>
-				</li>
+                <li><a href="http://fma2.github.io/#about">about</a>
+                    <span>&nbsp;/&nbsp;</span>
+                </li>
 
-				<li><a href="http://fma2.github.io/#port">blog</a>
-				<span>&nbsp;/&nbsp;</span>
-				</li>
+                <li><a href="http://fma2.github.io/#port">blog</a>
+                    <span>&nbsp;/&nbsp;</span>
+                </li>
 
-				<li>maps
-				<span>&nbsp;/&nbsp;</span>
-				</li>
+                <li>maps
+                    <span>&nbsp;/&nbsp;</span>
+                </li>
 
-				<li>contact</li>
+                <li>contact</li>
 
-			</ul>
-		</div>
-	</div>
+            </ul>
+        </div>
+    </div>
 
-<!-- Body -->
+    <!-- Body -->
 
-<!-- Navigation between posts -->
-<div class="forward-backward">
-	<p><a href="http://fma2.github.io/unit1_projects/week6_technical.html">previous post</a> <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">all technical blog entries</a> <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">next post</a></p>
-</div>
-<div class="content">
-	<h1>wk 8 technical: test-driven development</h1>
-		<p><em>Saturday, June 14, 2014</em></p>
-		<p>This post will discuss ways to optimize SQL queries.   I will limit it to SQL query optimization options within my current scope of understanding of SQL syntax in an effort to apply the tips as soon as possible.  However, I should note that, when researching the topic, I found various other SQL query optimization suggestions.</p>
-		<p>SQL query optimization is important for better performance.  A query is a request for information from a database.  Database structures are complex, so it is not surprising that "the needed data for a query can be collected from a database by accessing it in different ways, through different data-structures, and in different orders"<sup>1</sup>--this is performed through SQL statements.   What can change with different SQL statements is processing time.  Query optimization is meant to "find the way to process a given query in minimum time"<sup>1</sup>.  Why optimize SQL queries?  ServerWatch argues, "Time is money and people don't like to wait so programs are expected to be fast"<sup>2</sup>.</p>
-		<p>Here are two approaches to optimize your SQL queries with a few examples of each in practice--</p>
+    <!-- Navigation between posts -->
+    <div class="forward-backward">
+        <p><a href="http://fma2.github.io/unit1_projects/week7_technical.html">previous post</a> 
+            <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">all technical blog entries</a> 
+            <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">next post</a>
+        </p>
+    </div>
+    <div class="content">
+        <h1>wk 8 technical: test-driven development</h1>
+        <p>
+            <em>Saturday, June 14, 2014</em>
+        </p>
+        <p>Test-driven development (TDD) is "a software development process that relies on the repetition of a very short development cycle"<sup>1</sup>.
+        </p>
+        <p>
+            <img border="0" src="http://upload.wikimedia.org/wikipedia/en/9/9c/Test-driven_development.PNG" alt="TDD Development Cycle">
+            <br>
+            <small>A graphical representation of the development cycle, using a basic flowchart<sup>1</sup>
+            </small>
+        </p>
+        <p>Generally speaking, the cycle includes the following steps:</p>
 
-		<h2>APPROACH #1: ONLY QUERY WHAT YOU REALLY NEED</h2>
 
-		<p><u><font face="roboto slab" color="#666666">Use the actual column names in SELECT statements instead of '*'</font></u>.  "This is, hands-down, the biggest, baddest SQL optimization violation out there. If you considered "SELECT *" to be off limits in your applications, I bet that would clear up a sizable chunk of the SQL problems that applications have"<sup>3</sup></p>
- 
-		<h3><font face="roboto slab" color="#666666" size="3">BAD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT *<br>
-		FROM users;
-		</p>
-		<h3><font face="roboto slab" color="#666666" size="3">GOOD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first_name, last_name, age<br>
-		FROM users;
-		</p>
+        <li>(1) Deciding what the code will do</li>
+        <br>
+        <li>(2) Write a test that will pass if the code its thing</li>
+        <br>
+        <li>(3) Run the test, see it fail</li>
+        <br>
+        <li>(4) Write the code--just enough production code to fulfill the written test</li>
+        <br>
+        <li>(5) Run the test, see it pass</li>
+        <br>
+        <li>(6) Repeat the above process for every couple of lines of code <sup>2</sup>
+        </li>
 
-		<p><u><font face="roboto slab" color="#666666">Be careful with conditions in the WHERE clause</font></u>.  Write it according to what you need/what you want.
-		</p>
+        <p>Some refer to the steps as RED, GREEN, and REFACTOR.</p>
+        <blockquote cite="http://msdn.microsoft.com/en-us/library/aa730844(v=vs.80).aspx" style="padding: 10px;background-color: #E0E0E0 ;  border: black 0.5px solid">
+            <li>1) Understand the requirements of the story, work item, or feature that you are working on.</li>
+            <br>
+            <li>2)
+                <font color="red">Red</font>: Create a test and make it fail--it is expected for it to fail, as it ensures your code is working.</li>
+            <br>
+            <li>3)
+                <font color="green">Green</font>: Make the test pass by any means necessary. Write the production code to make the test pass. Keep it simple.</li>
+            <br>
+            <li>4)
+                <font color="purple">Refactor</font>: Change the code to remove duplication in your project and to improve the design while ensuring that all tests still pass. Repeat the cycle. Each cycle should be very short, and a typical hour should contain many Red/Green/Refactor cycles<sup>3</sup>.</li>
+        </blockquote>
 
-		<h3><font face="roboto slab" color="#666666" size="3">BAD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first name, last_name, age<br>
-		FROM users<br>
-		WHERE age != 10;
-		</p>
-		<h3><font face="roboto slab" color="#666666" size="3">GOOD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first name, last_name, age<br>
-		FROM users<br>
-		WHERE age > 10;
-		</p>
+        <p>Check out this video for more on this process:</p>
+       <iframe width="640" height="360" src="//www.youtube.com/embed/HhwElTL-mdI?rel=0" frameborder="0" allowfullscreen></iframe>
+        <p>As the video describes, TDD encourages design of testable code, which means better planning leading to better results. Amongst many uses, writing testable code through TDD forces the developer to break things down (i.e. code is modular), ensures code is not too tightly woven (referred to as decoupled design), and includes methods with limited scope.</p>
 
-		<h3><font face="roboto slab" color="#666666" size="3">BAD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first_name, age<br>
-FROM student_details <br>
-WHERE SUBSTR(first_name,1,3) = 'Cha';
-		</p>
-		<h3><font face="roboto slab" color="#666666" size="3">GOOD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first_name, age<br> 
-FROM users<br>
-WHERE first_name LIKE 'Chan%';
-		</p>
+        <h3>Benefits of TDD</h3>
+        <ul>
+            <li>TDD enables the developer to take small steps when writing software. Many find this practice to be more productive than attempting to code in large steps. Further, it is easier to find and fix defects in code. <sup>4</sup>
+            </li>
+            <li>Each test provides feedback to the developer that each component is working.</li>
+            <li>The tests also provide documentation to the developer</li>
+            <li>After the test passes and the code is refactored, "it is clear that the code is finished, and the developer can move on to a new test" <sup>3</sup>
+            </li>
+            <li>Test-driven development forces critical analysis and design because the developer cannot create the production code without truly understanding what the desired result should be and how to test it <sup>3</sup>
+            </li>
+            <li>Reduces debugging time.</li>
+            <li>Overall, advocates of TDD feel <u>it leads to better design in less time</u>.</li>
+        </ul>
 
-		<p><u><font face="roboto slab" color="#666666">Use the HAVING clause appropriately</font></u>.  It is used to filter the rows after allthe rows are selected; if you do not need to do this, then you do not need a HAVING clause <sup>4</sup></p>
+        <h3>Objections to TDD</h3>
+        <ul>
+            <li>* To be able to write better code in less time, one needs to get used to TDD before he/she gets faster.</li>
+            <li>* The basic steps are easy to learn but the mindset takes a while to sink in. And, before it sinks in, "TDD will likely seem clumsy, slow, and awkward"<sup>5</sup>. It may take 2 to 3 months of full-time TDD use to adapt.</li>
+            <li>* It promotes microdesign over macrodesign and can be hard to apply in practice<sup>6</sup>. <a href="http://beust.com/weblog/2014/05/11/the-pitfalls-of-test-driven-development/" alt="Pitfalls of Test Driven Development" target="_blank">Here</a> is an interesting blog post on these points.</li>
+        </ul>
 
-		<h3><font face="roboto slab" color="#666666" size="3">BAD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT subject, count(subject)<br>
-		FROM student_details <br>
-		GROUP BY subject <br>
-		HAVING subject!= 'Vancouver' AND subject!= 'Toronto';
-		</p>
-		<h3><font face="roboto slab" color="#666666" size="3">GOOD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT subject, count(subject) 
-		FROM student_details<br>
-		WHERE subject != 'Science' <br>
-		AND subject != 'Maths' <br>
-		GROUP BY subject;
-		</p>
-
-		<h2>APPROACH #2: CONSIDER HOW DIFFERENT OPERATORS WORK/WHAT OPERATORS ARE APPROPRIATE</h2>
-
-		<p><u><font face="roboto slab" color="#666666">Use operator EXISTS, IN,and table joins appropriately in your query</font></u>.  "Usually, IN has the slowest performance.   IN is efficient when most of the filter criteria is in the sub-query.   EXISTS is efficient when most of the filter criteria is in the main query."<sup>4</sup></p>
-
-		<h3><font face="roboto slab" color="#666666" size="3">BAD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT *<br>
-		FROM product p<br>
-		WHERE product_id
-		IN (SELECT product_id FROM order_items)
-		</p>
-		<h3><font face="roboto slab" color="#666666" size="3">GOOD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT * <br>
-			FROM product p <br>
-		WHERE EXISTS (SELECT * from order_items o <br>
-		WHERE o.product_id = p.product_id)
-		</p>
-		
-		<p><u> <font face="roboto slab" color="#666666">Try not to use the NOT operator.</font></u>  It is much faster to search for an exact match using the LIKE, IN, EXIST or = symbol operator (positive operators) instead of NOT LIKE, NOT IN, NOT EXIST or != symbol (negative operators).   A negative operator will "cause the search to find every single row" whereas the positive operator stops as soon as the result is found.</p>
-
-		<h3><font face="roboto slab" color="#666666" size="3">BAD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT name<br>
-		FROM users<br>
-		WHERE name NOT LIKE "F%";
-		</p>
-		<h3><font face="roboto slab" color="#666666" size="3">GOOD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT name<br>
-		FROM users<br>
-		WHERE name LIKE "M%";
-		</p>
-
-		<p><u> <font face="roboto slab" color="#666666">Minimize the number of subqueries in your main query</font></u>.</p>
-
-		<h3><font face="roboto slab" color="#666666" size="3">BAD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT name<br> 
-FROM employee<br> 
-WHERE salary = (SELECT MAX(salary) FROM employee_details) <br>
-AND age = (SELECT MAX(age) FROM employee_details) <br>
-AND emp_dept = 'Electronics';
-		</p>
-		<h3><font face="roboto slab" color="#666666" size="3">GOOD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT name <br>
-FROM employee <br>
-WHERE (salary, age ) = (SELECT MAX (salary), MAX (age) <br>
-FROM employee_details) <br>
-AND dept = 'Electronics'; 
-		</p>
-
-		<p><u> <font face="roboto slab" color="#666666">Use EXIST instead of COUNT when trying to determine whether particular data exists</font></u>.  The EXIST operator will stop once it finds the first record while the COUNT operator will search for all existing records on the table.  </p>
-
-			<h3><font face="roboto slab" color="#666666" size="3">BAD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT column<br>
-FROM table <br>
-WHERE COUNT(column) > 0<br>
-		</p>
-		<h3><font face="roboto slab" color="#666666" size="3">GOOD</font></h3>
-		<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT column<br>
-FROM table<br>
-WHERE EXISTS(SELECT * FROM  customer  <br>
-WHERE grade=3)
-		</p>
-
-	<p>Hopefully, these tips will help you get started in optimizing your SQL queries! For more, check out these resources:
-	</p>
-	<ul>
-	<li><a href="http://hungred.com/useful-information/ways-optimize-sql-queries/" target="_blank">15 Ways to Optimize Your SQL Queries</a></li><br>
-	<li><a href="http://dev.mysql.com/doc/refman/5.6/en/statement-optimization.html" target="_blank">Optimizing SQL Statements</a></li><br>
-	<li><a href="http://beginner-sql-tutorial.com/sql-query-tuning.htm" target="_blank">SQL Tuning or SQL Optimization</a></li><br>
-	<li><a href="http://www.bennadel.com/blog/1189-ben-nadel-s-easy-tips-for-writing-better-more-optimized-sql.htm" target="_blank">Ben Nadel's Easy Tips For Writing Better, More Optimized SQL</li><br>
-	<li><a href="http://www.serverwatch.com/tutorials/article.php/2175621/How-to-Optimize-Queries-Theory-an-Practice.htm" target="_blank">How to Optimize Queries (Theory in Practice)</a></li>
-	</ul>
-	&nbsp;
-		<small><p>References:</p>
-			<li>1) <a href="http://en.wikipedia.org/wiki/Query_optimization" target="_blank">Wikipedia: Query Optimization</a></li><br>
-			<li>2) <a href="http://www.serverwatch.com/tutorials/article.php/2175621/How-to-Optimize-Queries-Theory-an-Practice.htm" target="_blank"> How to Optimize Queries Theory in Practice</a> </li><br>
-			<li>3) <a href="http://www.bennadel.com/blog/1189-ben-nadel-s-easy-tips-for-writing-better-more-optimized-sql.htm" target="_blank">Ben Nadel's Easy Tips for Writing Better, More Optimized SQL</a></li><br>
-			<li>4) <a href="http://beginner-sql-tutorial.com/sql-query-tuning.htm" target="_blank">SQL Query Tuning</a></li>
+        <small>
+            <p>References:</p>
+            <li>1) <a href="http://en.wikipedia.org/wiki/Test-driven_development" target="_blank">Wikipedia: Test-Driven Development</a>
+            </li>
+            <br>
+            <li>2) <a href="http://www.youtube.com/watch?v=HhwElTL-mdI" target="_blank"> VIDEO: Test-driven development: Write better code in less time</a> 
+            </li>
+            <br>
+            <li>3) <a href="http://msdn.microsoft.com/en-us/library/aa730844(v=vs.80).aspx" target="_blank">Guidelines for Test-Driven Development</a>
+            </li>
+            <br>
+            <li>4) <a href="http://www.agiledata.org/essays/tdd.html#sthash.yRGxurFo.dpuf" target="_blank">Introduction to Test Driven Development (TDD)</a>
+            </li>
+            <li>5) <a href="http://www.jamesshore.com/Agile-Book/test_driven_development.html" target="_blank">Test-Driven Development</a>
+            </li>
+            <li>6) <a href="http://beust.com/weblog/2014/05/11/the-pitfalls-of-test-driven-development/" target="_blank">The pitfalls of Test-Driven Development/a></li>
 		</small>
 </div>
 
 <!-- Navigation between posts -->
 <div class="forward-backward">
-	<p><a href="http://fma2.github.io/unit1_projects/week6_technical.html">previous post</a> <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">all technical blog entries</a> <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">next post</a></p>
-</div>
+	<p><a href="http://fma2.github.io/unit1_projects/week7_technical.html">previous post</a> 
+                <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">all technical blog entries</a> 
+                <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">next post</a>
+                </p>
+    </div>
 
-<!-- Footer -->
-<div class = "footer">
-	<p> 
-		Copyright 2014 <a href = "mailto:farheen.m.malik@gmail.com">Farheen Malik</a>
-			&nbsp;
-			&nbsp;
-		<ul>	
-			<li>#<a href="https://twitter.com/angryteachrlady" alt="twitter" target="_blank">twitter</a><span>&nbsp;&nbsp;</span></li>
-			
-			<li>#<a href = "https://www.facebook.com/farheen.malik" alt="facebook" target="_blank">facebook </a><span>&nbsp;&nbsp;</span></li>
-			
-			<li>#<a href="http://instagram.com/f_ma2" alt="instagram" target="_blank">instagram</a><span>&nbsp;&nbsp;</span></li>
-			
-			<li>#<a href="http://www.linkedin.com/pub/farheen-malik/77/753/b40" alt="linkedin" target="_blank">linkedin</a><span>&nbsp;&nbsp;</span></li>
-			<li>#<a href="https://plus.google.com/u/0/+FarheenMalik1/posts" alt="google-plus" target="_blank">google+</a></li>
-	</p>
-</div>
+    <!-- Footer -->
+    <div class="footer">
+        <p>
+            Copyright 2014 <a href="mailto:farheen.m.malik@gmail.com">Farheen Malik</a>
+            &nbsp; &nbsp;
+            <ul>
+                <li>#<a href="https://twitter.com/angryteachrlady" alt="twitter" target="_blank">twitter</a>
+                    <span>&nbsp;&nbsp;</span>
+                </li>
+
+                <li>#<a href="https://www.facebook.com/farheen.malik" alt="facebook" target="_blank">facebook </a>
+                    <span>&nbsp;&nbsp;</span>
+                </li>
+
+                <li>#<a href="http://instagram.com/f_ma2" alt="instagram" target="_blank">instagram</a>
+                    <span>&nbsp;&nbsp;</span>
+                </li>
+
+                <li>#<a href="http://www.linkedin.com/pub/farheen-malik/77/753/b40" alt="linkedin" target="_blank">linkedin</a>
+                    <span>&nbsp;&nbsp;</span>
+                </li>
+                <li>#<a href="https://plus.google.com/u/0/+FarheenMalik1/posts" alt="google-plus" target="_blank">google+</a>
+                </li>
+        </p>
+    </div>
 </body>
+
 </html>
