@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/technicalblog-v2.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Oswald:700,400|Pacifico|Special+Elite' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lora|PT+Mono|Roboto+Slab|Raleway+Dots|Share+Tech+Mono|Inconsolata|Cuprum|Text+Me+One' rel='stylesheet' type='text/css'>
+    <title>fmhub: technical blog, optimizing sql queries</title>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="wrapper">
+        <div class="header">
+            <a href="http://fma2.github.io/" class="logo" id="#home">
+                <h1>
+                    fmhub
+                </h1>
+            </a>
+            <ul class="nav">
+                <li><a href="http://fma2.github.io/" class="selected">home</a>
+                    <span>&nbsp;/&nbsp;</span>
+                </li>
+
+                <li><a href="http://fma2.github.io/#about">about</a>
+                    <span>&nbsp;/&nbsp;</span>
+                </li>
+
+                <li><a href="http://fma2.github.io/#port">blog</a>
+                    <span>&nbsp;/&nbsp;</span>
+                </li>
+
+                <li>maps
+                    <span>&nbsp;/&nbsp;</span>
+                </li>
+
+                <li>contact</li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- Body -->
+
+    <!-- Navigation between posts -->
+    <div class="forward-backward">
+        <p><a href="http://fma2.github.io/unit1_projects/week6_technical.html">previous post</a> 
+            <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">all technical blog entries</a> 
+            <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">next post</a>
+        </p>
+    </div>
+    <div class="content">
+        <h1>wk 7 technical: optimizing sql queries</h1>
+        <p>
+            <em>Saturday, June 7, 2014</em>
+        </p>
+        <p>This post will discuss ways to optimize SQL queries. I will limit it to SQL query optimization options within my current scope of understanding of SQL syntax in an effort to apply the tips as soon as possible. However, I should note that, when researching the topic, I found various other SQL query optimization suggestions.</p>
+        <p>SQL query optimization is important for better performance. A query is a request for information from a database. Database structures are complex, so it is not surprising that "the needed data for a query can be collected from a database by accessing it in different ways, through different data-structures, and in different orders"<sup>1</sup>--this is performed through SQL statements. What can change with different SQL statements is processing time. Query optimization is meant to "find the way to process a given query in minimum time"<sup>1</sup>. Why optimize SQL queries? ServerWatch argues, "Time is money and people don't like to wait so programs are expected to be fast"<sup>2</sup>.</p>
+        <p>Here are two approaches to optimize your SQL queries with a few examples of each in practice--</p>
+
+        <h2>APPROACH #1: ONLY QUERY WHAT YOU REALLY NEED</h2>
+
+        <p><u><font face="roboto slab" color="#666666">Use the actual column names in SELECT statements instead of '*'</font></u>. "This is, hands-down, the biggest, baddest SQL optimization violation out there. If you considered "SELECT *" to be off limits in your applications, I bet that would clear up a sizable chunk of the SQL problems that applications have"<sup>3</sup>
+        </p>
+
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">BAD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT *
+            <br>FROM users;
+        </p>
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">GOOD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first_name, last_name, age
+            <br>FROM users;
+        </p>
+
+        <p><u><font face="roboto slab" color="#666666">Be careful with conditions in the WHERE clause</font></u>. Write it according to what you need/what you want.
+        </p>
+
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">BAD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first name, last_name, age
+            <br>FROM users
+            <br>WHERE age != 10;
+        </p>
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">GOOD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first name, last_name, age
+            <br>FROM users
+            <br>WHERE age > 10;
+        </p>
+
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">BAD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first_name, age
+            <br>FROM student_details
+            <br>WHERE SUBSTR(first_name,1,3) = 'Cha';
+        </p>
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">GOOD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first_name, age
+            <br>FROM users
+            <br>WHERE first_name LIKE 'Chan%';
+        </p>
+
+        <p><u><font face="roboto slab" color="#666666">Use the HAVING clause appropriately</font></u>. It is used to filter the rows after allthe rows are selected; if you do not need to do this, then you do not need a HAVING clause <sup>4</sup>
+        </p>
+
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">BAD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT subject, count(subject)
+            <br>FROM student_details
+            <br>GROUP BY subject
+            <br>HAVING subject!= 'Vancouver' AND subject!= 'Toronto';
+        </p>
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">GOOD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT subject, count(subject) FROM student_details
+            <br>WHERE subject != 'Science'
+            <br>AND subject != 'Maths'
+            <br>GROUP BY subject;
+        </p>
+
+        <h2>APPROACH #2: CONSIDER HOW DIFFERENT OPERATORS WORK/WHAT OPERATORS ARE APPROPRIATE</h2>
+
+        <p><u><font face="roboto slab" color="#666666">Use operator EXISTS, IN,and table joins appropriately in your query</font></u>. "Usually, IN has the slowest performance. IN is efficient when most of the filter criteria is in the sub-query. EXISTS is efficient when most of the filter criteria is in the main query."<sup>4</sup>
+        </p>
+
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">BAD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT *
+            <br>FROM product p
+            <br>WHERE product_id IN (SELECT product_id FROM order_items)
+        </p>
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">GOOD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT *
+            <br>FROM product p
+            <br>WHERE EXISTS (SELECT * from order_items o
+            <br>WHERE o.product_id = p.product_id)
+        </p>
+
+        <p><u> <font face="roboto slab" color="#666666">Try not to use the NOT operator.</font></u> It is much faster to search for an exact match using the LIKE, IN, EXIST or = symbol operator (positive operators) instead of NOT LIKE, NOT IN, NOT EXIST or != symbol (negative operators). A negative operator will "cause the search to find every single row" whereas the positive operator stops as soon as the result is found.</p>
+
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">BAD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT name
+            <br>FROM users
+            <br>WHERE name NOT LIKE "F%";
+        </p>
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">GOOD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT name
+            <br>FROM users
+            <br>WHERE name LIKE "M%";
+        </p>
+
+        <p><u> <font face="roboto slab" color="#666666">Minimize the number of subqueries in your main query</font></u>.</p>
+
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">BAD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT name
+            <br>FROM employee
+            <br>WHERE salary = (SELECT MAX(salary) FROM employee_details)
+            <br>AND age = (SELECT MAX(age) FROM employee_details)
+            <br>AND emp_dept = 'Electronics';
+        </p>
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">GOOD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT name
+            <br>FROM employee
+            <br>WHERE (salary, age ) = (SELECT MAX (salary), MAX (age)
+            <br>FROM employee_details)
+            <br>AND dept = 'Electronics';
+        </p>
+
+        <p><u> <font face="roboto slab" color="#666666">Use EXIST instead of COUNT when trying to determine whether particular data exists</font></u>. The EXIST operator will stop once it finds the first record while the COUNT operator will search for all existing records on the table.</p>
+
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">BAD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT column
+            <br>FROM table
+            <br>WHERE COUNT(column) > 0
+            <br>
+        </p>
+        <h3>
+            <font face="roboto slab" color="#666666" size="3">GOOD</font>
+        </h3>
+        <p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT column
+            <br>FROM table
+            <br>WHERE EXISTS(SELECT * FROM customer
+            <br>WHERE grade=3)
+        </p>
+
+        <p>Hopefully, these tips will help you get started in optimizing your SQL queries! For more, check out these resources:
+        </p>
+        <ul>
+            <li><a href="http://hungred.com/useful-information/ways-optimize-sql-queries/" target="_blank">15 Ways to Optimize Your SQL Queries</a>
+            </li>
+            <br>
+            <li><a href="http://dev.mysql.com/doc/refman/5.6/en/statement-optimization.html" target="_blank">Optimizing SQL Statements</a>
+            </li>
+            <br>
+            <li><a href="http://beginner-sql-tutorial.com/sql-query-tuning.htm" target="_blank">SQL Tuning or SQL Optimization</a>
+            </li>
+            <br>
+            <li><a href="http://www.bennadel.com/blog/1189-ben-nadel-s-easy-tips-for-writing-better-more-optimized-sql.htm" target="_blank">Ben Nadel's Easy Tips For Writing Better, More Optimized SQL</li><br>
+	<li><a href="http://www.serverwatch.com/tutorials/article.php/2175621/How-to-Optimize-Queries-Theory-an-Practice.htm" target="_blank">How to Optimize Queries (Theory in Practice)</a>
+            </li>
+        </ul>
+        &nbsp;
+        <small>
+            <p>References:</p>
+            <li>1) <a href="http://en.wikipedia.org/wiki/Query_optimization" target="_blank">Wikipedia: Query Optimization</a>
+            </li>
+            <br>
+            <li>2) <a href="http://www.serverwatch.com/tutorials/article.php/2175621/How-to-Optimize-Queries-Theory-an-Practice.htm" target="_blank"> How to Optimize Queries Theory in Practice</a> 
+            </li>
+            <br>
+            <li>3) <a href="http://www.bennadel.com/blog/1189-ben-nadel-s-easy-tips-for-writing-better-more-optimized-sql.htm" target="_blank">Ben Nadel's Easy Tips for Writing Better, More Optimized SQL</a>
+            </li>
+            <br>
+            <li>4) <a href="http://beginner-sql-tutorial.com/sql-query-tuning.htm" target="_blank">SQL Query Tuning</a>
+            </li>
+        </small>
+    </div>
+
+    <!-- Navigation between posts -->
+    <div class="forward-backward">
+        <p><a href="http://fma2.github.io/unit1_projects/week6_technical.html">previous post</a> 
+            <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">all technical blog entries</a> 
+            <span>&nbsp;/&nbsp;</span> <a href="http://fma2.github.io/unit1_projects/technical_blogs_posts.html">next post</a>
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>
+            Copyright 2014 <a href="mailto:farheen.m.malik@gmail.com">Farheen Malik</a>
+            &nbsp; &nbsp;
+            <ul>
+                <li>#<a href="https://twitter.com/angryteachrlady" alt="twitter" target="_blank">twitter</a>
+                    <span>&nbsp;&nbsp;</span>
+                </li>
+
+                <li>#<a href="https://www.facebook.com/farheen.malik" alt="facebook" target="_blank">facebook </a>
+                    <span>&nbsp;&nbsp;</span>
+                </li>
+
+                <li>#<a href="http://instagram.com/f_ma2" alt="instagram" target="_blank">instagram</a>
+                    <span>&nbsp;&nbsp;</span>
+                </li>
+
+                <li>#<a href="http://www.linkedin.com/pub/farheen-malik/77/753/b40" alt="linkedin" target="_blank">linkedin</a>
+                    <span>&nbsp;&nbsp;</span>
+                </li>
+                <li>#<a href="https://plus.google.com/u/0/+FarheenMalik1/posts" alt="google-plus" target="_blank">google+</a>
+                </li>
+        </p>
+    </div>
+</body>
+
+</html>
