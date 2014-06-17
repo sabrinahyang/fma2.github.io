@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/cheatsheet.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Oswald:700,400|Pacifico|Special+Elite' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lora|PT+Mono|Roboto+Slab|Raleway+Dots|Share+Tech+Mono|Inconsolata|Cuprum|Text+Me+One' rel='stylesheet' type='text/css'>
+    <title>cheatsheet: looping through arrays with ruby & javascript</title>
+</head>
+
+<body>
+    <h1>Cheat Sheet: Looping through Arrays with Ruby & Javascript</h1>
+    <p>The loop examples below refer to the following arrays:
+        <br>students = ["Farheen", "Joel", "Maria", "Tanner", "Sam", "Dylan", "Justin"]
+        <br>numbers = [1,2,3,4,5]</p>
+
+    <div class="ruby">
+
+        <h3>Ruby</h3>
+        <p>EACH</p>
+        <p>numbers.each {|number| p number}</p>
+
+        <p>FOR</p>
+        <p>for n in numbers
+            <br>p n+= 1
+            <br>end
+        </p>
+
+        <p>MAP</p>
+        <p>students.map { |student| p student.reverse.split("") }</p>
+        <p>can also be destructive: .map!</p>
+
+        <p>COLLECT</p>
+        <p>students.collect { |student| p student +"!"}</p>
+
+        <p>DELETE_IF</p>
+        <p>p students.delete_if {|name| name.length > 6 }</p>
+
+        <p>FIND_INDEX</p>
+        <p>p students.find_index("Joel")
+            <br>p numbers.find_index(5)</p>
+
+        <p>EACH_INDEX</p>
+        <p>numbers.each_index {|i| p i}</p>
+
+        <p>SELECT</p>
+        <p>p numbers.select{ |number| number
+            < 4}</p>
+
+</body>
