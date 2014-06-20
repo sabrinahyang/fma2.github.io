@@ -5,46 +5,136 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/cheatsheet.css" />
     <link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Oswald:700,400|Pacifico|Special+Elite' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lora|PT+Mono|Roboto+Slab|Raleway+Dots|Share+Tech+Mono|Inconsolata|Cuprum|Text+Me+One' rel='stylesheet' type='text/css'>
+    
+    <script type="text/javascript" src="unit3_projects/code-ol.js">
+    </script>
+    
     <title>cheatsheet: looping through arrays with ruby & javascript</title>
 </head>
 
+<!-- body -->
+
 <body>
-    <h1>Cheat Sheet: Looping through Arrays with Ruby & Javascript</h1>
-    <p>The loop examples below refer to the following arrays:
-        <br>students = ["Farheen", "Joel", "Maria", "Tanner", "Sam", "Dylan", "Justin"]
-        <br>numbers = [1,2,3,4,5]</p>
+    <table class="body-wrap">
+        <tr>
+            <td></td>
+            <td class="container">
+                <!-- content -->
+                <div class="content">
+                    <table>
+                        <tr>
+                            <td>
+                                <h1>Cheat Sheet: Looping through Arrays with Ruby & Javascript</h1>
+                                <p>The loop examples below refer to the following arrays:
+                                    <br>students = ["Farheen", "Joel", "Maria", "Tanner", "Sam", "Dylan", "Justin"]
+                                    <br>numbers = [1,2,3,4,5]</p>
+                                <h3>Ruby</h3>
+                                <h4># EACH</h4>
+                                <code>
+                                    <ol>
+                                        <li></li>
+                                        <li>numbers.each {|number| p number}</li>
+                                    </ol>
+                                </code>
 
-    <div class="ruby">
+                                <h4>FOR .. IN</h4>
+                                <code>
+                                    <ol>
+                                        <li>for n in numbers</li>
+                                        <li>&nbsp;&nbsp;p n+= 1</li>
+                                        <li>end</li>
+                                    </ol>
+                                </code>
 
-        <h3>Ruby</h3>
-        <p>EACH</p>
-        <p>numbers.each {|number| p number}</p>
+                                <h4>MAP</h4>
+                                <code>
+                                    <ol>
+                                        <li>students.map { |student| p student.reverse.split("") }</li>
+                                    </ol>
+                                </code>
+                                <p>can also be destructive: .map!</p>
 
-        <p>FOR</p>
-        <p>for n in numbers
-            <br>p n+= 1
-            <br>end
-        </p>
+                                <h4>COLLECT</h4>
+                                <code>
+                                    <ol>
+                                        <li>students.collect { |student| p student +"!"}</li>
+                                    </ol>
+                                </code>
 
-        <p>MAP</p>
-        <p>students.map { |student| p student.reverse.split("") }</p>
-        <p>can also be destructive: .map!</p>
+                                <h4>DELETE_IF</h4>
+                                <code>
+                                    <ol>
+                                        <li>p students.delete_if {|name| name.length > 6 }</li>
+                                    </ol>
+                                </code>
 
-        <p>COLLECT</p>
-        <p>students.collect { |student| p student +"!"}</p>
+                                <h4>FIND_INDEX</h4>
+                                <code>
+                                    <ol>
+                                        <li>p students.find_index("Joel")</li>
+                                        <li>p numbers.find_index(5)</li>
+                                    </ol>
+                                </code>
 
-        <p>DELETE_IF</p>
-        <p>p students.delete_if {|name| name.length > 6 }</p>
+                                <h4>EACH_INDEX</h4>
+                                <code>
+                                    <ol>
+                                        <li>numbers.each_index {|i| p i}</li>
+                                    </ol>
+                                </code>
 
-        <p>FIND_INDEX</p>
-        <p>p students.find_index("Joel")
-            <br>p numbers.find_index(5)</p>
+                                <h4>SELECT</h4>
+                                <code>
+                                    <ol>
+                                        <li>p numbers.select{ |number| number < 4}</li>
+                                                <li></li>
+                                    </ol>
+                                </code>
 
-        <p>EACH_INDEX</p>
-        <p>numbers.each_index {|i| p i}</p>
+                                <code>
+                                    <ol>
+                                        <li></li>
+                                        <li></li>
+                                    </ol>
+                                </code>
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td>
+                                <h3>JavaScript</h3>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td></td>
+        </tr>
+    </table>
 
-        <p>SELECT</p>
-        <p>p numbers.select{ |number| number
-            < 4}</p>
+    <!-- footer -->
+<table class="footer-wrap">
+    <tr>
+        <td></td>
+        <td class="container">
+
+            <!-- content -->
+            <div class="content">
+                <table>
+                    <tr>
+                        <td align="center">
+                            <p>copyright Farheen Malik
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- /content -->
+
+        </td>
+        <td></td>
+    </tr>
+</table>
 
 </body>

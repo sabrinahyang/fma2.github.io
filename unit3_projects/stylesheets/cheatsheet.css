@@ -1,24 +1,28 @@
 /*GENERAL*/
-* {
-    margin: 0;
+html {
+    margin: 0px auto;
     padding: 5;
     font-family:"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     font-size: 100%;
     line-height: 1.6;
+    background-color: #F2f2f2; 
 }
 img {
     max-width: 100%;
 }
 body {
-    width: 100%!important;
+    width: 50%;
     height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
 }
 a {
     color: #348eda;
 }
+/*
 
 /*TEXT STYLING*/
-h1, h2, h3 {
+ h1, h2, h3 {
     font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     line-height: 1.1;
     margin-bottom: 15px;
@@ -44,4 +48,107 @@ p, ul, ol {
 ul li, ol li {
     margin-left: 5px;
     list-style-position: inside;
+}
+
+/*BODY STYLING*/
+
+table.body-wrap {
+    width: 100%;
+    padding: 20px;
+}
+
+.container {
+    border: 1px solid #f0f0f0;
+}
+
+.content table, tr, td, h1, h3, h4, li, ol, p {
+    background-color: #ffffff;
+}
+
+/*FOOTER STYLING*/
+table.footer-wrap {
+    width: 100%;    
+    clear: both!important;
+}
+
+.footer-wrap .container p {
+    font-size: 12px;
+    color: #666;
+
+}
+
+table.footer-wrap a {
+    color: #999;
+}
+
+/*CODE STYLING*/
+
+code {
+    background: url(code_bg.png) repeat left top;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+    width: 550px;
+}
+code li {
+    color: #669933;
+    font-family:"Consolas", "Courier New", Courier, mono;
+    line-height: 0px;
+    /* to remove white border issue */
+    white-space: pre;
+}
+code {
+    counter-reset: li;
+}
+code li:before {
+    counter-increment: li;
+    content: counter(li)". ";
+    background: #ececec;
+    border-right: 1px solid #cccccc;
+    color: #555555;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 30px;
+    /* minumum line height = 24, smaller causes white border issue */
+    margin-right: 20px;
+    padding-right: 5px;
+    text-align: right;
+    width: 50px;
+}
+code li:empty {
+    display: none;
+}
+code ol {
+    list-style-type: none;
+}
+
+/* ---------------------------------------------------
+        RESPONSIVENESS
+        Nuke it from orbit. It's the only way to be sure.
+------------------------------------------------------ */
+
+/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+.container {
+    display: block!important;
+    max-width: 600px!important;
+    margin: 0 auto!important; /* makes it centered */
+    clear: both!important;
+}
+
+/* Set the padding on the td rather than the div for Outlook compatibility */
+.body-wrap .container {
+    padding: 20px;
+}
+
+/* This should also be a block element, so that it will fill 100% of the .container */
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Let's make sure tables in the content area are 100% wide */
+.content table {
+    width: 100%;
 }
