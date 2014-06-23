@@ -1,11 +1,9 @@
 /*GENERAL*/
 html {
-    margin: 0px auto;
-    padding: 5;
     font-family:"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     font-size: 100%;
+    background-color: #F2f2f2;
     line-height: 1.6;
-    background-color: #F2f2f2; 
 }
 img {
     max-width: 100%;
@@ -13,18 +11,18 @@ img {
 body {
     width: 50%;
     height: 100%;
+    margin-left: auto;
+    margin-right: auto;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: none;
 }
 a {
     color: #348eda;
 }
-/*
 
 /*TEXT STYLING*/
- h1, h2, h3 {
+ h1, h2, h3,h4,h5,h6 {
     font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    line-height: 1.1;
     margin-bottom: 15px;
     color: #000;
     margin: 40px 0 10px;
@@ -40,47 +38,93 @@ h2 {
 h3 {
     font-size: 22px;
 }
-p, ul, ol {
-    margin-bottom: 10px;
-    font-weight: normal;
+h4 {
+    font-size: 16px;
+    font-style: underline;
+}
+h5 {
+    font-size: 16px;
+    font-style: italic;
+}
+h6 {
     font-size: 14px;
 }
-ul li, ol li {
-    margin-left: 5px;
+p, ul, ol {
+    margin-bottom: 10px;
+    /*font-weight: normal;*/
+    font-size: 14px;
+    font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: #000;
+    line-height: 1.2;
+    font-weight: 200;
+}
+ul li, ol {
+    margin-left: 0px;
     list-style-position: inside;
+}
+
+li {
+    font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: #000;
+    font-weight: normal;
+    font-size: 14px;
+    font-weight: 200;
+
 }
 
 /*BODY STYLING*/
 
-table.body-wrap {
-    width: 100%;
-    padding: 20px;
+.navbar {
+    font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-style: italic;
+    width: 93%;
+    height: 100%;
+    padding: 2px;
+    text-align: center;
 }
-
+.body-wrap {
+    width: 100%;
+}
 .container {
     border: 1px solid #f0f0f0;
 }
-
-.content table, tr, td, h1, h3, h4, li, ol, p {
+table {
+  padding: 20px;
+}
+.content table, h1, h3, h4, li, ol{
     background-color: #ffffff;
 }
 
+.quick-links {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
+
 /*FOOTER STYLING*/
-table.footer-wrap {
-    width: 100%;    
-    clear: both!important;
+.footer-wrap {
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.footer-wrap .container p {
-    font-size: 12px;
+.footer.container {
+    font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    padding: 2px;
+    text-align: center;
+}
+
+.footer-content p {
     color: #666;
-
+     font-size: 10px;
+     text-align: center;
 }
-
-table.footer-wrap a {
-    color: #999;
+.footer-content li {
+    list-style: none;  
+    display: inline-block;
+     font-size: 10px;
+     text-align: center;    
 }
-
+}
 /*CODE STYLING*/
 
 code {
@@ -90,6 +134,7 @@ code {
     padding: 0px;
     overflow: auto;
     width: 550px;
+    float:left;
 }
 code li {
     color: #669933;
@@ -100,6 +145,7 @@ code li {
 }
 code {
     counter-reset: li;
+
 }
 code li:before {
     counter-increment: li;
@@ -123,7 +169,7 @@ code ol {
     list-style-type: none;
 }
 
-/* ---------------------------------------------------
+/*/* ---------------------------------------------------
         RESPONSIVENESS
         Nuke it from orbit. It's the only way to be sure.
 ------------------------------------------------------ */
@@ -151,4 +197,4 @@ code ol {
 /* Let's make sure tables in the content area are 100% wide */
 .content table {
     width: 100%;
-}
+}*/
