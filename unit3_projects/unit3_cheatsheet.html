@@ -39,8 +39,8 @@
                                         <li>numbers = [1,2,3,4,5]</li>
                                     </ol>
                                 </code>
-                                <p>Scroll to view examples or use the quick links below.</p>
-                                <div class="quick-links">
+                                <p><a id="top"></a>Scroll to view examples or use the quick links below.</p>
+                                <div class="quick-links-ruby">
                                 <li><a href="#Ruby">ruby (top of list)</a></li>
                                 <li><a href="#Ruby-Collect">#collect</a></li>
                                 <li><a href="#Ruby-Each">#each</a></li>
@@ -50,6 +50,9 @@
                                 <li><a href="#Ruby-For">for..in</a></li>
                                 <li><a href="#Ruby-Map">#map</a></li>
                                 <li><a href="#Ruby-Select">#select</a></li>
+                                </div>
+                                <br>
+                                <div class="quick-links-js">
                                 <li><a href="#Javascript">javascript (top of list)</a></li>
                                 <li><a href="#JS-ForLoop">FOR loop</a></li>
                                 <li><a href="#JS-ForInLoop">FOR-IN loop</a></li>
@@ -68,38 +71,50 @@
                                 <code>
                                     <ol>
                                         <li>students.collect { |student| p student +"!"}</li>
+                                        <li># => ["Joel!", "Maria!", "Tanner!", "Sam!"]</li>
                                     </ol>
                                 </code>
+                                <p><em><font size="1">back to <a href="#top">top</a></font></em></p>
                                 <h4><a id="Ruby-Each">#each</a></h4>
                                 <p>Calls the given block once for each element in self, passing that element as a parameter</p>
                                 <code>
                                     <ol>
                                         <li>numbers.each {|number| p number}</li>
+                                        <li># => [1, 2, 3, 4, 5]</li>
                                     </ol>
                                 </code>
+                                <p><em><font size="1">back to <a href="#top">top</a></font></em></p>
                                 <h4><a id="Ruby-EachIndex">#each_index</a></h4>
                                 <p>Same as #each, but passes the index of the element instead of the element itself.</p>
                                 <code>
                                     <ol>
                                         <li>numbers.each_index {|i| p i}</li>
+                                        <li># => [1, 2, 3, 4, 5]</li>
                                     </ol>
                                 </code>
+                                <p><em><font size="1">back to <a href="#top">top</a></font></em></p>
                                 <h4><a id="Ruby-DeleteIf">#delete_if</a></h4>
                                 <p>Deletes every element of self for which block evaluates to true. The array is changed instantly every time the block is called, not after the iteration is over.</p>
                                 <code>
                                     <ol>
                                         <li>p students.delete_if {|name| name.length > 6 }</li>
+                                        <li># => ["Joel", "Maria", "Tanner", "Sam"]</li>
                                     </ol>
                                 </code>
+                                <p><em><font size="1">back to <a href="#top">top</a></font></em></p>
 
                                 <h4><a id="Ruby-FindIndex">#find_index</a></h4>
                                 <p>Returns the index of the first object in ary such that the object is == to obj. If a block is given instead of an argument, returns the index of the first object for which the block returns true. Returns nil if no match is found.</p>
                                 <code>
                                     <ol>
                                         <li>p students.find_index("Joel")</li>
+                                        <li># => 1</li>
+                                        <li></li>
                                         <li>p numbers.find_index(5)</li>
+                                        <li># => 4</li>
                                     </ol>
                                 </code>
+                                <p><em><font size="1">back to <a href="#top">top</a></font></em></p>
                                 <h4><a id="Ruby-For">for..in</a></h4>
                                 <p>Executes
                                     <em>code</em>once for each element in expression.</p>
@@ -108,8 +123,10 @@
                                         <li>for n in numbers</li>
                                         <li>&nbsp;&nbsp;p n+= 1</li>
                                         <li>end</li>
+                                        <li># => [1, 2, 3, 4, 5]</li>
                                     </ol>
                                 </code>
+                                <p><em><font size="1">back to <a href="#top">top</a></font></em></p>
 
                                 <h4><a id="Ruby-Map">#map</a></h4>
                                 <p>Invokes the given block once for each element of self. Creates a new array containing the values returned by the block. Can be destructive if written as
@@ -117,16 +134,21 @@
                                 <code>
                                     <ol>
                                         <li>students.map { |student| p student.reverse.split("") }</li>
+                                        <li># => [["n", "e", "e", "h", "r", "a", "F"], ["l", "e", "o", "J"],</li>
+                                        <li># ["a", "i", "r", "a", "M"], ["r", "e", "n", "n", "a", "T"],</li>
+                                            <li># ["m", "a", "S"]]</li>
                                     </ol>
                                 </code>
+                                <p><em><font size="1">back to <a href="#top">top</a></font></em></p>
                                 <h4><a id="Ruby-Select">#select</a></h4>
                                 <p>Returns a new array containing all elements of ary for which the given block returns a true value.</p>
                                 <code>
                                     <ol>
                                         <li>p numbers.select{ |number| number< 4}</li>
-                                                <li></li>
+                                                <li># => [1, 2, 3]</li>
                                     </ol>
                                 </code>
+                                <p><em><font size="1">back to <a href="#top">top</a></font></em></p>
                                 <h3><a id="Javascript">JavaScript</a></h3>
                                 <p> To decide which of the for loops below to use, <a href="http://www.sebarmeli.com/blog/2010/12/06/best-way-to-loop-through-an-array-in-javascript/">here</a> is a good resource.</p>
 
@@ -136,8 +158,15 @@
                                         <li>for (var i=0; i < students.length; i++) { </li>
                                         <li>&nbsp;&nbsp;&nbsp;console.log(students[i])</li>
                                         <li>} </li>
+                                        <li>// =></li>
+                                        <li>// Farheen</li>
+                                        <li>// Joel</li>
+                                        <li>// Maria</li>
+                                        <li>// Tanner</li>
+                                        <li>// Sam</li>
                                     </ol>
                                 </code>
+                                <p><em><font size="1">back to <a href="#top">top</a></font></em></p>
                                 <h4><a id="JS-ForInLoop">FOR-IN loop</a></h4>
 
                                 <code>
@@ -146,10 +175,13 @@
                                         <li>&nbsp;&nbsp;&nbsp;if (numbers[i] > 2)</li>
                                         <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(numbers[i])};</li>
                                         <li>}</li>
-                                        
+                                        <li>// =>
+                                        <li>// 3</li>
+                                        <li>// 4</li>
+                                        <li>// 5</li>
                                     </ol>
                                 </code>
-                                
+                                <p><em><font size="1">back to <a href="#top">top</a></font></em></p>
                             </td>
                         </tr>
                     </table>
