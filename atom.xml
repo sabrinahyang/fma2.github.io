@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://fma2.github.io/atom.xml" rel="self"/>
   <link href="http://fma2.github.io/"/>
-  <updated>2014-08-04T13:52:24-04:00</updated>
+  <updated>2014-08-04T13:52:58-04:00</updated>
   <id>http://fma2.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -20,10 +20,14 @@
     <id>http://fma2.github.io/blog/2014/04/27/wk-1-technical-user-experience-and-design-analysis</id>
     <content type="html"><![CDATA[<p>For Week 1, I selected the following favorite websites:</p>
 
-<p><a href="drive.google.com">Google Drive</a>
-<a href="https://twitter.com/">Twitter</a>
-<a href="http://digg.com/reader">Digg Reader</a>
-Below is analysis of these websites in terms of user experience and design.</p>
+<ul>
+<li><a href="drive.google.com">Google Drive</a></li>
+<li><a href="https://twitter.com/">Twitter</a></li>
+<li><a href="http://digg.com/reader">Digg Reader</a></li>
+</ul>
+
+
+<p>Below is analysis of these websites in terms of user experience and design.</p>
 
 <h4>Google Drive</h4>
 
