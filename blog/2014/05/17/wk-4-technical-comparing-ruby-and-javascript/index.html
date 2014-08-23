@@ -106,86 +106,85 @@ Next, check out how both languages rank on Hammer Principle: Programming Languag
 
 <h5>Check out the code!</h5>
 
-<p>Below are a few examples comparing how to write code for each.</p>
+<p>Below are a few examples comparing how to write code for each.
+          <table border="1">
+                    <col width="100">
+                        <col width="200">
+                            <col width="200">
+                                <tr>
+                                    <th></th>
+                                    <th>Ruby
+                                        <img src="http://people.csail.mit.edu/aleks/website/arby/ruby_transparent.png" alt="Ruby" style="width: 20%; height: 10%">
+                                    </th>
+                                    <th>Javascript
+                                        <img src="https://lh6.ggpht.com/o4rkqaUwWB65RND-ZC3Nt5PQ07chvCM8mkvCXYhvRob_Qg07cjgaLtGAefZOO8J8zg=w300" alt="JavaScript" style="width: 20%; height: 10%">
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>arrays</p>
+                                    </td>
+                                    <td>
+                                        <p>a = [1,2,3]</p>
+                                        <p>array iteration with
+                                            <small>each</small>:
+                                            <br>a.each {|n| puts n}
+                                            <br>
+                                            <em>or</em>
+                                            <br>a.each do |n|
+                                            <br>puts n
+                                            <br>end
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>var a = [1,2,3]</p>
+                                        <p>array iteration with
+                                            <small>each</small>:
+                                            <br>a.forEach(function(n)) {
+                                            <br>console.log(n);
+                                            <br>});
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>function</p>
+                                    </td>
+                                    <td>
+                                        <p>def method_name (var1, var2)
+                                            <br>expr..
+                                            <br>end
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>new Function ([arg1[, arg2[, &hellip;argN]],] functionBody)</p>
+                                    </td>
+                                </tr>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>if .. else statements</p>
+                                    </td>
+                                    <td>
+                                        <p>x=1
+                                            <br>if x > 2
+                                            <br>puts &ldquo;x is greater than 2&rdquo;
+                                            <br>elsif x
+                                            &lt;=2 and x!=0<br>puts &ldquo;x is 1&rdquo;
+                                                <br>else
+                                                <br>puts &ldquo;I can&rsquo;t guess the number&rdquo; end
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>if (cipher_char === from_char) {
+                                            <br>result = result + to_char;
+                                            <br>x++;
+                                            <br>} else {
+                                            <br>result = result + clear_char;
+                                            <br>}</p>
+                                    </td>
+                                </tr></p>
 
-<pre><code>      &lt;table border="1"&gt;
-                &lt;col width="100"&gt;
-                    &lt;col width="200"&gt;
-                        &lt;col width="200"&gt;
-                            &lt;tr&gt;
-                                &lt;th&gt;&lt;/th&gt;
-                                &lt;th&gt;Ruby
-                                    &lt;img src="http://people.csail.mit.edu/aleks/website/arby/ruby_transparent.png" alt="Ruby" style="width: 20%; height: 10%"&gt;
-                                &lt;/th&gt;
-                                &lt;th&gt;Javascript
-                                    &lt;img src="https://lh6.ggpht.com/o4rkqaUwWB65RND-ZC3Nt5PQ07chvCM8mkvCXYhvRob_Qg07cjgaLtGAefZOO8J8zg=w300" alt="JavaScript" style="width: 20%; height: 10%"&gt;
-                                &lt;/th&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                                &lt;td&gt;
-                                    &lt;p&gt;arrays&lt;/p&gt;
-                                &lt;/td&gt;
-                                &lt;td&gt;
-                                    &lt;p&gt;a = [1,2,3]&lt;/p&gt;
-                                    &lt;p&gt;array iteration with
-                                        &lt;small&gt;each&lt;/small&gt;:
-                                        &lt;br&gt;a.each {|n| puts n}
-                                        &lt;br&gt;
-                                        &lt;em&gt;or&lt;/em&gt;
-                                        &lt;br&gt;a.each do |n|
-                                        &lt;br&gt;puts n
-                                        &lt;br&gt;end
-                                    &lt;/p&gt;
-                                &lt;/td&gt;
-                                &lt;td&gt;
-                                    &lt;p&gt;var a = [1,2,3]&lt;/p&gt;
-                                    &lt;p&gt;array iteration with
-                                        &lt;small&gt;each&lt;/small&gt;:
-                                        &lt;br&gt;a.forEach(function(n)) {
-                                        &lt;br&gt;console.log(n);
-                                        &lt;br&gt;});
-                                &lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                                &lt;td&gt;
-                                    &lt;p&gt;function&lt;/p&gt;
-                                &lt;/td&gt;
-                                &lt;td&gt;
-                                    &lt;p&gt;def method_name (var1, var2)
-                                        &lt;br&gt;expr..
-                                        &lt;br&gt;end
-                                    &lt;/p&gt;
-                                &lt;/td&gt;
-                                &lt;td&gt;
-                                    &lt;p&gt;new Function ([arg1[, arg2[, ...argN]],] functionBody)&lt;/p&gt;
-                                &lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                                &lt;td&gt;
-                                    &lt;p&gt;if .. else statements&lt;/p&gt;
-                                &lt;/td&gt;
-                                &lt;td&gt;
-                                    &lt;p&gt;x=1
-                                        &lt;br&gt;if x &gt; 2
-                                        &lt;br&gt;puts "x is greater than 2"
-                                        &lt;br&gt;elsif x
-                                        &lt;=2 and x!=0&lt;br&gt;puts "x is 1"
-                                            &lt;br&gt;else
-                                            &lt;br&gt;puts "I can't guess the number" end
-                                    &lt;/p&gt;
-                                &lt;/td&gt;
-                                &lt;td&gt;
-                                    &lt;p&gt;if (cipher_char === from_char) {
-                                        &lt;br&gt;result = result + to_char;
-                                        &lt;br&gt;x++;
-                                        &lt;br&gt;} else {
-                                        &lt;br&gt;result = result + clear_char;
-                                        &lt;br&gt;}&lt;/p&gt;
-                                &lt;/td&gt;
-                            &lt;/tr&gt;
-
-            &lt;/table&gt;
+<pre><code>            &lt;/table&gt;
 </code></pre>
 </div>
 	
