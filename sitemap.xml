@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://fma2.github.io/blog/2014/05/03/wk-2-technical-all-about-css-positioning/</loc>
+    <lastmod>2014-05-03T16:08:23-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://fma2.github.io/blog/2014/04/27/wk-1-technical-user-experience-and-design-analysis/</loc>
     <lastmod>2014-04-27T13:49:25-04:00</lastmod>
     <priority>0.8</priority>
@@ -17,14 +23,28 @@
   
   <url>
     <loc>http://fma2.github.io/blog/archives/</loc>
-    <lastmod>2014-08-04T13:52:58-04:00</lastmod>
+    <lastmod>2014-08-23T16:43:40-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/archives/</loc>
+    <lastmod>2014-08-23T16:43:40-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/blog/</loc>
+    <lastmod>2014-08-23T16:43:40-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/</loc>
-    <lastmod>2014-08-04T13:52:58-04:00</lastmod>
+    <lastmod>2014-08-23T16:43:40-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
