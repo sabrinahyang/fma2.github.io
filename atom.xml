@@ -4,7 +4,7 @@
   <title><![CDATA[fmhub]]></title>
   <link href="http://fma2.github.io/atom.xml" rel="self"/>
   <link href="http://fma2.github.io/"/>
-  <updated>2014-08-23T19:29:53-04:00</updated>
+  <updated>2014-08-23T19:33:02-04:00</updated>
   <id>http://fma2.github.io/</id>
   <author>
     <name><![CDATA[Farheen Malik]]></name>
@@ -71,15 +71,6 @@
     <link href="http://fma2.github.io/blog/2014/08/23/comparing-wireframes/"/>
     <updated>2014-08-23T18:55:35-04:00</updated>
     <id>http://fma2.github.io/blog/2014/08/23/comparing-wireframes</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[wk 6 technical: blocs]]></title>
-    <link href="http://fma2.github.io/blog/2014/08/23/wk-6-technical-blocs/"/>
-    <updated>2014-08-23T18:55:18-04:00</updated>
-    <id>http://fma2.github.io/blog/2014/08/23/wk-6-technical-blocs</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
@@ -153,6 +144,149 @@
     </p>
     <br>
 </small></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[blocs, procs, and lambdas]]></title>
+    <link href="http://fma2.github.io/blog/2014/05/31/wk-6-technical-blocs-procs-lambdas/"/>
+    <updated>2014-05-31T18:55:18-04:00</updated>
+    <id>http://fma2.github.io/blog/2014/05/31/wk-6-technical-blocs-procs-lambdas</id>
+    <content type="html"><![CDATA[<p>This week&#8217;s technical blog covers blocks, procs, and lambdas. I opted to research blocks, procs, and lambdas because, while I recall using them through Code Academy, I was not able to connect them to what I have learned in the past few weeks without some Googling.</p>
+
+
+
+
+<p>Blocks, procs, and lambdas are all examples of closures. Closures are functions or references to functions that are bound to the scope in which they were created. Closures meet the following criteria: can be passed around as a value; can be executed on demand by anyone who has that value; and, can refer to variables from the context in which it was created (even if those variables are no longer in scope) (source: http://www.technicalecstasy.net/closures-in-ruby-blocks-procs-and-lambdas/). They are helpful for: refactoring, customization, iterating across collections, managing resources, and enforcing policy <sup>1</sup>.</p>
+
+
+
+
+<p><b><u>Blocks</u></b> are the most commonly used closure. They are also amongst the few exceptions to the “everything is an object” rule in Ruby. They are considered nameless functions, and they use curly braces
+    <font face="Times New Roman">{..}</font>or
+    <font face="Times New Roman">do&#8230;end</font>syntax. They can&#8217;t be saved to a variable - so they don’t have the powers of a Ruby object.</p>
+
+
+<pre><code>&lt;p&gt;Below are examples of blocks.&lt;/p&gt;
+
+&lt;p&gt;In Example 1, the block is just a function that takes a single argument x and prints that argument to the screen&lt;sup&gt;2&lt;/sup&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Example 1&lt;/u&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;font face="Times New Roman"&gt;
+        &lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;(1..10).each do |x|
+            &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;puts x
+            &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;end
+        &lt;/small&gt;
+    &lt;/font&gt;
+&lt;/p&gt;
+
+&lt;p&gt;In Example 2, the #collect! method is used on an Array with a block of code. Within the method, the block takes each variable in the array and squares it.&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Example 2&lt;/u&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;font face="Times New Roman"&gt;
+        &lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;array = [1, 2, 3, 4]
+            &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;array.collect! do |n|
+            &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;n ** 2
+            &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;end
+            &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;puts array.inspect&lt;/small&gt;
+        &lt;/font&gt;
+    &lt;/p&gt;
+
+    &lt;p&gt;Though blocks are useful and syntactically simple, their namelessness presents a problem when one wants to have many different blocks to be used multiple times. To do this, the block would need to be saved as a variable. This is where Procs come in! To save a block to a variable, you have to make it a &lt;b&gt;&lt;u&gt;Proc!&lt;/u&gt;&lt;/b&gt;
+    &lt;/p&gt;
+
+    &lt;p&gt;"Proc" is short for procedure. Basically, procs are saved blocks. Because they are saved, they are objects that can be passed around. Procs can help make code DRYer. And, as previously alluded, they allow one to write a function once and then pass it to lots of different functions. A Proc is made by using Proc.new and passing a block, by Proc.new {|x| x}, or by using the proc keyword, prox {|x| x}&lt;sup&gt;3&lt;/sup&gt;.
+
+        &lt;p&gt;Below are examples of Procs.&lt;/p&gt;
+
+        &lt;p&gt;In Example 3, a Proc is used to save a function in the variable greeting; the function prints “Hello World.”&lt;sup&gt;1&lt;/sup&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;&lt;u&gt;Example 3&lt;/u&gt;
+        &lt;/p&gt;
+
+    ```ruby
+    greeting = Proc.new { puts "Hello World!" }
+    greeting.call
+    ```
+
+        &lt;p&gt;In Example 4, doubler is a variable with a Proc that doubles a n. The function in doubler (available as a Proc) is able to be used multiple times without rewriting for two arrays.&lt;/p&gt;
+
+        &lt;p&gt;&lt;u&gt;Example 4&lt;/u&gt;
+        &lt;/p&gt;
+
+        ```ruby
+        doubler = Proc.new { |n| n * 2}
+        [1,2,3].collect (&amp;doubler)
+        # =&gt; [2,4,6]
+        [10,20,30].map (&amp;doubler)
+        # =&gt; [20,40,60]
+        ```
+
+                &lt;p&gt;Notable aspects of procs to remember:&lt;/p&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;-A return from inside exits completely out of the method enclosing the Proc.&lt;sup&gt;3&lt;/sup&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;-A Proc doesn't care about the arguments passed. If you define a Proc with two parameters, and you pass only 1, or possibly 3, it keeps on trucking. In the case of 1 argument, the second parameter will have the value nil. If you pass extra arguments, they will be ignored and lost.&lt;sup&gt;3&lt;/sup&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;p&gt;&lt;b&gt;&lt;u&gt;Lambdas&lt;/u&gt;&lt;/b&gt;, on the other hand, are a more strict form of proc, though they are used almost identically like procs. Specifically, lambdas “check the number of arguments passed to them, whereas procs do not. Lambdas return differently than do procs"&lt;sup&gt;2&lt;/sup&gt;.&lt;/p&gt;
+                &lt;p&gt;Comparing a lambda to a proc, you can see they are syntactically very similar:&lt;/p&gt;
+                &lt;p&gt;
+                    &lt;font face="Times New Roman"&gt;
+                        &lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;lambda { puts "Hello DBC! }
+                            &lt;br&gt;
+                            &lt;em&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                &lt;small&gt;equivalent to&lt;/small&gt;
+                            &lt;/em&gt;
+                            &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Proc.new {puts “Hello DBC!”}&lt;/font&gt;
+                        &lt;/small&gt;
+                    &lt;/p&gt;
+
+                    &lt;p&gt;And, here is another example of a lambda:&lt;/p&gt;
+                    &lt;p&gt;
+                        &lt;font face="Times New Roman"&gt;
+                            &lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;names = ["Farheen", "Faizah", "Farnaz"]
+                                &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;symbolize = lambda { |e| e.to_sym}
+                                &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;symbols = names.collect{&amp;symbolize}
+                                &lt;small&gt;
+                                    &lt;em&gt;=&gt; :Farheen, :Farnaz, :Faizah&lt;/em&gt;
+                                &lt;/small&gt;
+                            &lt;/small&gt;
+                        &lt;/font&gt;
+                    &lt;/p&gt;
+
+                    &lt;p&gt;It's likely even clearer from examples provided that lambdas are very similar to procs. Their main differences include: lambdas check the number of arguments received and return an Argument Error if they do not match; when a proc encounters a return statement in its execution, it halts the method and returns the provided value, and lambda returns the value fo teh method and allows it to continue&lt;sup&gt;4&lt;/sup&gt;.
+
+                        &lt;small&gt;
+                            &lt;p&gt;References:
+                                &lt;ul&gt;
+                                    &lt;li&gt;1) &lt;a href="http://www.technicalecstasy.net/closures-in-ruby-blocks-procs-and-lambdas/" target="_blank"&gt; Closures in Ruby: Blocks, Procs and Lambdas&lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;br&gt;
+                                    &lt;li&gt;2) &lt;a href="http://jwb.io/20130107-know-your-closures-blocks-procs-and-lambdas.html" target="_blank"&gt; Know your closures: blocks, procs, and lambdas&lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;br&gt;
+                                    &lt;li&gt;3)&lt;a href="http://verboselogging.com/2011/09/20/proc-block-and-two-smoking-lambdas" target="_blank"&gt; Proc, Block, and Two Smoking Lambdas&lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;br&gt;
+                                    &lt;li&gt;4) &lt;a href="ttp://code.tutsplus.com/tutorials/ruby-on-rails-study-guide-blocks-procs-and-lambdas--net-29811" target="_blank"&gt; Ruby on Rails Study Guide: Blocks, Procs, and Lambdas&lt;/a&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/p&gt;
+                            &lt;br&gt;
+                            &lt;p&gt;Other Resources:
+                                &lt;ul&gt;
+                                    &lt;li&gt;&lt;a href="https://speakerdeck.com/jboursiquot/getting-closure-rubys-blocks-procs-and-lambdas" target="_blank"&gt;Getting Closure: Ruby's Blocks, Procs and Lambdas&lt;/a&gt; 
+                                    &lt;/li&gt;
+                                    &lt;br&gt;
+                                    &lt;li&gt;&lt;a href="http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/" target="_blank"&gt;Understanding Ruby Blocks, Procs and Lambdas&lt;/a&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/small&gt;
+</code></pre>
 ]]></content>
   </entry>
   
