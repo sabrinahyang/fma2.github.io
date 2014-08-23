@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[fmhub]]></title>
-  <link href="http://fma2.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: ui | fmhub]]></title>
+  <link href="http://fma2.github.io/blog/categories/ui/atom.xml" rel="self"/>
   <link href="http://fma2.github.io/"/>
   <updated>2014-08-23T18:16:56-04:00</updated>
   <id>http://fma2.github.io/</id>
@@ -10,43 +10,8 @@
     <name><![CDATA[Farheen Malik]]></name>
     
   </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[wk 2 technical: all about css positioning]]></title>
-    <link href="http://fma2.github.io/blog/2014/05/03/wk-2-technical-all-about-css-positioning/"/>
-    <updated>2014-05-03T16:08:23-04:00</updated>
-    <id>http://fma2.github.io/blog/2014/05/03/wk-2-technical-all-about-css-positioning</id>
-    <content type="html"><![CDATA[<p>This blog post will discuss the differences between relative, absolute, and fixed positioning.</p>
-
-<p>The positionproperty is important for making more complex web page layouts. Possible values for this property include:</p>
-
-<ul>
-<li>static</li>
-<li>relative</li>
-<li>absolute</li>
-<li>fixed</li>
-</ul>
-
-
-<h4>Static Positioning</h4>
-
-<p>Static positioning is the default position value for any element on a website. Elements with this positioning or no positioning will fall where they are found in the standard flow of a document. These elements scroll normally.</p>
-
-<p>Here is an example of how it is written:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">p</span> <span class="p">{</span>
-</span><span class='line'><span class="k">position</span><span class="o">:</span> <span class="k">static</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Each element in the sample below is in the standard flow of how the HTML was written. The elements either have no positioning or <code>position: static</code>.</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[wk 1 technical: user experience and design analysis]]></title>
@@ -91,25 +56,6 @@
 <p>To browse through content, the user can simply click headlines or they can use keyboard shortcuts. When new content is posted on the websites to which the user is subscribed, &ldquo;__ new items&rdquo; appears in the sidebar. The user can choose to update their feed to include these new items. Unfortunately, there is no visible search option for the user to search their feed for specific articles.</p>
 
 <p>If the user is subscribed to many websites, he/she may never finish reading the content on their Digg Reader. This may make the user feel differently each time he/she uses Digg Reader&ndash;at times, it may feel like he/she wasted a lot of time on information he/she didn&rsquo;t need at that time; other times, he/she may feel they have gained a lot of interesting information after stumbling on several articles from sites they love to follow.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[wk 1 cultural: identifying core values]]></title>
-    <link href="http://fma2.github.io/blog/2014/04/27/wk-1-cultural-identifying-core-values/"/>
-    <updated>2014-04-27T00:03:00-04:00</updated>
-    <id>http://fma2.github.io/blog/2014/04/27/wk-1-cultural-identifying-core-values</id>
-    <content type="html"><![CDATA[<p>When I think of times in my life I&rsquo;ve been the happiest, the proudest, or the most satisfied, I recall all of the following values:</p>
-
-<p>Activism AdventureAutonomy ChallengeCommunity CompetenceCooperation EfficiencyExcitement FairnessFreedom FriendshipsGrowth Helping other peopleHelping society HonestyIndependence Inner harmonyInsight IntrospectionJustice LeadershipMeaningful work MentorshipPersistance Personal developmentPublic service QualityResponsibility Self-knowledgeSelf-reliance SpiritualityTruth VibrancyWisdom</p>
-
-<p>FAIRNESS</p>
-
-<p>The importance of this value to me stems, in part, from my years as a teacher in the Bronx. All of my students&#8217; families were low-income, most below the poverty line. What motivated me everyday in working with my students was the desire to ensure they had/have access to the same opportunities I, a person who was just lucky to be born into privilege, was afforded growing up &ndash; I seeked fairness.</p>
-
-<p>In general, I try to live up these values: 5</p>
-
-<p>The last topic on which someone asked me advice was career. A friend teaches at a charter school but is interested in other opportunities in education.</p>
 ]]></content>
   </entry>
   
