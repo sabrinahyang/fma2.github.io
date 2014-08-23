@@ -146,15 +146,15 @@ i</p>
 <p>Notable aspects of procs to remember:i</p>
 
 <ul>
-    <li>-A return from inside exits completely out of the method enclosing the Proc.<sup>3</sup>
+    <li>A return from inside exits completely out of the method enclosing the Proc.<sup>3</sup>
     </li>
-    <li>-A Proc doesn&#8217;t care about the arguments passed. If you define a Proc with two parameters, and you pass only 1, or possibly 3, it keeps on trucking. In the case of 1 argument, the second parameter will have the value nil. If you pass extra arguments, they will be ignored and lost.<sup>3</sup>
+    <li>A Proc doesn&#8217;t care about the arguments passed. If you define a Proc with two parameters, and you pass only 1, or possibly 3, it keeps on trucking. In the case of 1 argument, the second parameter will have the value nil. If you pass extra arguments, they will be ignored and lost.<sup>3</sup>
     </li>
 </ul>
 
 
-<p><b><u>Lambdas</u></b>, on the other hand, are a more strict form of proc, though they are used almost identically like procs. Specifically, lambdas “check the number of arguments passed to them, whereas procs do not. Lambdas return differently than do procs&#8221;<sup>2</sup>.i
-Comparing a lambda to a proc, you can see they are syntactically very similar:i</p>
+<p><b><u>Lambdas</u></b>, on the other hand, are a more strict form of proc, though they are used almost identically like procs. Specifically, lambdas “check the number of arguments passed to them, whereas procs do not. Lambdas return differently than do procs&#8221;<sup>2</sup>.
+Comparing a lambda to a proc, you can see they are syntactically very similar:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -165,7 +165,7 @@ Comparing a lambda to a proc, you can see they are syntactically very similar:i<
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>And, here is another example of a lambda:i</p>
+<p>And, here is another example of a lambda:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
