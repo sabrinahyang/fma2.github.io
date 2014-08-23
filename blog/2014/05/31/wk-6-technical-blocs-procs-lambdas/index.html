@@ -156,17 +156,13 @@
         ```
 
         &lt;p&gt;And, here is another example of a lambda:&lt;/p&gt;
-        &lt;p&gt;
-            &lt;font face="Times New Roman"&gt;
-                &lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;names = ["Farheen", "Faizah", "Farnaz"]
-                    &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;symbolize = lambda { |e| e.to_sym}
-                    &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;symbols = names.collect{&amp;symbolize}
-                    &lt;small&gt;
-                        &lt;em&gt;=&gt; :Farheen, :Farnaz, :Faizah&lt;/em&gt;
-                    &lt;/small&gt;
-                &lt;/small&gt;
-            &lt;/font&gt;
-        &lt;/p&gt;
+
+        ```ruby
+        names = ["Farheen", "Faizah", "Farnaz"]
+        symbolize = lambda { |e| e.to_sym}
+        symbols = names.collect{&amp;symbolize}
+        #=&gt; :Farheen, :Farnaz, :Faizah
+        ```
 
         &lt;p&gt;It's likely even clearer from examples provided that lambdas are very similar to procs. Their main differences include: lambdas check the number of arguments received and return an Argument Error if they do not match; when a proc encounters a return statement in its execution, it halts the method and returns the provided value, and lambda returns the value fo teh method and allows it to continue&lt;sup&gt;4&lt;/sup&gt;.
 
