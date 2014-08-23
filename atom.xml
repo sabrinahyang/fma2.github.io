@@ -4,7 +4,7 @@
   <title><![CDATA[fmhub]]></title>
   <link href="http://fma2.github.io/atom.xml" rel="self"/>
   <link href="http://fma2.github.io/"/>
-  <updated>2014-08-23T18:14:12-04:00</updated>
+  <updated>2014-08-23T18:15:33-04:00</updated>
   <id>http://fma2.github.io/</id>
   <author>
     <name><![CDATA[Farheen Malik]]></name>
@@ -44,7 +44,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Each element in the sample below is in the standard flow of how the HTML was written. The elements either have no positioning or position: static .</p>
+<p>Each element in the sample below is in the standard flow of how the HTML was written. The elements either have no positioning or <code>position: static</code>.</p>
 ]]></content>
   </entry>
   
