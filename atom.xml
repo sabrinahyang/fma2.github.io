@@ -4,7 +4,7 @@
   <title><![CDATA[fmhub]]></title>
   <link href="http://fma2.github.io/atom.xml" rel="self"/>
   <link href="http://fma2.github.io/"/>
-  <updated>2014-08-23T19:39:44-04:00</updated>
+  <updated>2014-08-23T19:40:50-04:00</updated>
   <id>http://fma2.github.io/</id>
   <author>
     <name><![CDATA[Farheen Malik]]></name>
@@ -160,7 +160,7 @@
 <font face="Times New Roman">{..}</font>or
 <font face="Times New Roman">do&hellip;end</font>syntax. They can&rsquo;t be saved to a variable - so they don’t have the powers of a Ruby object.i</p>
 
-<p>Below are examples of blocks.i</p>
+<p>Below are examples of blocks.</p>
 
 <p>In Example 1, the block is just a function that takes a single argument x and prints that argument to the screen<sup>2</sup>:i
 <u>Example 1</u>
@@ -283,9 +283,8 @@ Comparing a lambda to a proc, you can see they are syntactically very similar:i<
         </li>
     </ul>
 </p>
-<br></p>
-
-<p><p>Other Resources:
+<br>
+Other Resources:
     <ul>
         <li><a href="https://speakerdeck.com/jboursiquot/getting-closure-rubys-blocks-procs-and-lambdas" target="_blank">Getting Closure: Ruby&rsquo;s Blocks, Procs and Lambdas</a>
         </li>
