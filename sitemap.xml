@@ -3,6 +3,84 @@
   
   
   <url>
+    <loc>http://fma2.github.io/blog/2014/08/23/cheatsheet-looping-through-arrays-with-ruby-and-javascript/</loc>
+    <lastmod>2014-08-23T18:57:18-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/blog/2014/08/23/wk-9-cultural-thinking-and-learning-style/</loc>
+    <lastmod>2014-08-23T18:56:53-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/blog/2014/08/23/wk-8-technical-test-driven-development/</loc>
+    <lastmod>2014-08-23T18:56:38-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/blog/2014/08/23/wk-8-cultural-pairing-and-giving-feedback/</loc>
+    <lastmod>2014-08-23T18:56:27-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/blog/2014/08/23/wk-7-technical-optimizing-sql-queries/</loc>
+    <lastmod>2014-08-23T18:56:13-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/blog/2014/08/23/wk-7-cultural-affirmation-and-stereotype-threat/</loc>
+    <lastmod>2014-08-23T18:56:00-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/blog/2014/08/23/comparing-wireframes/</loc>
+    <lastmod>2014-08-23T18:55:35-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/blog/2014/08/23/wk-6-technical-blocs/</loc>
+    <lastmod>2014-08-23T18:55:18-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/blog/2014/08/23/wk-6-cultural-stereotype-threat/</loc>
+    <lastmod>2014-08-23T18:55:01-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/blog/2014/08/23/wk-5-technical-instance-variable-v-class-variable/</loc>
+    <lastmod>2014-08-23T18:54:43-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/blog/2014/08/23/wk-5-cultural-challenges-with-computer-science-education/</loc>
+    <lastmod>2014-08-23T18:54:18-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/blog/2014/05/17/wk-4-technical-comparing-ruby-and-javascript/</loc>
+    <lastmod>2014-05-17T18:54:01-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/blog/2014/05/17/wk-4-cultural-dealing-with-conflict/</loc>
+    <lastmod>2014-05-17T18:53:37-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://fma2.github.io/blog/2014/05/08/wk-3-technical-what-is-so-great-about-javascript-anyway/</loc>
     <lastmod>2014-05-08T18:47:42-04:00</lastmod>
     <priority>0.8</priority>
@@ -35,35 +113,35 @@
   
   <url>
     <loc>http://fma2.github.io/404.html</loc>
-    <lastmod>2014-08-23T18:52:25-04:00</lastmod>
+    <lastmod>2014-08-23T19:08:27-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/archives/</loc>
-    <lastmod>2014-08-23T18:52:25-04:00</lastmod>
+    <lastmod>2014-08-23T19:08:27-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/blog/archives/</loc>
-    <lastmod>2014-08-23T18:52:25-04:00</lastmod>
+    <lastmod>2014-08-23T19:08:27-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/blog/</loc>
-    <lastmod>2014-08-23T18:52:25-04:00</lastmod>
+    <lastmod>2014-08-23T19:08:27-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/</loc>
-    <lastmod>2014-08-23T18:52:25-04:00</lastmod>
+    <lastmod>2014-08-23T19:08:27-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
