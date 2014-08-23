@@ -413,29 +413,36 @@
 &lt;p&gt;In Example 1, the block is just a function that takes a single argument x and prints that argument to the screen&lt;sup&gt;2&lt;/sup&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;u&gt;Example 1&lt;/u&gt;
 &lt;/p&gt;
-&lt;p&gt;
-    &lt;font face="Times New Roman"&gt;
-        &lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;(1..10).each do |x|
-            &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;puts x
-            &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;end
-        &lt;/small&gt;
-    &lt;/font&gt;
-&lt;/p&gt;
+</code></pre>
 
-&lt;p&gt;In Example 2, the #collect! method is used on an Array with a block of code. Within the method, the block takes each variable in the array and squares it.&lt;/p&gt;
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="n">x</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>&lt;p&gt;In Example 2, the #collect! method is used on an Array with a block of code. Within the method, the block takes each variable in the array and squares it.&lt;/p&gt;
 &lt;p&gt;&lt;u&gt;Example 2&lt;/u&gt;
 &lt;/p&gt;
-&lt;p&gt;
-    &lt;font face="Times New Roman"&gt;
-        &lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;array = [1, 2, 3, 4]
-            &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;array.collect! do |n|
-            &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;n ** 2
-            &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;end
-            &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;puts array.inspect&lt;/small&gt;
-        &lt;/font&gt;
-    &lt;/p&gt;
+</code></pre>
 
-    &lt;p&gt;Though blocks are useful and syntactically simple, their namelessness presents a problem when one wants to have many different blocks to be used multiple times. To do this, the block would need to be saved as a variable. This is where Procs come in! To save a block to a variable, you have to make it a &lt;b&gt;&lt;u&gt;Proc!&lt;/u&gt;&lt;/b&gt;
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">array</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">]</span>
+</span><span class='line'><span class="n">array</span><span class="o">.</span><span class="n">collect!</span> <span class="k">do</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">n</span> <span class="o">**</span> <span class="mi">2</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">array</span><span class="o">.</span><span class="n">inspect</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>    &lt;p&gt;Though blocks are useful and syntactically simple, their namelessness presents a problem when one wants to have many different blocks to be used multiple times. To do this, the block would need to be saved as a variable. This is where Procs come in! To save a block to a variable, you have to make it a &lt;b&gt;&lt;u&gt;Proc!&lt;/u&gt;&lt;/b&gt;
     &lt;/p&gt;
 
     &lt;p&gt;"Proc" is short for procedure. Basically, procs are saved blocks. Because they are saved, they are objects that can be passed around. Procs can help make code DRYer. And, as previously alluded, they allow one to write a function once and then pass it to lots of different functions. A Proc is made by using Proc.new and passing a block, by Proc.new {|x| x}, or by using the proc keyword, prox {|x| x}&lt;sup&gt;3&lt;/sup&gt;.
@@ -457,16 +464,22 @@
 
         &lt;p&gt;&lt;u&gt;Example 4&lt;/u&gt;
         &lt;/p&gt;
+</code></pre>
 
-        ```ruby
-        doubler = Proc.new { |n| n * 2}
-        [1,2,3].collect (&amp;doubler)
-        # =&gt; [2,4,6]
-        [10,20,30].map (&amp;doubler)
-        # =&gt; [20,40,60]
-        ```
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">doubler</span> <span class="o">=</span> <span class="no">Proc</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span><span class="p">}</span>
+</span><span class='line'><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">].</span><span class="n">collect</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">doubler</span><span class="p">)</span>
+</span><span class='line'><span class="c1"># =&gt; [2,4,6]</span>
+</span><span class='line'><span class="o">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="o">].</span><span class="n">map</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">doubler</span><span class="p">)</span>
+</span><span class='line'><span class="c1"># =&gt; [20,40,60]</span>
+</span></code></pre></td></tr></table></div></figure>
 
-        &lt;p&gt;Notable aspects of procs to remember:&lt;/p&gt;
+
+<pre><code>        &lt;p&gt;Notable aspects of procs to remember:&lt;/p&gt;
         &lt;ul&gt;
             &lt;li&gt;-A return from inside exits completely out of the method enclosing the Proc.&lt;sup&gt;3&lt;/sup&gt;
             &lt;/li&gt;
@@ -475,15 +488,18 @@
         &lt;/ul&gt;
         &lt;p&gt;&lt;b&gt;&lt;u&gt;Lambdas&lt;/u&gt;&lt;/b&gt;, on the other hand, are a more strict form of proc, though they are used almost identically like procs. Specifically, lambdas “check the number of arguments passed to them, whereas procs do not. Lambdas return differently than do procs"&lt;sup&gt;2&lt;/sup&gt;.&lt;/p&gt;
         &lt;p&gt;Comparing a lambda to a proc, you can see they are syntactically very similar:&lt;/p&gt;
+</code></pre>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">lambda</span> <span class="p">{</span> <span class="nb">puts</span> <span class="s2">&quot;Hello DBC! }</span>
+</span><span class='line'><span class="s2"># equivalent to</span>
+</span><span class='line'><span class="s2">Proc.new {puts “Hello DBC!”}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-        ```ruby
-        lambda { puts "Hello DBC! }
-        # equivalent to
-        Proc.new {puts “Hello DBC!”}
-        ```
-
-        &lt;p&gt;And, here is another example of a lambda:&lt;/p&gt;
+<pre><code>        &lt;p&gt;And, here is another example of a lambda:&lt;/p&gt;
 
         ```ruby
         names = ["Farheen", "Faizah", "Farnaz"]
