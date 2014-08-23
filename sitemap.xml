@@ -15,12 +15,6 @@
   </url>
   
   <url>
-    <loc>http://fma2.github.io/blog/2014/08/23/wk-8-technical-test-driven-development/</loc>
-    <lastmod>2014-08-23T18:56:38-04:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
     <loc>http://fma2.github.io/blog/2014/08/23/comparing-wireframes/</loc>
     <lastmod>2014-08-23T18:55:35-04:00</lastmod>
     <priority>0.8</priority>
@@ -29,6 +23,12 @@
   <url>
     <loc>http://fma2.github.io/blog/2014/06/15/wk-8-cultural-pairing-and-giving-feedback/</loc>
     <lastmod>2014-06-15T18:56:27-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://fma2.github.io/blog/2014/06/14/wk-8-technical-test-driven-development/</loc>
+    <lastmod>2014-06-14T18:56:38-04:00</lastmod>
     <priority>0.8</priority>
   </url>
   
@@ -113,35 +113,35 @@
   
   <url>
     <loc>http://fma2.github.io/404.html</loc>
-    <lastmod>2014-08-23T19:48:56-04:00</lastmod>
+    <lastmod>2014-08-23T19:50:22-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/archives/</loc>
-    <lastmod>2014-08-23T19:48:56-04:00</lastmod>
+    <lastmod>2014-08-23T19:50:22-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/blog/archives/</loc>
-    <lastmod>2014-08-23T19:48:56-04:00</lastmod>
+    <lastmod>2014-08-23T19:50:22-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/blog/</loc>
-    <lastmod>2014-08-23T19:48:56-04:00</lastmod>
+    <lastmod>2014-08-23T19:50:22-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/</loc>
-    <lastmod>2014-08-23T19:48:56-04:00</lastmod>
+    <lastmod>2014-08-23T19:50:22-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

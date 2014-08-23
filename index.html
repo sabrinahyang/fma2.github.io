@@ -119,38 +119,6 @@
 	<header>
 		<h2 class="title">
 			
-			<a href="/blog/2014/08/23/wk-8-technical-test-driven-development/">
-			
-				Wk 8 Technical: Test-driven Development</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-08-23T18:56:38-04:00" pubdate data-updated="true">Aug 23<sup>rd</sup>, 2014</time></div>
-	</header>
-	<div class="entry-content">
-		
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
 			<a href="/blog/2014/08/23/comparing-wireframes/">
 			
 				Comparing Wireframes</a>
@@ -234,6 +202,133 @@
 
 <p>Conclusively, while pairing via Google Hangouts is fine and receiving feedback on these sessions is great, I am mainly looking forward to being able to engage in this productive process in person when Phase 1 begins!</p>
 
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2014/06/14/wk-8-technical-test-driven-development/">
+			
+				Test-driven Development</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-14T18:56:38-04:00" pubdate data-updated="true">Jun 14<sup>th</sup>, 2014</time></div>
+	</header>
+	<div class="entry-content">
+		<p>Test-driven development (TDD) is &#8220;a software development process that relies on the repetition of a very short development cycle&#8221;<sup>1</sup>.
+</p>
+
+
+<div id="dev_image">
+    <p>
+        <img border="0" src="http://upload.wikimedia.org/wikipedia/en/9/9c/Test-driven_development.PNG" alt="TDD Development Cycle" width="100">
+        <br>
+        <small>
+            <center>A graphical representation of the development cycle, using a basic flowchart<sup>1</sup>
+            </center>
+        </small>
+    </p>
+</div>
+
+
+<p>Generally speaking, the cycle includes the following steps:</p>
+
+
+<p><li>(1) Decide what the code will do</li>
+<br>
+<li>(2) Write a test that will pass when the code runs</li>
+<br>
+<li>(3) Run the test, see it fail</li>
+<br>
+<li>(4) Write the code&ndash;just enough production code to fulfill the written test</li>
+<br>
+<li>(5) Run the test, see it pass</li>
+<br>
+<li>(6) Repeat the above process for every couple of lines of code <sup>2</sup>
+</li>
+<br></p>
+
+<p>Some refer to the steps as RED, GREEN, and REFACTOR.</p>
+
+
+<blockquote cite="http://msdn.microsoft.com/en-us/library/aa730844(v=vs.80).aspx" style="padding: 10px;background-color: #E0E0E0 ;  border: black 0.5px solid">
+    <li>1) Understand the requirements of the story, work item, or feature that you are working on.</li>
+    <br>
+    <li>2)
+        <font color="red">Red</font>: Create a test and make it fail&#8211;it is expected for it to fail, as it ensures your code is working.</li>
+        <br>
+        <li>3)
+            <font color="green">Green</font>: Make the test pass by any means necessary. Write the production code to make the test pass. Keep it simple.</li>
+            <br>
+            <li>4)
+                <font color="purple">Refactor</font>: Change the code to remove duplication in your project and to improve the design while ensuring that all tests still pass. Repeat the cycle. Each cycle should be very short, and a typical hour should contain many Red/Green/Refactor cycles<sup>3</sup>.</li>
+            </blockquote>
+
+
+<pre><code>        &lt;p&gt;Check out this video for more on this process:&lt;/p&gt;
+        &lt;iframe width="640" height="360" src="//www.youtube.com/embed/HhwElTL-mdI?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+        &lt;p&gt;As the video describes, TDD encourages design of testable code, which means better planning leading to better results. Amongst many uses, writing testable code through TDD forces the developer to break things down (i.e. code is modular), ensures code is not too tightly woven (referred to as decoupled design), and includes methods with limited scope.&lt;/p&gt;
+
+        &lt;h3&gt;Benefits of TDD&lt;/h3&gt;
+        &lt;li&gt;- TDD enables the developer to take small steps when writing software. Many find this practice to be more productive than attempting to code in large steps. Further, it is easier to find and fix defects in code&lt;sup&gt;4&lt;/sup&gt;.
+        &lt;/li&gt;
+        &lt;br&gt;
+        &lt;li&gt;- Each test provides feedback to the developer that each component is working.&lt;/li&gt;
+        &lt;br&gt;
+        &lt;li&gt;- The tests also provide documentation to the developer&lt;/li&gt;
+        &lt;br&gt;
+        &lt;li&gt;- After the test passes and the code is refactored, "it is clear that the code is finished, and the developer can move on to a new test" &lt;sup&gt;3&lt;/sup&gt;
+        &lt;/li&gt;
+        &lt;br&gt;
+        &lt;li&gt;- Test-driven development forces critical analysis and design because the developer cannot create the production code without truly understanding what the desired result should be and how to test it &lt;sup&gt;3&lt;/sup&gt;.
+        &lt;/li&gt;
+        &lt;br&gt;
+        &lt;li&gt;- Reduces debugging time.&lt;/li&gt;
+        &lt;br&gt;
+        &lt;li&gt;- Overall, advocates of TDD feel &lt;u&gt;it leads to better design in less time&lt;/u&gt;.&lt;/li&gt;
+
+        &lt;h3&gt;Objections to TDD&lt;/h3&gt;
+        &lt;li&gt;- To be able to write better code in less time, one needs to get used to TDD before he/she gets faster.&lt;/li&gt;
+        &lt;br&gt;
+        &lt;li&gt;- The basic steps are easy to learn but the mindset takes a while to sink in. And, before it sinks in, "TDD will likely seem clumsy, slow, and awkward"&lt;sup&gt;5&lt;/sup&gt;. It may take 2 to 3 months of full-time TDD use to adapt.&lt;/li&gt;
+        &lt;br&gt;
+        &lt;li&gt;- It promotes microdesign over macrodesign and can be hard to apply in practice&lt;sup&gt;6&lt;/sup&gt;. &lt;a href="http://beust.com/weblog/2014/05/11/the-pitfalls-of-test-driven-development/" alt="Pitfalls of Test Driven Development" target="_blank"&gt;Here&lt;/a&gt; is an interesting blog post on these points.&lt;/li&gt;
+
+        &lt;small&gt;
+            &lt;p&gt;References:&lt;/p&gt;
+            &lt;li&gt;1) &lt;a href="http://en.wikipedia.org/wiki/Test-driven_development" target="_blank"&gt;Wikipedia: Test-Driven Development&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;br&gt;
+            &lt;li&gt;2) &lt;a href="http://www.youtube.com/watch?v=HhwElTL-mdI" target="_blank"&gt; VIDEO: Test-driven development: Write better code in less time&lt;/a&gt; 
+            &lt;/li&gt;
+            &lt;br&gt;
+            &lt;li&gt;3) &lt;a href="http://msdn.microsoft.com/en-us/library/aa730844(v=vs.80).aspx" target="_blank"&gt;Guidelines for Test-Driven Development&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;br&gt;
+            &lt;li&gt;4) &lt;a href="http://www.agiledata.org/essays/tdd.html#sthash.yRGxurFo.dpuf" target="_blank"&gt;Introduction to Test Driven Development (TDD)&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;5) &lt;a href="http://www.jamesshore.com/Agile-Book/test_driven_development.html" target="_blank"&gt;Test-Driven Development&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;6) &lt;a href="http://beust.com/weblog/2014/05/11/the-pitfalls-of-test-driven-development/" target="_blank"&gt;The pitfalls of Test-Driven Development/a&gt;&lt;/li&gt;
+</code></pre>
 
 		
 		
