@@ -448,10 +448,10 @@
         &lt;p&gt;&lt;u&gt;Example 3&lt;/u&gt;
         &lt;/p&gt;
 
-    ```ruby
-    greeting = Proc.new { puts "Hello World!" }
-    greeting.call
-    ```
+        ```ruby
+        greeting = Proc.new { puts "Hello World!" }
+        greeting.call
+        ```
 
         &lt;p&gt;In Example 4, doubler is a variable with a Proc that doubles a n. The function in doubler (available as a Proc) is able to be used multiple times without rewriting for two arrays.&lt;/p&gt;
 
@@ -466,67 +466,64 @@
         # =&gt; [20,40,60]
         ```
 
-                &lt;p&gt;Notable aspects of procs to remember:&lt;/p&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;-A return from inside exits completely out of the method enclosing the Proc.&lt;sup&gt;3&lt;/sup&gt;
-                    &lt;/li&gt;
-                    &lt;li&gt;-A Proc doesn't care about the arguments passed. If you define a Proc with two parameters, and you pass only 1, or possibly 3, it keeps on trucking. In the case of 1 argument, the second parameter will have the value nil. If you pass extra arguments, they will be ignored and lost.&lt;sup&gt;3&lt;/sup&gt;
-                    &lt;/li&gt;
-                &lt;/ul&gt;
-                &lt;p&gt;&lt;b&gt;&lt;u&gt;Lambdas&lt;/u&gt;&lt;/b&gt;, on the other hand, are a more strict form of proc, though they are used almost identically like procs. Specifically, lambdas “check the number of arguments passed to them, whereas procs do not. Lambdas return differently than do procs"&lt;sup&gt;2&lt;/sup&gt;.&lt;/p&gt;
-                &lt;p&gt;Comparing a lambda to a proc, you can see they are syntactically very similar:&lt;/p&gt;
-                &lt;p&gt;
-                    &lt;font face="Times New Roman"&gt;
-                        &lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;lambda { puts "Hello DBC! }
-                            &lt;br&gt;
-                            &lt;em&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
-                                &lt;small&gt;equivalent to&lt;/small&gt;
-                            &lt;/em&gt;
-                            &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Proc.new {puts “Hello DBC!”}&lt;/font&gt;
-                        &lt;/small&gt;
-                    &lt;/p&gt;
+        &lt;p&gt;Notable aspects of procs to remember:&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;-A return from inside exits completely out of the method enclosing the Proc.&lt;sup&gt;3&lt;/sup&gt;
+            &lt;/li&gt;
+            &lt;li&gt;-A Proc doesn't care about the arguments passed. If you define a Proc with two parameters, and you pass only 1, or possibly 3, it keeps on trucking. In the case of 1 argument, the second parameter will have the value nil. If you pass extra arguments, they will be ignored and lost.&lt;sup&gt;3&lt;/sup&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p&gt;&lt;b&gt;&lt;u&gt;Lambdas&lt;/u&gt;&lt;/b&gt;, on the other hand, are a more strict form of proc, though they are used almost identically like procs. Specifically, lambdas “check the number of arguments passed to them, whereas procs do not. Lambdas return differently than do procs"&lt;sup&gt;2&lt;/sup&gt;.&lt;/p&gt;
+        &lt;p&gt;Comparing a lambda to a proc, you can see they are syntactically very similar:&lt;/p&gt;
 
-                    &lt;p&gt;And, here is another example of a lambda:&lt;/p&gt;
-                    &lt;p&gt;
-                        &lt;font face="Times New Roman"&gt;
-                            &lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;names = ["Farheen", "Faizah", "Farnaz"]
-                                &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;symbolize = lambda { |e| e.to_sym}
-                                &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;symbols = names.collect{&amp;symbolize}
-                                &lt;small&gt;
-                                    &lt;em&gt;=&gt; :Farheen, :Farnaz, :Faizah&lt;/em&gt;
-                                &lt;/small&gt;
-                            &lt;/small&gt;
-                        &lt;/font&gt;
-                    &lt;/p&gt;
 
-                    &lt;p&gt;It's likely even clearer from examples provided that lambdas are very similar to procs. Their main differences include: lambdas check the number of arguments received and return an Argument Error if they do not match; when a proc encounters a return statement in its execution, it halts the method and returns the provided value, and lambda returns the value fo teh method and allows it to continue&lt;sup&gt;4&lt;/sup&gt;.
+        ```ruby
+        lambda { puts "Hello DBC! }
+        # equivalent to
+        Proc.new {puts “Hello DBC!”}
+        ```
 
-                        &lt;small&gt;
-                            &lt;p&gt;References:
-                                &lt;ul&gt;
-                                    &lt;li&gt;1) &lt;a href="http://www.technicalecstasy.net/closures-in-ruby-blocks-procs-and-lambdas/" target="_blank"&gt; Closures in Ruby: Blocks, Procs and Lambdas&lt;/a&gt;
-                                    &lt;/li&gt;
-                                    &lt;br&gt;
-                                    &lt;li&gt;2) &lt;a href="http://jwb.io/20130107-know-your-closures-blocks-procs-and-lambdas.html" target="_blank"&gt; Know your closures: blocks, procs, and lambdas&lt;/a&gt;
-                                    &lt;/li&gt;
-                                    &lt;br&gt;
-                                    &lt;li&gt;3)&lt;a href="http://verboselogging.com/2011/09/20/proc-block-and-two-smoking-lambdas" target="_blank"&gt; Proc, Block, and Two Smoking Lambdas&lt;/a&gt;
-                                    &lt;/li&gt;
-                                    &lt;br&gt;
-                                    &lt;li&gt;4) &lt;a href="ttp://code.tutsplus.com/tutorials/ruby-on-rails-study-guide-blocks-procs-and-lambdas--net-29811" target="_blank"&gt; Ruby on Rails Study Guide: Blocks, Procs, and Lambdas&lt;/a&gt;
-                                    &lt;/li&gt;
-                                &lt;/ul&gt;
-                            &lt;/p&gt;
-                            &lt;br&gt;
-                            &lt;p&gt;Other Resources:
-                                &lt;ul&gt;
-                                    &lt;li&gt;&lt;a href="https://speakerdeck.com/jboursiquot/getting-closure-rubys-blocks-procs-and-lambdas" target="_blank"&gt;Getting Closure: Ruby's Blocks, Procs and Lambdas&lt;/a&gt; 
-                                    &lt;/li&gt;
-                                    &lt;br&gt;
-                                    &lt;li&gt;&lt;a href="http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/" target="_blank"&gt;Understanding Ruby Blocks, Procs and Lambdas&lt;/a&gt;
-                                    &lt;/li&gt;
-                                &lt;/ul&gt;
-                            &lt;/small&gt;
+        &lt;p&gt;And, here is another example of a lambda:&lt;/p&gt;
+        &lt;p&gt;
+            &lt;font face="Times New Roman"&gt;
+                &lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;names = ["Farheen", "Faizah", "Farnaz"]
+                    &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;symbolize = lambda { |e| e.to_sym}
+                    &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;symbols = names.collect{&amp;symbolize}
+                    &lt;small&gt;
+                        &lt;em&gt;=&gt; :Farheen, :Farnaz, :Faizah&lt;/em&gt;
+                    &lt;/small&gt;
+                &lt;/small&gt;
+            &lt;/font&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;It's likely even clearer from examples provided that lambdas are very similar to procs. Their main differences include: lambdas check the number of arguments received and return an Argument Error if they do not match; when a proc encounters a return statement in its execution, it halts the method and returns the provided value, and lambda returns the value fo teh method and allows it to continue&lt;sup&gt;4&lt;/sup&gt;.
+
+            &lt;small&gt;
+                &lt;p&gt;References:
+                    &lt;ul&gt;
+                        &lt;li&gt;1) &lt;a href="http://www.technicalecstasy.net/closures-in-ruby-blocks-procs-and-lambdas/" target="_blank"&gt; Closures in Ruby: Blocks, Procs and Lambdas&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;br&gt;
+                        &lt;li&gt;2) &lt;a href="http://jwb.io/20130107-know-your-closures-blocks-procs-and-lambdas.html" target="_blank"&gt; Know your closures: blocks, procs, and lambdas&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;br&gt;
+                        &lt;li&gt;3)&lt;a href="http://verboselogging.com/2011/09/20/proc-block-and-two-smoking-lambdas" target="_blank"&gt; Proc, Block, and Two Smoking Lambdas&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;br&gt;
+                        &lt;li&gt;4) &lt;a href="ttp://code.tutsplus.com/tutorials/ruby-on-rails-study-guide-blocks-procs-and-lambdas--net-29811" target="_blank"&gt; Ruby on Rails Study Guide: Blocks, Procs, and Lambdas&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/p&gt;
+                &lt;br&gt;
+                &lt;p&gt;Other Resources:
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="https://speakerdeck.com/jboursiquot/getting-closure-rubys-blocks-procs-and-lambdas" target="_blank"&gt;Getting Closure: Ruby's Blocks, Procs and Lambdas&lt;/a&gt; 
+                        &lt;/li&gt;
+                        &lt;br&gt;
+                        &lt;li&gt;&lt;a href="http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/" target="_blank"&gt;Understanding Ruby Blocks, Procs and Lambdas&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/small&gt;
 </code></pre>
 
 		
