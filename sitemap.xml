@@ -3,14 +3,8 @@
   
   
   <url>
-    <loc>http://fma2.github.io/blog/2014/08/23/cheatsheet-looping-through-arrays-with-ruby-and-javascript/</loc>
-    <lastmod>2014-08-23T18:57:18-04:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://fma2.github.io/blog/2014/08/23/comparing-wireframes/</loc>
-    <lastmod>2014-08-23T18:55:35-04:00</lastmod>
+    <loc>http://fma2.github.io/blog/2014/06/22/cheatsheet-looping-through-arrays-with-ruby-and-javascript/</loc>
+    <lastmod>2014-06-22T18:57:18-04:00</lastmod>
     <priority>0.8</priority>
   </url>
   
@@ -99,6 +93,12 @@
   </url>
   
   <url>
+    <loc>http://fma2.github.io/blog/2014/04/27/comparing-wireframes/</loc>
+    <lastmod>2014-04-27T18:55:35-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://fma2.github.io/blog/2014/04/27/wk-1-technical-user-experience-and-design-analysis/</loc>
     <lastmod>2014-04-27T13:49:25-04:00</lastmod>
     <priority>0.8</priority>
@@ -113,35 +113,35 @@
   
   <url>
     <loc>http://fma2.github.io/404.html</loc>
-    <lastmod>2014-08-23T20:04:27-04:00</lastmod>
+    <lastmod>2014-08-23T20:06:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/archives/</loc>
-    <lastmod>2014-08-23T20:04:27-04:00</lastmod>
+    <lastmod>2014-08-23T20:06:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/blog/archives/</loc>
-    <lastmod>2014-08-23T20:04:27-04:00</lastmod>
+    <lastmod>2014-08-23T20:06:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/blog/</loc>
-    <lastmod>2014-08-23T20:04:27-04:00</lastmod>
+    <lastmod>2014-08-23T20:06:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/</loc>
-    <lastmod>2014-08-23T20:04:27-04:00</lastmod>
+    <lastmod>2014-08-23T20:06:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
