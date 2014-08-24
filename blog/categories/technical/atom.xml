@@ -4,7 +4,7 @@
   <title><![CDATA[Category: technical | fmhub]]></title>
   <link href="http://fma2.github.io/blog/categories/technical/atom.xml" rel="self"/>
   <link href="http://fma2.github.io/"/>
-  <updated>2014-08-23T20:06:31-04:00</updated>
+  <updated>2014-08-23T20:10:15-04:00</updated>
   <id>http://fma2.github.io/</id>
   <author>
     <name><![CDATA[Farheen Malik]]></name>
@@ -14,80 +14,733 @@
 
   
   <entry>
-    <title type="html"><![CDATA[all about CSS positioning]]></title>
-    <link href="http://fma2.github.io/blog/2014/05/03/wk-2-technical-all-about-css-positioning/"/>
-    <updated>2014-05-03T16:08:23-04:00</updated>
-    <id>http://fma2.github.io/blog/2014/05/03/wk-2-technical-all-about-css-positioning</id>
-    <content type="html"><![CDATA[<p>This blog post will discuss the differences between relative, absolute, and fixed positioning.</p>
+    <title type="html"><![CDATA[cheatsheet: looping through arrays with ruby &amp; javascript]]></title>
+    <link href="http://fma2.github.io/blog/2014/06/22/cheatsheet-looping-through-arrays-with-ruby-and-javascript/"/>
+    <updated>2014-06-22T18:57:18-04:00</updated>
+    <id>http://fma2.github.io/blog/2014/06/22/cheatsheet-looping-through-arrays-with-ruby-and-javascript</id>
+    <content type="html"><![CDATA[<p><table class="body-wrap">
+<tr>
+<td></td>
+<td class="container">
+<table>
+<tr>
+<td>
+<h1>Cheat Sheet: Looping through Arrays with Ruby &amp; Javascript</h1>
+<h5>So you want to perform some operation on each item in an array?</h5>
+<p>Below is a list of ways I most often iterate through an array with Ruby &amp; Javascript.</p>
+<p>The examples below refer to the following sample arrays:</p>
+<code>
+<ol>
+<li>students = [&ldquo;Farheen&rdquo;, &ldquo;Joel&rdquo;, &ldquo;Maria&rdquo;, &ldquo;Tanner&rdquo;, &ldquo;Sam&rdquo;]</li>
+<li>numbers = [1,2,3,4,5]</li>
+</ol>
+</code>
+<p><a id="top"></a>Scroll to view examples or use the quick links below.</p>
+<div class="quick-links-ruby">
+<li><a href="#Ruby">ruby (top of list)</a></li>
+<li><a href="#Ruby-Collect">#collect</a></li>
+<li><a href="#Ruby-Each">#each</a></li>
+<li><a href="#Ruby-EachIndex">#each_index</a></li>
+<li><a href="#Ruby-DeleteIf">#delete_if</a></li>
+<li><a href="#Ruby-FindIndex">#find_index</a></li>
+<li><a href="#Ruby-For">for..in</a></li>
+<li><a href="#Ruby-Map">#map</a></li>
+<li><a href="#Ruby-Select">#select</a></li>
+</div>
+<br>
+<div class="quick-links-js">
+<li><a href="#Javascript">javascript (top of list)</a></li>
+<li><a href="#JS-ForLoop">FOR loop</a></li>
+<li><a href="#JS-ForInLoop">FOR-IN loop</a></li>
+</div>
+<h3><a id="Ruby">Ruby</a></h3>
+<h4><a id="Ruby-Collect">#collect</a></h4></p>
 
-<p>The positionproperty is important for making more complex web page layouts. Possible values for this property include:</p>
+<p><p>Invokes the given block once for each element of self. Creates a new array containing the values returned by the block. Can be descructive if written as
+<small>collect!</small>. Same as #map</p>
+<!--   <code>
+<ol>
+<li></li>
+<li></li>
+</ol>
+</code> &ndash;>
+<code>
+<ol>
+<li>students.collect { |student| p student +&ldquo;!&rdquo;}</li>
+<li># => [&ldquo;Joel!&rdquo;, &ldquo;Maria!&rdquo;, &ldquo;Tanner!&rdquo;, &ldquo;Sam!&rdquo;]</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+<h4><a id="Ruby-Each">#each</a></h4>
+<p>Calls the given block once for each element in self, passing that element as a parameter</p>
+<code>
+<ol>
+<li>numbers.each {|number| p number}</li>
+<li># => [1, 2, 3, 4, 5]</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+<h4><a id="Ruby-EachIndex">#each_index</a></h4>
+<p>Same as #each, but passes the index of the element instead of the element itself.</p>
+<code>
+<ol>
+<li>numbers.each_index {|i| p i}</li>
+<li># => [1, 2, 3, 4, 5]</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+<h4><a id="Ruby-DeleteIf">#delete_if</a></h4>
+<p>Deletes every element of self for which block evaluates to true. The array is changed instantly every time the block is called, not after the iteration is over.</p>
+<code>
+<ol>
+<li>p students.delete_if {|name| name.length > 6 }</li>
+<li># => [&ldquo;Joel&rdquo;, &ldquo;Maria&rdquo;, &ldquo;Tanner&rdquo;, &ldquo;Sam&rdquo;]</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p></p>
 
-<ul>
-<li>static</li>
-<li>relative</li>
-<li>absolute</li>
-<li>fixed</li>
-</ul>
+<p><h4><a id="Ruby-FindIndex">#find_index</a></h4>
+<p>Returns the index of the first object in ary such that the object is == to obj. If a block is given instead of an argument, returns the index of the first object for which the block returns true. Returns nil if no match is found.</p>
+<code>
+<ol>
+<li>p students.find_index(&ldquo;Joel&rdquo;)</li>
+<li># => 1</li>
+<li></li>
+<li>p numbers.find_index(5)</li>
+<li># => 4</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+<h4><a id="Ruby-For">for..in</a></h4>
+<p>Executes
+<em>code</em>once for each element in expression.</p>
+<code>
+<ol>
+<li>for n in numbers</li>
+<li>&nbsp;&nbsp;p n+= 1</li>
+<li>end</li>
+<li># => [1, 2, 3, 4, 5]</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p></p>
 
+<p><h4><a id="Ruby-Map">#map</a></h4>
+<p>Invokes the given block once for each element of self. Creates a new array containing the values returned by the block. Can be destructive if written as
+<small>map!</small>. Same as #collect.</p>
+<code>
+<ol>
+<li>students.map { |student| p student.reverse.split(&ldquo;&rdquo;) }</li>
+<li># => [[&ldquo;n&rdquo;, &ldquo;e&rdquo;, &ldquo;e&rdquo;, &ldquo;h&rdquo;, &ldquo;r&rdquo;, &ldquo;a&rdquo;, &ldquo;F&rdquo;], [&ldquo;l&rdquo;, &ldquo;e&rdquo;, &ldquo;o&rdquo;, &ldquo;J&rdquo;],</li>
+<li># [&ldquo;a&rdquo;, &ldquo;i&rdquo;, &ldquo;r&rdquo;, &ldquo;a&rdquo;, &ldquo;M&rdquo;], [&ldquo;r&rdquo;, &ldquo;e&rdquo;, &ldquo;n&rdquo;, &ldquo;n&rdquo;, &ldquo;a&rdquo;, &ldquo;T&rdquo;],</li>
+<li># [&ldquo;m&rdquo;, &ldquo;a&rdquo;, &ldquo;S&rdquo;]]</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+<h4><a id="Ruby-Select">#select</a></h4>
+<p>Returns a new array containing all elements of ary for which the given block returns a true value.</p>
+<code>
+<ol>
+<li>p numbers.select{ |number| number&lt; 4}</li>
+<li># => [1, 2, 3]</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+<h3><a id="Javascript">JavaScript</a></h3>
+<p> To decide which of the for loops below to use, <a href="http://www.sebarmeli.com/blog/2010/12/06/best-way-to-loop-through-an-array-in-javascript/">here</a> is a good resource.</p></p>
 
-<h4>Static Positioning</h4>
+<p><h4><a id="JS-ForLoop">FOR loop</a></h4>
+<code>
+<ol>
+<li>for (var i=0; i &lt; students.length; i++) { </li>
+<li>&nbsp;&nbsp;&nbsp;console.log(students[i])</li>
+<li>} </li>
+<li>// =></li>
+<li>// Farheen</li>
+<li>// Joel</li>
+<li>// Maria</li>
+<li>// Tanner</li>
+<li>// Sam</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+<h4><a id="JS-ForInLoop">FOR-IN loop</a></h4></p>
 
-<p>Static positioning is the default position value for any element on a website. Elements with this positioning or no positioning will fall where they are found in the standard flow of a document. These elements scroll normally.</p>
-
-<p>Here is an example of how it is written:</p>
-
-<pre><code class="css">p { 
-position: static 
-}
-</code></pre>
-
-<p>Each element in the sample below is in the standard flow of how the HTML was written. The elements either have no positioning or <code>position: static</code>.</p>
+<p><code>
+<ol>
+<li>for (var i in numbers){</li>
+<li>&nbsp;&nbsp;&nbsp;if (numbers[i] > 2)</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(numbers[i])};</li>
+<li>}</li>
+<li>// =>
+    <li>// 3</li>
+    <li>// 4</li>
+    <li>// 5</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+</td>
+</tr>
+</table></p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[wk 1 technical: user experience and design analysis]]></title>
-    <link href="http://fma2.github.io/blog/2014/04/27/wk-1-technical-user-experience-and-design-analysis/"/>
-    <updated>2014-04-27T13:49:25-04:00</updated>
-    <id>http://fma2.github.io/blog/2014/04/27/wk-1-technical-user-experience-and-design-analysis</id>
-    <content type="html"><![CDATA[<p>For Week 1, I selected the following favorite websites:</p>
+    <title type="html"><![CDATA[test-driven development]]></title>
+    <link href="http://fma2.github.io/blog/2014/06/14/wk-8-technical-test-driven-development/"/>
+    <updated>2014-06-14T18:56:38-04:00</updated>
+    <id>http://fma2.github.io/blog/2014/06/14/wk-8-technical-test-driven-development</id>
+    <content type="html"><![CDATA[<p>Test-driven development (TDD) is &ldquo;a software development process that relies on the repetition of a very short development cycle&rdquo;<sup>1</sup>.</p>
+
+<p><img border="0" src="http://upload.wikimedia.org/wikipedia/en/9/9c/Test-driven_development.PNG" alt="TDD Development Cycle">
+<small>
+    <center>A graphical representation of the development cycle, using a basic flowchart<sup>1</sup>
+    </center>
+</small></p>
+
+<p>Generally speaking, the cycle includes the following steps:</p>
+
+<p><li>(1) Decide what the code will do</li>
+<li>(2) Write a test that will pass when the code runs</li>
+<li>(3) Run the test, see it fail</li>
+<li>(4) Write the code&ndash;just enough production code to fulfill the written test</li>
+<li>(5) Run the test, see it pass</li>
+<li>(6) Repeat the above process for every couple of lines of code <sup>2</sup>
+</li></p>
+
+<p>Some refer to the steps as RED, GREEN, and REFACTOR.</p>
+
+<blockquote>
+<li>1) Understand the requirements of the story, work item, or feature that you are working on.</li>
+<li>2)
+    <font color="red">Red</font>: Create a test and make it fail&#8211;it is expected for it to fail, as it ensures your code is working.</li>
+<li>3)
+<font color="green">Green</font>: Make the test pass by any means necessary. Write the production code to make the test pass. Keep it simple.</li>
+<li>4)<font color="purple">Refactor</font>: Change the code to remove duplication in your project and to improve the design while ensuring that all tests still pass. Repeat the cycle. Each cycle should be very short, and a typical hour should contain many Red/Green/Refactor cycles<sup>3</sup>.</li>
+</blockquote>
+
+
+<p>Check out this video for more on this process:</p>
+
+<iframe width="640" height="360" src="//www.youtube.com/embed/HhwElTL-mdI?rel=0" frameborder="0" allowfullscreen></iframe>
+
+
+<p>As the video describes, TDD encourages design of testable code, which means better planning leading to better results. Amongst many uses, writing testable code through TDD forces the developer to break things down (i.e. code is modular), ensures code is not too tightly woven (referred to as decoupled design), and includes methods with limited scope.</p>
+
+<h3>Benefits of TDD</h3>
+
+
+<p><li>TDD enables the developer to take small steps when writing software. Many find this practice to be more productive than attempting to code in large steps. Further, it is easier to find and fix defects in code<sup>4</sup>.
+</li>
+<li>Each test provides feedback to the developer that each component is working.</li>
+<li>The tests also provide documentation to the developer</li>
+<li>After the test passes and the code is refactored, &ldquo;it is clear that the code is finished, and the developer can move on to a new test&rdquo; <sup>3</sup>
+</li>
+<li>Test-driven development forces critical analysis and design because the developer cannot create the production code without truly understanding what the desired result should be and how to test it <sup>3</sup>.
+</li>
+<li>Reduces debugging time.</li>
+<li>Overall, advocates of TDD feel <u>it leads to better design in less time</u>.</li></p>
+
+<h3>Objections to TDD</h3>
+
+
+<p><li>To be able to write better code in less time, one needs to get used to TDD before he/she gets faster.</li>
+<br>
+<li>The basic steps are easy to learn but the mindset takes a while to sink in. And, before it sinks in, &ldquo;TDD will likely seem clumsy, slow, and awkward&rdquo;<sup>5</sup>. It may take 2 to 3 months of full-time TDD use to adapt.</li>
+<br>
+<li>It promotes microdesign over macrodesign and can be hard to apply in practice<sup>6</sup>. <a href="http://beust.com/weblog/2014/05/11/the-pitfalls-of-test-driven-development/" alt="Pitfalls of Test Driven Development" target="_blank">Here</a> is an interesting blog post on these points.</li></p>
+
+<p><small>
+References:
+<li>1) <a href="http://en.wikipedia.org/wiki/Test-driven_development" target="_blank">Wikipedia: Test-Driven Development</a>
+</li>
+<li>2) <a href="http://www.youtube.com/watch?v=HhwElTL-mdI" target="_blank"> VIDEO: Test-driven development: Write better code in less time</a>
+</li>
+<li>3) <a href="http://msdn.microsoft.com/en-us/library/aa730844(v=vs.80).aspx" target="_blank">Guidelines for Test-Driven Development</a>
+</li>
+<li>4) <a href="http://www.agiledata.org/essays/tdd.html#sthash.yRGxurFo.dpuf" target="_blank">Introduction to Test Driven Development (TDD)</a>
+</li>
+<li>5) <a href="http://www.jamesshore.com/Agile-Book/test_driven_development.html" target="_blank">Test-Driven Development</a>
+</li>
+<li>6) <a href="http://beust.com/weblog/2014/05/11/the-pitfalls-of-test-driven-development/" target="_blank">The pitfalls of Test-Driven Development/a></li></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[optimizing sql queries]]></title>
+    <link href="http://fma2.github.io/blog/2014/06/07/wk-7-technical-optimizing-sql-queries/"/>
+    <updated>2014-06-07T18:56:13-04:00</updated>
+    <id>http://fma2.github.io/blog/2014/06/07/wk-7-technical-optimizing-sql-queries</id>
+    <content type="html"><![CDATA[<p>This post will discuss ways to optimize SQL queries. I will limit it to SQL query optimization options within my current scope of understanding of SQL syntax in an effort to apply the tips as soon as possible. However, I should note that, when researching the topic, I found various other SQL query optimization suggestions.</p>
+
+
+<p>SQL query optimization is important for better performance. A query is a request for information from a database. Database structures are complex, so it is not surprising that &#8220;the needed data for a query can be collected from a database by accessing it in different ways, through different data-structures, and in different orders&#8221;<sup>1</sup>&#8211;this is performed through SQL statements. What can change with different SQL statements is processing time. Query optimization is meant to &#8220;find the way to process a given query in minimum time&#8221;<sup>1</sup>. Why optimize SQL queries? ServerWatch argues, &#8220;Time is money and people don&#8217;t like to wait so programs are expected to be fast&#8221;<sup>2</sup>.</p>
+
+
+<p>Here are two approaches to optimize your SQL queries with a few examples of each in practice&#8211;</p>
+
+
+
+
+<h2>APPROACH #1: ONLY QUERY WHAT YOU REALLY NEED</h2>
+
+
+
+
+<p><u><font face="roboto slab" color="#666666">Use the actual column names in SELECT statements instead of &#8216;*&#8217;</font></u>. &#8220;This is, hands-down, the biggest, baddest SQL optimization violation out there. If you considered &#8220;SELECT *&#8221; to be off limits in your applications, I bet that would clear up a sizable chunk of the SQL problems that applications have&#8221;<sup>3</sup>
+</p>
+
+
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">BAD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT *
+    <br>FROM users;
+</p>
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">GOOD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first_name, last_name, age
+    <br>FROM users;
+</p>
+
+
+
+
+<p><u><font face="roboto slab" color="#666666">Be careful with conditions in the WHERE clause</font></u>. Write it according to what you need/what you want.
+</p>
+
+
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">BAD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first name, last_name, age
+    <br>FROM users
+    <br>WHERE age != 10;
+</p>
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">GOOD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first name, last_name, age
+    <br>FROM users
+    <br>WHERE age > 10;
+</p>
+
+
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">BAD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first_name, age
+    <br>FROM student_details
+    <br>WHERE SUBSTR(first_name,1,3) = &#8216;Cha&#8217;;
+</p>
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">GOOD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT id, first_name, age
+    <br>FROM users
+    <br>WHERE first_name LIKE &#8216;Chan%&#8217;;
+</p>
+
+
+
+
+<p><u><font face="roboto slab" color="#666666">Use the HAVING clause appropriately</font></u>. It is used to filter the rows after allthe rows are selected; if you do not need to do this, then you do not need a HAVING clause <sup>4</sup>
+</p>
+
+
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">BAD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT subject, count(subject)
+    <br>FROM student_details
+    <br>GROUP BY subject
+    <br>HAVING subject!= &#8216;Vancouver&#8217; AND subject!= &#8216;Toronto&#8217;;
+</p>
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">GOOD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT subject, count(subject) FROM student_details
+    <br>WHERE subject != &#8216;Science&#8217;
+    <br>AND subject != &#8216;Maths&#8217;
+    <br>GROUP BY subject;
+</p>
+
+
+
+
+<h2>APPROACH #2: CONSIDER HOW DIFFERENT OPERATORS WORK/WHAT OPERATORS ARE APPROPRIATE</h2>
+
+
+
+
+<p><u><font face="roboto slab" color="#666666">Use operator EXISTS, IN,and table joins appropriately in your query</font></u>. &#8220;Usually, IN has the slowest performance. IN is efficient when most of the filter criteria is in the sub-query. EXISTS is efficient when most of the filter criteria is in the main query.&#8221;<sup>4</sup>
+</p>
+
+
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">BAD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT *
+    <br>FROM product p
+    <br>WHERE product_id IN (SELECT product_id FROM order_items)
+</p>
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">GOOD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT *
+    <br>FROM product p
+    <br>WHERE EXISTS (SELECT * from order_items o
+    <br>WHERE o.product_id = p.product_id)
+</p>
+
+
+
+
+<p><u> <font face="roboto slab" color="#666666">Try not to use the NOT operator.</font></u> It is much faster to search for an exact match using the LIKE, IN, EXIST or = symbol operator (positive operators) instead of NOT LIKE, NOT IN, NOT EXIST or != symbol (negative operators). A negative operator will &#8220;cause the search to find every single row&#8221; whereas the positive operator stops as soon as the result is found.</p>
+
+
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">BAD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT name
+    <br>FROM users
+    <br>WHERE name NOT LIKE &#8220;F%&#8221;;
+</p>
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">GOOD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT name
+    <br>FROM users
+    <br>WHERE name LIKE &#8220;M%&#8221;;
+</p>
+
+
+
+
+<p><u> <font face="roboto slab" color="#666666">Minimize the number of subqueries in your main query</font></u>.</p>
+
+
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">BAD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT name
+    <br>FROM employee
+    <br>WHERE salary = (SELECT MAX(salary) FROM employee_details)
+    <br>AND age = (SELECT MAX(age) FROM employee_details)
+    <br>AND emp_dept = &#8216;Electronics&#8217;;
+</p>
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">GOOD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT name
+    <br>FROM employee
+    <br>WHERE (salary, age ) = (SELECT MAX (salary), MAX (age)
+    <br>FROM employee_details)
+    <br>AND dept = &#8216;Electronics&#8217;;
+</p>
+
+
+
+
+<p><u> <font face="roboto slab" color="#666666">Use EXIST instead of COUNT when trying to determine whether particular data exists</font></u>. The EXIST operator will stop once it finds the first record while the COUNT operator will search for all existing records on the table.</p>
+
+
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">BAD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT column
+    <br>FROM table
+    <br>WHERE COUNT(column) > 0
+    <br>
+</p>
+
+
+<h3>
+    <font face="roboto slab" color="#666666" size="3">GOOD</font>
+</h3>
+
+
+<p style="padding: 10px;background-color: #E0E0E0 ; font-family:Courier; border: black 0.5px solid">SELECT column
+    <br>FROM table
+    <br>WHERE EXISTS(SELECT * FROM customer
+    <br>WHERE grade=3)
+</p>
+
+
+
+
+<p>Hopefully, these tips will help you get started in optimizing your SQL queries! For more, check out these resources:
+</p>
+
 
 <ul>
-<li><a href="drive.google.com">Google Drive</a></li>
-<li><a href="https://twitter.com/">Twitter</a></li>
-<li><a href="http://digg.com/reader">Digg Reader</a></li>
+    <li><a href="http://hungred.com/useful-information/ways-optimize-sql-queries/" target="_blank">15 Ways to Optimize Your SQL Queries</a>
+    </li>
+    <br>
+    <li><a href="http://dev.mysql.com/doc/refman/5.6/en/statement-optimization.html" target="_blank">Optimizing SQL Statements</a>
+    </li>
+    <br>
+    <li><a href="http://beginner-sql-tutorial.com/sql-query-tuning.htm" target="_blank">SQL Tuning or SQL Optimization</a>
+    </li>
+    <br>
+    <li><a href="http://www.bennadel.com/blog/1189-ben-nadel-s-easy-tips-for-writing-better-more-optimized-sql.htm" target="_blank">Ben Nadel&#8217;s Easy Tips For Writing Better, More Optimized SQL</li><br>
+    <li><a href="http://www.serverwatch.com/tutorials/article.php/2175621/How-to-Optimize-Queries-Theory-an-Practice.htm" target="_blank">How to Optimize Queries (Theory in Practice)</a>
+    </li>
 </ul>
 
 
-<p>Below is analysis of these websites in terms of user experience and design.</p>
+<p>&nbsp;
+<small>
+    <p>References:</p>
+    <li>1) <a href="http://en.wikipedia.org/wiki/Query_optimization" target="_blank">Wikipedia: Query Optimization</a>
+    </li>
+    <br>
+    <li>2) <a href="http://www.serverwatch.com/tutorials/article.php/2175621/How-to-Optimize-Queries-Theory-an-Practice.htm" target="_blank"> How to Optimize Queries Theory in Practice</a>
+    </li>
+    <br>
+    <li>3) <a href="http://www.bennadel.com/blog/1189-ben-nadel-s-easy-tips-for-writing-better-more-optimized-sql.htm" target="_blank">Ben Nadel&rsquo;s Easy Tips for Writing Better, More Optimized SQL</a>
+    </li>
+    <br>
+    <li>4) <a href="http://beginner-sql-tutorial.com/sql-query-tuning.htm" target="_blank">SQL Query Tuning</a>
+    </li>
+</small></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[blocs, procs, and lambdas]]></title>
+    <link href="http://fma2.github.io/blog/2014/05/31/wk-6-technical-blocs-procs-lambdas/"/>
+    <updated>2014-05-31T18:55:18-04:00</updated>
+    <id>http://fma2.github.io/blog/2014/05/31/wk-6-technical-blocs-procs-lambdas</id>
+    <content type="html"><![CDATA[<p>This week&rsquo;s technical blog covers blocks, procs, and lambdas. I opted to research blocks, procs, and lambdas because, while I recall using them through Code Academy, I was not able to connect them to what I have learned in the past few weeks without some Googling.i</p>
 
-<h4>Google Drive</h4>
+<p>Blocks, procs, and lambdas are all examples of closures. Closures are functions or references to functions that are bound to the scope in which they were created. Closures meet the following criteria: can be passed around as a value; can be executed on demand by anyone who has that value; and, can refer to variables from the context in which it was created (even if those variables are no longer in scope) (source: <a href="http://www.technicalecstasy.net/closures-in-ruby-blocks-procs-and-lambdas/">http://www.technicalecstasy.net/closures-in-ruby-blocks-procs-and-lambdas/</a>). They are helpful for: refactoring, customization, iterating across collections, managing resources, and enforcing policy <sup>1</sup>.i</p>
 
-<p>I visit Google Drive multiple times in a single day to view, edit, and share personal andwork files. I love that I am able to access necessary files from anywhere.</p>
+<p><b><u>Blocks</u></b> are the most commonly used closure. They are also amongst the few exceptions to the “everything is an object” rule in Ruby. They are considered nameless functions, and they use curly braces
+<font face="Times New Roman">{..}</font>or
+<font face="Times New Roman">do&hellip;end</font>syntax. They can&rsquo;t be saved to a variable - so they don’t have the powers of a Ruby object.i</p>
 
-<p>The website has a simple design; it looks similar to a file folder one may find on a computer&rsquo;s hard drive. Further, files are easily searchable from the search tool. One can search the file name or even text from within a file. A user can also easily organize their files into related folders for easy searching and sharing. For important files, a user can use the &ldquo;Star&rdquo; tool.</p>
+<p>Below are examples of blocks.</p>
 
-<p>Notably, despite this design similarity, there is still a learning curve. First, files do not appear automatically on Google Drive; there are setup and uploading steps. Google Drive also has its own format for word processing, spreadsheet, presentation, and other types of files. For example, while a user may upload a word processing document created in Microsoft Word, they will not be able to edit it in Google Drive, despite being able to see it. A new user will need to learn these rules to simply view and edit files. An added step for a new user is sharing, which has additional processes that may not be immediately familiar to a new user.</p>
+<p>In Example 1, the block is just a function that takes a single argument x and prints that argument to the screen<sup>2</sup>:i
+<u>Example 1</u>
+i</p>
 
-<h4>Twitter</h4>
+<pre><code class="ruby">(1..10).each do |x|
+puts x
+end
+</code></pre>
 
-<p>I utilize Twitter for quick, recent, and relevant news and information.</p>
+<p>In Example 2, the #collect! method is used on an Array with a block of code. Within the method, the block takes each variable in the array and squares it.i
+<u>Example 2</u>
+i</p>
 
-<p>The website has user-created content. Users share 140-character text messages called &ldquo;tweets&rdquo; with their followers and on their page, which can be made public or available only to specific users. Users can also view all tweets of followed users on their home page. On this page, tweets appear in order, with the most recent tweet on top; one&rsquo;s home page updates frequently due to constant new tweets from followers. Also, the search tool makes it easy for anyone, whether a registered Twitter user or not, to search users, tweet content, or trending information or hashtags</p>
+<pre><code class="ruby">array = [1, 2, 3, 4]
+array.collect! do |n|
+n ** 2
+end
+puts array.inspect
+</code></pre>
 
-<p>Twitter can be overstimulating due to the constantly changing tweets feed. In this way, even though the website may only have 5 or so boxes, new tweet after new tweet can make it seem cluttered. The site is used by individuals, companies, and organizations who all may distribute different types of information to followers&ndash;it seems the value of the site can vary depending on this, for both viewers of tweets and tweeters.</p>
+<p>Though blocks are useful and syntactically simple, their namelessness presents a problem when one wants to have many different blocks to be used multiple times. To do this, the block would need to be saved as a variable. This is where Procs come in! To save a block to a variable, you have to make it a <b><u>Proc!</u></b>
+i</p>
 
-<p>I am most excited to use Twitter during specific moments, like the President&rsquo;s State of the Union, elections, awards shows, and important international events (e.g. events in Egypt or Syria). At these moments, Twitter provides minute-by-minute coverage from a seeminly unending supply of sources that is unmatched by any news station.</p>
+<p>&ldquo;Proc&rdquo; is short for procedure. Basically, procs are saved blocks. Because they are saved, they are objects that can be passed around. Procs can help make code DRYer. And, as previously alluded, they allow one to write a function once and then pass it to lots of different functions. A Proc is made by using Proc.new and passing a block, by Proc.new {|x| x}, or by using the proc keyword, prox {|x| x}<sup>3</sup>.</p>
 
-<h4>Digg Reader</h4>
+<p>Below are examples of Procs.i</p>
 
-<p>Digg Reader is another useful site for news and information.</p>
+<p>In Example 3, a Proc is used to save a function in the variable greeting; the function prints “Hello World.”<sup>1</sup>
+i</p>
 
-<p>The website aggregates posts from news and related websites; the user subscribes to have these sites appear in his/her Digg Reader. These posts can appear all together under &ldquo;All.&rdquo; Or, the user is able to group these sites into folders for easier reading. Either way, with Digg Reader, the user does not have to visit each of the sites in which they are interested; Digg Reader becomes a one-stop shop for news and information from specific sources.</p>
+<p><u>Example 3</u>
+i</p>
 
-<p>To browse through content, the user can simply click headlines or they can use keyboard shortcuts. When new content is posted on the websites to which the user is subscribed, &ldquo;__ new items&rdquo; appears in the sidebar. The user can choose to update their feed to include these new items. Unfortunately, there is no visible search option for the user to search their feed for specific articles.</p>
+<pre><code class="ruby">greeting = Proc.new { puts "Hello World!" }
+greeting.call
+</code></pre>
 
-<p>If the user is subscribed to many websites, he/she may never finish reading the content on their Digg Reader. This may make the user feel differently each time he/she uses Digg Reader&ndash;at times, it may feel like he/she wasted a lot of time on information he/she didn&rsquo;t need at that time; other times, he/she may feel they have gained a lot of interesting information after stumbling on several articles from sites they love to follow.</p>
+<p>In Example 4, doubler is a variable with a Proc that doubles a n. The function in doubler (available as a Proc) is able to be used multiple times without rewriting for two arrays.i</p>
+
+<p><u>Example 4</u>
+i</p>
+
+<pre><code class="ruby">doubler = Proc.new { |n| n * 2}
+[1,2,3].collect (&amp;doubler)
+# =&gt; [2,4,6]
+[10,20,30].map (&amp;doubler)
+# =&gt; [20,40,60]
+</code></pre>
+
+<p>Notable aspects of procs to remember:i</p>
+
+<ul>
+    <li>A return from inside exits completely out of the method enclosing the Proc.<sup>3</sup>
+    </li>
+    <li>A Proc doesn&#8217;t care about the arguments passed. If you define a Proc with two parameters, and you pass only 1, or possibly 3, it keeps on trucking. In the case of 1 argument, the second parameter will have the value nil. If you pass extra arguments, they will be ignored and lost.<sup>3</sup>
+    </li>
+</ul>
+
+
+<p><b><u>Lambdas</u></b>, on the other hand, are a more strict form of proc, though they are used almost identically like procs. Specifically, lambdas “check the number of arguments passed to them, whereas procs do not. Lambdas return differently than do procs&#8221;<sup>2</sup>.
+Comparing a lambda to a proc, you can see they are syntactically very similar:</p>
+
+<pre><code class="ruby">lambda { puts "Hello DBC! }
+# equivalent to
+
+Proc.new {puts “Hello DBC!”}
+</code></pre>
+
+<p>And, here is another example of a lambda:</p>
+
+<pre><code class="ruby">names = ["Farheen", "Faizah", "Farnaz"]
+symbolize = lambda { |e| e.to_sym}
+symbols = names.collect{&amp;symbolize}
+#=&gt; :Farheen, :Farnaz, :Faizah
+</code></pre>
+
+<p>It&rsquo;s likely even clearer from examples provided that lambdas are very similar to procs. Their main differences include: lambdas check the number of arguments received and return an Argument Error if they do not match; when a proc encounters a return statement in its execution, it halts the method and returns the provided value, and lambda returns the value fo teh method and allows it to continue<sup>4</sup>.</p>
+
+<p><small>
+    References:
+    <ul>
+        <li>1) <a href="http://www.technicalecstasy.net/closures-in-ruby-blocks-procs-and-lambdas/" target="_blank"> Closures in Ruby: Blocks, Procs and Lambdas</a>
+        </li>
+        <br>
+        <li>2) <a href="http://jwb.io/20130107-know-your-closures-blocks-procs-and-lambdas.html" target="_blank"> Know your closures: blocks, procs, and lambdas</a>
+        </li>
+        <br>
+        <li>3)<a href="http://verboselogging.com/2011/09/20/proc-block-and-two-smoking-lambdas" target="_blank"> Proc, Block, and Two Smoking Lambdas</a>
+        </li>
+        <br>
+        <li>4) <a href="ttp://code.tutsplus.com/tutorials/ruby-on-rails-study-guide-blocks-procs-and-lambdas--net-29811" target="_blank"> Ruby on Rails Study Guide: Blocks, Procs, and Lambdas</a>
+        </li>
+    </ul>
+</p>
+<br>
+Other Resources:
+    <ul>
+        <li><a href="https://speakerdeck.com/jboursiquot/getting-closure-rubys-blocks-procs-and-lambdas" target="_blank">Getting Closure: Ruby&rsquo;s Blocks, Procs and Lambdas</a>
+        </li>
+        <br>
+        <li><a href="http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/" target="_blank">Understanding Ruby Blocks, Procs and Lambdas</a>
+        </li>
+    </ul>
+</small></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[instance variable v. class variable]]></title>
+    <link href="http://fma2.github.io/blog/2014/05/24/wk-5-technical-instance-variable-v-class-variable/"/>
+    <updated>2014-05-24T18:54:43-04:00</updated>
+    <id>http://fma2.github.io/blog/2014/05/24/wk-5-technical-instance-variable-v-class-variable</id>
+    <content type="html"><![CDATA[<p>This post will discuss when and how to use instance variables and class variables with Class in Ruby.
+Ruby is an object-oriented language in which everything is an object. A class is the factory that builds an object. To create a class, define the characteristics of the class through methods. Then, make an instance of it; an object can be built by a certain class and is called &lsquo;an instance of that class.&rsquo;
+Here is a class definition with one instance method for the class Welcome:</p>
+
+<p><img src="https://fma2.github.io/unit1_projects/images/simple_class_example.png" alt="Simple class example" /></p>
+
+<p>Here is an instance of Welcome:</p>
+
+<p><img src="https://fma2.github.io/unit1_projects/images/create_instance_example.png" alt="Create instance example" /></p>
+
+<p>Now, we can call the method week_five within class Welcome:</p>
+
+<p><img src="https://fma2.github.io/unit1_projects/images/call_method_example.png" alt="Call method example" /></p>
+
+<p>Both instance variables and class variables are variables found only in instance and class methods. How are they different? Let’s take a look at a few ways!</p>
+
+<h3>Instance Variable</h3>
+
+<p>An instance variable begins with @. Instance variables can be referenced by any method of a particular class. They are bound to the instance of the particular class. Instance variables are initialized through the instance method initialize.</p>
+
+<p><img src="https://fma2.github.io/unit1_projects/images/instance_variable_example.png" alt="Instance Variable Example" /></p>
+
+<p>In the example, there are two instances explicated &ndash; see comments. This makes two different objects, because both objects set different values for their instance variables. Remember that how an instance variable is defined is bound to a particular instance of the class.</p>
+
+<h3>Class Variable</h3>
+
+<p>A class variable begins with @@. They are shared across all instances of a class&ndash;they are found in instance methods, class methods, and in the class definition itself, outside of any method. They are initialized in the class definition itself. Class Variable is important to pay attention to when using inheritance with classes.</p>
+
+<p><img src="https://fma2.github.io/unit1_projects/images/class_variable_example.png" alt="class variable example"></p>
+
+<p>In the example, one class (FamilyWithNewBaby) inherits from another (Family). And, though there are two instances of the class, @@members is able to be changed between them.</p>
+
+<p>Hopefully, this helped you understand instance variables and class variables a bit more. Other resources to explore are listed below. Enjoy!</p>
+
+<ul>
+    <li>Class and Instance Variables in Ruby: <a href="http://www.railstips.org/blog/archives/2006/11/18/class-and-instance-variables-in-ruby/">http://www.railstips.org/blog/archives/2006/11/18/class-and-instance-variables-in-ruby/</a>
+    </li>
+    <li>Ruby User&#8217;s Guide: <a href="http://www.rubyist.net/~slagell/ruby/index.html">http://www.rubyist.net/~slagell/ruby/index.html</a>
+    </li>
+    <li>Class Variables: A Ruby Gotcha: <a href="http://www.sitepoint.com/class-variables-a-ruby-gotcha/">http://www.sitepoint.com/class-variables-a-ruby-gotcha/</a>
+    </li>
+    <li>Instance Variables: <a href="http://ruby.about.com/od/variables/a/Instance-Variables.htm">http://ruby.about.com/od/variables/a/Instance-Variables.htm</a>
+    </li>
+    <li>Class Variables: <a href="http://ruby.about.com/od/variables/a/Class-Variables.htm">http://ruby.about.com/od/variables/a/Class-Variables.htm</a>
+    </li>
+</ul>
+
 ]]></content>
   </entry>
   

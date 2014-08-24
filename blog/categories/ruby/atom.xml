@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ruby | fmhub]]></title>
+  <link href="http://fma2.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://fma2.github.io/"/>
+  <updated>2014-08-23T20:10:15-04:00</updated>
+  <id>http://fma2.github.io/</id>
+  <author>
+    <name><![CDATA[Farheen Malik]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[cheatsheet: looping through arrays with ruby &amp; javascript]]></title>
+    <link href="http://fma2.github.io/blog/2014/06/22/cheatsheet-looping-through-arrays-with-ruby-and-javascript/"/>
+    <updated>2014-06-22T18:57:18-04:00</updated>
+    <id>http://fma2.github.io/blog/2014/06/22/cheatsheet-looping-through-arrays-with-ruby-and-javascript</id>
+    <content type="html"><![CDATA[<p><table class="body-wrap">
+<tr>
+<td></td>
+<td class="container">
+<table>
+<tr>
+<td>
+<h1>Cheat Sheet: Looping through Arrays with Ruby &amp; Javascript</h1>
+<h5>So you want to perform some operation on each item in an array?</h5>
+<p>Below is a list of ways I most often iterate through an array with Ruby &amp; Javascript.</p>
+<p>The examples below refer to the following sample arrays:</p>
+<code>
+<ol>
+<li>students = [&ldquo;Farheen&rdquo;, &ldquo;Joel&rdquo;, &ldquo;Maria&rdquo;, &ldquo;Tanner&rdquo;, &ldquo;Sam&rdquo;]</li>
+<li>numbers = [1,2,3,4,5]</li>
+</ol>
+</code>
+<p><a id="top"></a>Scroll to view examples or use the quick links below.</p>
+<div class="quick-links-ruby">
+<li><a href="#Ruby">ruby (top of list)</a></li>
+<li><a href="#Ruby-Collect">#collect</a></li>
+<li><a href="#Ruby-Each">#each</a></li>
+<li><a href="#Ruby-EachIndex">#each_index</a></li>
+<li><a href="#Ruby-DeleteIf">#delete_if</a></li>
+<li><a href="#Ruby-FindIndex">#find_index</a></li>
+<li><a href="#Ruby-For">for..in</a></li>
+<li><a href="#Ruby-Map">#map</a></li>
+<li><a href="#Ruby-Select">#select</a></li>
+</div>
+<br>
+<div class="quick-links-js">
+<li><a href="#Javascript">javascript (top of list)</a></li>
+<li><a href="#JS-ForLoop">FOR loop</a></li>
+<li><a href="#JS-ForInLoop">FOR-IN loop</a></li>
+</div>
+<h3><a id="Ruby">Ruby</a></h3>
+<h4><a id="Ruby-Collect">#collect</a></h4></p>
+
+<p><p>Invokes the given block once for each element of self. Creates a new array containing the values returned by the block. Can be descructive if written as
+<small>collect!</small>. Same as #map</p>
+<!--   <code>
+<ol>
+<li></li>
+<li></li>
+</ol>
+</code> &ndash;>
+<code>
+<ol>
+<li>students.collect { |student| p student +&ldquo;!&rdquo;}</li>
+<li># => [&ldquo;Joel!&rdquo;, &ldquo;Maria!&rdquo;, &ldquo;Tanner!&rdquo;, &ldquo;Sam!&rdquo;]</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+<h4><a id="Ruby-Each">#each</a></h4>
+<p>Calls the given block once for each element in self, passing that element as a parameter</p>
+<code>
+<ol>
+<li>numbers.each {|number| p number}</li>
+<li># => [1, 2, 3, 4, 5]</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+<h4><a id="Ruby-EachIndex">#each_index</a></h4>
+<p>Same as #each, but passes the index of the element instead of the element itself.</p>
+<code>
+<ol>
+<li>numbers.each_index {|i| p i}</li>
+<li># => [1, 2, 3, 4, 5]</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+<h4><a id="Ruby-DeleteIf">#delete_if</a></h4>
+<p>Deletes every element of self for which block evaluates to true. The array is changed instantly every time the block is called, not after the iteration is over.</p>
+<code>
+<ol>
+<li>p students.delete_if {|name| name.length > 6 }</li>
+<li># => [&ldquo;Joel&rdquo;, &ldquo;Maria&rdquo;, &ldquo;Tanner&rdquo;, &ldquo;Sam&rdquo;]</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p></p>
+
+<p><h4><a id="Ruby-FindIndex">#find_index</a></h4>
+<p>Returns the index of the first object in ary such that the object is == to obj. If a block is given instead of an argument, returns the index of the first object for which the block returns true. Returns nil if no match is found.</p>
+<code>
+<ol>
+<li>p students.find_index(&ldquo;Joel&rdquo;)</li>
+<li># => 1</li>
+<li></li>
+<li>p numbers.find_index(5)</li>
+<li># => 4</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+<h4><a id="Ruby-For">for..in</a></h4>
+<p>Executes
+<em>code</em>once for each element in expression.</p>
+<code>
+<ol>
+<li>for n in numbers</li>
+<li>&nbsp;&nbsp;p n+= 1</li>
+<li>end</li>
+<li># => [1, 2, 3, 4, 5]</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p></p>
+
+<p><h4><a id="Ruby-Map">#map</a></h4>
+<p>Invokes the given block once for each element of self. Creates a new array containing the values returned by the block. Can be destructive if written as
+<small>map!</small>. Same as #collect.</p>
+<code>
+<ol>
+<li>students.map { |student| p student.reverse.split(&ldquo;&rdquo;) }</li>
+<li># => [[&ldquo;n&rdquo;, &ldquo;e&rdquo;, &ldquo;e&rdquo;, &ldquo;h&rdquo;, &ldquo;r&rdquo;, &ldquo;a&rdquo;, &ldquo;F&rdquo;], [&ldquo;l&rdquo;, &ldquo;e&rdquo;, &ldquo;o&rdquo;, &ldquo;J&rdquo;],</li>
+<li># [&ldquo;a&rdquo;, &ldquo;i&rdquo;, &ldquo;r&rdquo;, &ldquo;a&rdquo;, &ldquo;M&rdquo;], [&ldquo;r&rdquo;, &ldquo;e&rdquo;, &ldquo;n&rdquo;, &ldquo;n&rdquo;, &ldquo;a&rdquo;, &ldquo;T&rdquo;],</li>
+<li># [&ldquo;m&rdquo;, &ldquo;a&rdquo;, &ldquo;S&rdquo;]]</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+<h4><a id="Ruby-Select">#select</a></h4>
+<p>Returns a new array containing all elements of ary for which the given block returns a true value.</p>
+<code>
+<ol>
+<li>p numbers.select{ |number| number&lt; 4}</li>
+<li># => [1, 2, 3]</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+<h3><a id="Javascript">JavaScript</a></h3>
+<p> To decide which of the for loops below to use, <a href="http://www.sebarmeli.com/blog/2010/12/06/best-way-to-loop-through-an-array-in-javascript/">here</a> is a good resource.</p></p>
+
+<p><h4><a id="JS-ForLoop">FOR loop</a></h4>
+<code>
+<ol>
+<li>for (var i=0; i &lt; students.length; i++) { </li>
+<li>&nbsp;&nbsp;&nbsp;console.log(students[i])</li>
+<li>} </li>
+<li>// =></li>
+<li>// Farheen</li>
+<li>// Joel</li>
+<li>// Maria</li>
+<li>// Tanner</li>
+<li>// Sam</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+<h4><a id="JS-ForInLoop">FOR-IN loop</a></h4></p>
+
+<p><code>
+<ol>
+<li>for (var i in numbers){</li>
+<li>&nbsp;&nbsp;&nbsp;if (numbers[i] > 2)</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(numbers[i])};</li>
+<li>}</li>
+<li>// =>
+    <li>// 3</li>
+    <li>// 4</li>
+    <li>// 5</li>
+</ol>
+</code>
+<p><em><font size="1">back to <a href="#top">top</a></font></em></p>
+</td>
+</tr>
+</table></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[blocs, procs, and lambdas]]></title>
+    <link href="http://fma2.github.io/blog/2014/05/31/wk-6-technical-blocs-procs-lambdas/"/>
+    <updated>2014-05-31T18:55:18-04:00</updated>
+    <id>http://fma2.github.io/blog/2014/05/31/wk-6-technical-blocs-procs-lambdas</id>
+    <content type="html"><![CDATA[<p>This week&rsquo;s technical blog covers blocks, procs, and lambdas. I opted to research blocks, procs, and lambdas because, while I recall using them through Code Academy, I was not able to connect them to what I have learned in the past few weeks without some Googling.i</p>
+
+<p>Blocks, procs, and lambdas are all examples of closures. Closures are functions or references to functions that are bound to the scope in which they were created. Closures meet the following criteria: can be passed around as a value; can be executed on demand by anyone who has that value; and, can refer to variables from the context in which it was created (even if those variables are no longer in scope) (source: <a href="http://www.technicalecstasy.net/closures-in-ruby-blocks-procs-and-lambdas/">http://www.technicalecstasy.net/closures-in-ruby-blocks-procs-and-lambdas/</a>). They are helpful for: refactoring, customization, iterating across collections, managing resources, and enforcing policy <sup>1</sup>.i</p>
+
+<p><b><u>Blocks</u></b> are the most commonly used closure. They are also amongst the few exceptions to the “everything is an object” rule in Ruby. They are considered nameless functions, and they use curly braces
+<font face="Times New Roman">{..}</font>or
+<font face="Times New Roman">do&hellip;end</font>syntax. They can&rsquo;t be saved to a variable - so they don’t have the powers of a Ruby object.i</p>
+
+<p>Below are examples of blocks.</p>
+
+<p>In Example 1, the block is just a function that takes a single argument x and prints that argument to the screen<sup>2</sup>:i
+<u>Example 1</u>
+i</p>
+
+<pre><code class="ruby">(1..10).each do |x|
+puts x
+end
+</code></pre>
+
+<p>In Example 2, the #collect! method is used on an Array with a block of code. Within the method, the block takes each variable in the array and squares it.i
+<u>Example 2</u>
+i</p>
+
+<pre><code class="ruby">array = [1, 2, 3, 4]
+array.collect! do |n|
+n ** 2
+end
+puts array.inspect
+</code></pre>
+
+<p>Though blocks are useful and syntactically simple, their namelessness presents a problem when one wants to have many different blocks to be used multiple times. To do this, the block would need to be saved as a variable. This is where Procs come in! To save a block to a variable, you have to make it a <b><u>Proc!</u></b>
+i</p>
+
+<p>&ldquo;Proc&rdquo; is short for procedure. Basically, procs are saved blocks. Because they are saved, they are objects that can be passed around. Procs can help make code DRYer. And, as previously alluded, they allow one to write a function once and then pass it to lots of different functions. A Proc is made by using Proc.new and passing a block, by Proc.new {|x| x}, or by using the proc keyword, prox {|x| x}<sup>3</sup>.</p>
+
+<p>Below are examples of Procs.i</p>
+
+<p>In Example 3, a Proc is used to save a function in the variable greeting; the function prints “Hello World.”<sup>1</sup>
+i</p>
+
+<p><u>Example 3</u>
+i</p>
+
+<pre><code class="ruby">greeting = Proc.new { puts "Hello World!" }
+greeting.call
+</code></pre>
+
+<p>In Example 4, doubler is a variable with a Proc that doubles a n. The function in doubler (available as a Proc) is able to be used multiple times without rewriting for two arrays.i</p>
+
+<p><u>Example 4</u>
+i</p>
+
+<pre><code class="ruby">doubler = Proc.new { |n| n * 2}
+[1,2,3].collect (&amp;doubler)
+# =&gt; [2,4,6]
+[10,20,30].map (&amp;doubler)
+# =&gt; [20,40,60]
+</code></pre>
+
+<p>Notable aspects of procs to remember:i</p>
+
+<ul>
+    <li>A return from inside exits completely out of the method enclosing the Proc.<sup>3</sup>
+    </li>
+    <li>A Proc doesn&#8217;t care about the arguments passed. If you define a Proc with two parameters, and you pass only 1, or possibly 3, it keeps on trucking. In the case of 1 argument, the second parameter will have the value nil. If you pass extra arguments, they will be ignored and lost.<sup>3</sup>
+    </li>
+</ul>
+
+
+<p><b><u>Lambdas</u></b>, on the other hand, are a more strict form of proc, though they are used almost identically like procs. Specifically, lambdas “check the number of arguments passed to them, whereas procs do not. Lambdas return differently than do procs&#8221;<sup>2</sup>.
+Comparing a lambda to a proc, you can see they are syntactically very similar:</p>
+
+<pre><code class="ruby">lambda { puts "Hello DBC! }
+# equivalent to
+
+Proc.new {puts “Hello DBC!”}
+</code></pre>
+
+<p>And, here is another example of a lambda:</p>
+
+<pre><code class="ruby">names = ["Farheen", "Faizah", "Farnaz"]
+symbolize = lambda { |e| e.to_sym}
+symbols = names.collect{&amp;symbolize}
+#=&gt; :Farheen, :Farnaz, :Faizah
+</code></pre>
+
+<p>It&rsquo;s likely even clearer from examples provided that lambdas are very similar to procs. Their main differences include: lambdas check the number of arguments received and return an Argument Error if they do not match; when a proc encounters a return statement in its execution, it halts the method and returns the provided value, and lambda returns the value fo teh method and allows it to continue<sup>4</sup>.</p>
+
+<p><small>
+    References:
+    <ul>
+        <li>1) <a href="http://www.technicalecstasy.net/closures-in-ruby-blocks-procs-and-lambdas/" target="_blank"> Closures in Ruby: Blocks, Procs and Lambdas</a>
+        </li>
+        <br>
+        <li>2) <a href="http://jwb.io/20130107-know-your-closures-blocks-procs-and-lambdas.html" target="_blank"> Know your closures: blocks, procs, and lambdas</a>
+        </li>
+        <br>
+        <li>3)<a href="http://verboselogging.com/2011/09/20/proc-block-and-two-smoking-lambdas" target="_blank"> Proc, Block, and Two Smoking Lambdas</a>
+        </li>
+        <br>
+        <li>4) <a href="ttp://code.tutsplus.com/tutorials/ruby-on-rails-study-guide-blocks-procs-and-lambdas--net-29811" target="_blank"> Ruby on Rails Study Guide: Blocks, Procs, and Lambdas</a>
+        </li>
+    </ul>
+</p>
+<br>
+Other Resources:
+    <ul>
+        <li><a href="https://speakerdeck.com/jboursiquot/getting-closure-rubys-blocks-procs-and-lambdas" target="_blank">Getting Closure: Ruby&rsquo;s Blocks, Procs and Lambdas</a>
+        </li>
+        <br>
+        <li><a href="http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/" target="_blank">Understanding Ruby Blocks, Procs and Lambdas</a>
+        </li>
+    </ul>
+</small></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[comparing ruby and javascript]]></title>
+    <link href="http://fma2.github.io/blog/2014/05/17/wk-4-technical-comparing-ruby-and-javascript/"/>
+    <updated>2014-05-17T18:54:01-04:00</updated>
+    <id>http://fma2.github.io/blog/2014/05/17/wk-4-technical-comparing-ruby-and-javascript</id>
+    <content type="html"><![CDATA[<p>With hopes of better understanding both languages conceptually, I researched Ruby versus Javascript for this weeks&#8217; technical blog. Here are my findings!</p>
+
+<h4>Benefits vs. Drawbacks</h4>
+
+<p>In recent exposure to both languages, I have noticed the following differences:</p>
+
+<h5>How they define functions</h5>
+
+<p>Javascript has two ways of defining functions: function expressions and function declarations.</p>
+
+<p>Ruby has multiple types of functions: blocks, Procs, lambdas. Ruby also has methods and method objects.</p>
+
+<h5>Iterations</h5>
+
+<p>While both languages will have state, condition, and iterator in object iteration there are significant differences.</p>
+
+<p>Javascript only has a few ways to iterate: for loops, array methods.</p>
+
+<p>Ruby has a wealth of methods to use for loops and iterators (while, until, for, #each, #times, upto, downto, each_index). Often, there are abstractions hidden in each of these methods. It is challenging to understand all of these methods as a beginner.</p>
+
+<h5>Attention to syntax</h5>
+
+<p>JavaScript requires much more attention to curly braces, parenthesis, commas, and semicolon. Sometimes problems are caused by simple misplacement of or forgotten punctuation like these rather than larger conceptual problems</p>
+
+<p>Ruby does not demand as much attention to curly braces, parenthesis, etc. It is much more minimalisitic, and it allows one to focus on concepts versus syntax.</p>
+
+<h5>When it is used</h5>
+
+<p>Javascript is more commonly used for front-end,client-side web development</p>
+
+<p>Ruby is used for back-end, server-side web development</p>
+
+<h5>Which one should you pick?</h5>
+
+<p>I think it depends on what you are trying to do, learn, or make. Useful questions to consider at first:</p>
+
+<p>Is it client-side of server-side? Are you a beginner? Would focusing on syntax or concepts be more helpful to you?
+Next, check out how both languages rank on Hammer Principle: Programming Languages: JAVASCRIPT VS RUBY! Consider what you&rsquo;re priorities are, check to see if they have been ranked on Hammer Principle, and think about the results. This should get you started on deciding which to pick!</p>
+
+<h5>Check out the code!</h5>
+
+<p>Below are a few examples comparing how to write code for each.<table border="1">
+                    <col width="100">
+                        <col width="200">
+                            <col width="200">
+                                <tr>
+                                    <th></th>
+                                    <th>Ruby
+                                        <img src="http://people.csail.mit.edu/aleks/website/arby/ruby_transparent.png" alt="Ruby" style="width: 20%; height: 10%">
+                                    </th>
+                                    <th>Javascript
+                                        <img src="https://lh6.ggpht.com/o4rkqaUwWB65RND-ZC3Nt5PQ07chvCM8mkvCXYhvRob_Qg07cjgaLtGAefZOO8J8zg=w300" alt="JavaScript" style="width: 20%; height: 10%">
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>arrays</p>
+                                    </td>
+                                    <td>
+                                        <p>a = [1,2,3]</p>
+                                        <p>array iteration with
+                                            <small>each</small>:
+                                            <br>a.each {|n| puts n}
+                                            <br>
+                                            <em>or</em>
+                                            <br>a.each do |n|
+                                            <br>puts n
+                                            <br>end
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>var a = [1,2,3]</p>
+                                        <p>array iteration with
+                                            <small>each</small>:
+                                            <br>a.forEach(function(n)) {
+                                            <br>console.log(n);
+                                            <br>});
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>function</p>
+                                    </td>
+                                    <td>
+                                        <p>def method_name (var1, var2)
+                                            <br>expr..
+                                            <br>end
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>new Function ([arg1[, arg2[, &hellip;argN]],] functionBody)</p>
+                                    </td>
+                                </tr>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>if .. else statements</p>
+                                    </td>
+                                    <td>
+                                        <p>x=1
+                                            <br>if x > 2
+                                            <br>puts &ldquo;x is greater than 2&rdquo;
+                                            <br>elsif x
+                                            &lt;=2 and x!=0<br>puts &ldquo;x is 1&rdquo;
+                                                <br>else
+                                                <br>puts &ldquo;I can&rsquo;t guess the number&rdquo; end
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>if (cipher_char === from_char) {
+                                            <br>result = result + to_char;
+                                            <br>x++;
+                                            <br>} else {
+                                            <br>result = result + clear_char;
+                                            <br>}</p>
+                                    </td>
+                                </tr>
+                </table></p>
+]]></content>
+  </entry>
+  
+</feed>

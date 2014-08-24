@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: instance variables | fmhub]]></title>
+  <link href="http://fma2.github.io/blog/categories/instance-variables/atom.xml" rel="self"/>
+  <link href="http://fma2.github.io/"/>
+  <updated>2014-08-23T20:10:15-04:00</updated>
+  <id>http://fma2.github.io/</id>
+  <author>
+    <name><![CDATA[Farheen Malik]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[instance variable v. class variable]]></title>
+    <link href="http://fma2.github.io/blog/2014/05/24/wk-5-technical-instance-variable-v-class-variable/"/>
+    <updated>2014-05-24T18:54:43-04:00</updated>
+    <id>http://fma2.github.io/blog/2014/05/24/wk-5-technical-instance-variable-v-class-variable</id>
+    <content type="html"><![CDATA[<p>This post will discuss when and how to use instance variables and class variables with Class in Ruby.
+Ruby is an object-oriented language in which everything is an object. A class is the factory that builds an object. To create a class, define the characteristics of the class through methods. Then, make an instance of it; an object can be built by a certain class and is called &lsquo;an instance of that class.&rsquo;
+Here is a class definition with one instance method for the class Welcome:</p>
+
+<p><img src="https://fma2.github.io/unit1_projects/images/simple_class_example.png" alt="Simple class example" /></p>
+
+<p>Here is an instance of Welcome:</p>
+
+<p><img src="https://fma2.github.io/unit1_projects/images/create_instance_example.png" alt="Create instance example" /></p>
+
+<p>Now, we can call the method week_five within class Welcome:</p>
+
+<p><img src="https://fma2.github.io/unit1_projects/images/call_method_example.png" alt="Call method example" /></p>
+
+<p>Both instance variables and class variables are variables found only in instance and class methods. How are they different? Let’s take a look at a few ways!</p>
+
+<h3>Instance Variable</h3>
+
+<p>An instance variable begins with @. Instance variables can be referenced by any method of a particular class. They are bound to the instance of the particular class. Instance variables are initialized through the instance method initialize.</p>
+
+<p><img src="https://fma2.github.io/unit1_projects/images/instance_variable_example.png" alt="Instance Variable Example" /></p>
+
+<p>In the example, there are two instances explicated &ndash; see comments. This makes two different objects, because both objects set different values for their instance variables. Remember that how an instance variable is defined is bound to a particular instance of the class.</p>
+
+<h3>Class Variable</h3>
+
+<p>A class variable begins with @@. They are shared across all instances of a class&ndash;they are found in instance methods, class methods, and in the class definition itself, outside of any method. They are initialized in the class definition itself. Class Variable is important to pay attention to when using inheritance with classes.</p>
+
+<p><img src="https://fma2.github.io/unit1_projects/images/class_variable_example.png" alt="class variable example"></p>
+
+<p>In the example, one class (FamilyWithNewBaby) inherits from another (Family). And, though there are two instances of the class, @@members is able to be changed between them.</p>
+
+<p>Hopefully, this helped you understand instance variables and class variables a bit more. Other resources to explore are listed below. Enjoy!</p>
+
+<ul>
+    <li>Class and Instance Variables in Ruby: <a href="http://www.railstips.org/blog/archives/2006/11/18/class-and-instance-variables-in-ruby/">http://www.railstips.org/blog/archives/2006/11/18/class-and-instance-variables-in-ruby/</a>
+    </li>
+    <li>Ruby User&#8217;s Guide: <a href="http://www.rubyist.net/~slagell/ruby/index.html">http://www.rubyist.net/~slagell/ruby/index.html</a>
+    </li>
+    <li>Class Variables: A Ruby Gotcha: <a href="http://www.sitepoint.com/class-variables-a-ruby-gotcha/">http://www.sitepoint.com/class-variables-a-ruby-gotcha/</a>
+    </li>
+    <li>Instance Variables: <a href="http://ruby.about.com/od/variables/a/Instance-Variables.htm">http://ruby.about.com/od/variables/a/Instance-Variables.htm</a>
+    </li>
+    <li>Class Variables: <a href="http://ruby.about.com/od/variables/a/Class-Variables.htm">http://ruby.about.com/od/variables/a/Class-Variables.htm</a>
+    </li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
