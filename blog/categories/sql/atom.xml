@@ -4,7 +4,7 @@
   <title><![CDATA[Category: sql | fmhub]]></title>
   <link href="http://fma2.github.io/blog/categories/sql/atom.xml" rel="self"/>
   <link href="http://fma2.github.io/"/>
-  <updated>2014-08-23T20:23:08-04:00</updated>
+  <updated>2014-08-31T16:57:10-05:00</updated>
   <id>http://fma2.github.io/</id>
   <author>
     <name><![CDATA[Farheen Malik]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[optimizing sql queries]]></title>
     <link href="http://fma2.github.io/blog/2014/06/07/wk-7-technical-optimizing-sql-queries/"/>
-    <updated>2014-06-07T18:56:13-04:00</updated>
+    <updated>2014-06-07T17:56:13-05:00</updated>
     <id>http://fma2.github.io/blog/2014/06/07/wk-7-technical-optimizing-sql-queries</id>
     <content type="html"><![CDATA[<p>This post will discuss ways to optimize SQL queries. I will limit it to SQL query optimization options within my current scope of understanding of SQL syntax in an effort to apply the tips as soon as possible. However, I should note that, when researching the topic, I found various other SQL query optimization suggestions.</p>
 

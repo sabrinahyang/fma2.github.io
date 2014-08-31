@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tdd | fmhub]]></title>
   <link href="http://fma2.github.io/blog/categories/tdd/atom.xml" rel="self"/>
   <link href="http://fma2.github.io/"/>
-  <updated>2014-08-23T20:23:08-04:00</updated>
+  <updated>2014-08-31T16:57:10-05:00</updated>
   <id>http://fma2.github.io/</id>
   <author>
     <name><![CDATA[Farheen Malik]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[test-driven development]]></title>
     <link href="http://fma2.github.io/blog/2014/06/14/wk-8-technical-test-driven-development/"/>
-    <updated>2014-06-14T18:56:38-04:00</updated>
+    <updated>2014-06-14T17:56:38-05:00</updated>
     <id>http://fma2.github.io/blog/2014/06/14/wk-8-technical-test-driven-development</id>
     <content type="html"><![CDATA[<p>Test-driven development (TDD) is &ldquo;a software development process that relies on the repetition of a very short development cycle&rdquo;<sup>1</sup>.</p>
 
