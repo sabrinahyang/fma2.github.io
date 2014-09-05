@@ -4,7 +4,7 @@
   <title><![CDATA[fmhub]]></title>
   <link href="http://fma2.github.io/atom.xml" rel="self"/>
   <link href="http://fma2.github.io/"/>
-  <updated>2014-08-31T17:43:36-05:00</updated>
+  <updated>2014-09-05T13:08:49-04:00</updated>
   <id>http://fma2.github.io/</id>
   <author>
     <name><![CDATA[Farheen Malik]]></name>
@@ -15,7 +15,7 @@
   <entry>
     <title type="html"><![CDATA[thinking &amp; learning style]]></title>
     <link href="http://fma2.github.io/blog/2014/06/22/wk-9-cultural-thinking-and-learning-style/"/>
-    <updated>2014-06-22T17:56:53-05:00</updated>
+    <updated>2014-06-22T18:56:53-04:00</updated>
     <id>http://fma2.github.io/blog/2014/06/22/wk-9-cultural-thinking-and-learning-style</id>
     <content type="html"><![CDATA[<p>Anthony Gregorc, Ph. D., a phenomenological researcher, lecturer, consultant, author and President of Gregorc Associates <sup>1</sup>, organized a model describing different learning styles<sup>2</sup>. Referred to as the Gregorc Mind Styles model, it is theory that &#8220;provides an organized way to consider how the mind works&#8221; <sup>1</sup>. The model is based on &#8220;the existence of perceptions&#8211;our evaluation of the world by means of an approach that makes sense to us&#8221;<sup>2</sup>. Perceptions impact our specific learning strengths.</p>
 
@@ -131,7 +131,7 @@ Other Resources:</p>
   <entry>
     <title type="html"><![CDATA[pairing &amp; giving feedback]]></title>
     <link href="http://fma2.github.io/blog/2014/06/15/wk-8-cultural-pairing-and-giving-feedback/"/>
-    <updated>2014-06-15T17:56:27-05:00</updated>
+    <updated>2014-06-15T18:56:27-04:00</updated>
     <id>http://fma2.github.io/blog/2014/06/15/wk-8-cultural-pairing-and-giving-feedback</id>
     <content type="html"><![CDATA[<p>Truth be told, pairing initially felt awkward. It meant I had to meet with a stranger via video chat and accomplish a task&#8211;which required abilities that I was initially not completely confident I had&#8211;in a short period of time. To add to the awkwardness, I was nervous I would not meet the expectations set in <a href="http://vimeo.com/76662569">Pairing is Caring</a>. Notably, I did feel like I understood the purpose and benefits of pairing in theory.</p>
 
@@ -171,7 +171,7 @@ Other Resources:</p>
   <entry>
     <title type="html"><![CDATA[test-driven development]]></title>
     <link href="http://fma2.github.io/blog/2014/06/14/wk-8-technical-test-driven-development/"/>
-    <updated>2014-06-14T17:56:38-05:00</updated>
+    <updated>2014-06-14T18:56:38-04:00</updated>
     <id>http://fma2.github.io/blog/2014/06/14/wk-8-technical-test-driven-development</id>
     <content type="html"><![CDATA[<p>Test-driven development (TDD) is &ldquo;a software development process that relies on the repetition of a very short development cycle&rdquo;<sup>1</sup>.</p>
 
@@ -252,7 +252,7 @@ References:
   <entry>
     <title type="html"><![CDATA[affirmation &amp; stereotype threat]]></title>
     <link href="http://fma2.github.io/blog/2014/06/08/wk-7-cultural-affirmation-and-stereotype-threat/"/>
-    <updated>2014-06-08T17:56:00-05:00</updated>
+    <updated>2014-06-08T18:56:00-04:00</updated>
     <id>http://fma2.github.io/blog/2014/06/08/wk-7-cultural-affirmation-and-stereotype-threat</id>
     <content type="html"><![CDATA[<p>
     In the article <a href="http://blogs.discovermagazine.com/notrocketscience/2010/11/25/15-minute-writing-exercise-closes-the-gender-gap-in-university-level-physics/#.U5N_cZRdVo1" target="_blank"> 15-minute writing exercise closes the gender gap in university-level physics</a>, the author describes Akira Miyake&#8217;s study to close the gap between male and female performance. In this study, students in a physics class participated in a simple writing exercise that asked students to think about the things that are important to them; pick two or three of these values and write a few sentences aobut why they are important. Miyake believes this &#8220;value-affirming exercise has two benefits: it break the vicious cycle of stereotype threat, but it also sets up a positive cycle too&#8221;<sup>1</sup>. This exercise is very similar to our previous <a href="http://fma2.github.io/unit1_projects/week1_cultural_blog.html" target="_blank">blog post</a> on <a href="https://github.com/fma2/phase_0_unit_1/blob/master/week_1/9_cultural_blog.md" target="_blank">&#8220;Exploring your Values&#8221;</a>.
@@ -294,7 +294,7 @@ References:
   <entry>
     <title type="html"><![CDATA[optimizing sql queries]]></title>
     <link href="http://fma2.github.io/blog/2014/06/07/wk-7-technical-optimizing-sql-queries/"/>
-    <updated>2014-06-07T17:56:13-05:00</updated>
+    <updated>2014-06-07T18:56:13-04:00</updated>
     <id>http://fma2.github.io/blog/2014/06/07/wk-7-technical-optimizing-sql-queries</id>
     <content type="html"><![CDATA[<p>This post will discuss ways to optimize SQL queries. I will limit it to SQL query optimization options within my current scope of understanding of SQL syntax in an effort to apply the tips as soon as possible. However, I should note that, when researching the topic, I found various other SQL query optimization suggestions.</p>
 
@@ -596,7 +596,7 @@ References:
   <entry>
     <title type="html"><![CDATA[stereotype threat]]></title>
     <link href="http://fma2.github.io/blog/2014/06/01/wk-6-cultural-stereotype-threat/"/>
-    <updated>2014-06-01T17:55:01-05:00</updated>
+    <updated>2014-06-01T18:55:01-04:00</updated>
     <id>http://fma2.github.io/blog/2014/06/01/wk-6-cultural-stereotype-threat</id>
     <content type="html"><![CDATA[<p>Stereotype threat &#8220;refers to being at risk of confirming, as self-characteristic, a negative stereotype about one&#8217;s group&#8221;<sup>1</sup>. While I am familiar with some of the research on stereotype threat, I had not previously seen any of Steele&#8217;s talks. Notably, even more than any article I have read on the topic, his presentations made me realize how prevalent the issue is&#8211;how it is not limited to a specific community or space (academic, personal, work, etc.).</p>
 
@@ -668,7 +668,7 @@ References:
   <entry>
     <title type="html"><![CDATA[blocs, procs, and lambdas]]></title>
     <link href="http://fma2.github.io/blog/2014/05/31/wk-6-technical-blocs-procs-lambdas/"/>
-    <updated>2014-05-31T17:55:18-05:00</updated>
+    <updated>2014-05-31T18:55:18-04:00</updated>
     <id>http://fma2.github.io/blog/2014/05/31/wk-6-technical-blocs-procs-lambdas</id>
     <content type="html"><![CDATA[<p>This week&rsquo;s technical blog covers blocks, procs, and lambdas. I opted to research blocks, procs, and lambdas because, while I recall using them through Code Academy, I was not able to connect them to what I have learned in the past few weeks without some Googling.i</p>
 
@@ -819,7 +819,7 @@ Other Resources:
   <entry>
     <title type="html"><![CDATA[instance variable v. class variable]]></title>
     <link href="http://fma2.github.io/blog/2014/05/24/wk-5-technical-instance-variable-v-class-variable/"/>
-    <updated>2014-05-24T17:54:43-05:00</updated>
+    <updated>2014-05-24T18:54:43-04:00</updated>
     <id>http://fma2.github.io/blog/2014/05/24/wk-5-technical-instance-variable-v-class-variable</id>
     <content type="html"><![CDATA[<p>This post will discuss when and how to use instance variables and class variables with Class in Ruby.
 Ruby is an object-oriented language in which everything is an object. A class is the factory that builds an object. To create a class, define the characteristics of the class through methods. Then, make an instance of it; an object can be built by a certain class and is called &lsquo;an instance of that class.&rsquo;
@@ -874,13 +874,13 @@ Here is a class definition with one instance method for the class Welcome:</p>
   <entry>
     <title type="html"><![CDATA[challenges with computer science education]]></title>
     <link href="http://fma2.github.io/blog/2014/05/24/wk-5-cultural-challenges-with-computer-science-education/"/>
-    <updated>2014-05-24T17:54:18-05:00</updated>
+    <updated>2014-05-24T18:54:18-04:00</updated>
     <id>http://fma2.github.io/blog/2014/05/24/wk-5-cultural-challenges-with-computer-science-education</id>
     <content type="html"><![CDATA[<p>Society demands &ldquo;a higher level and different set of skills than schools were designed to teach&rdquo;(<a href="http://www.leadered">source</a>). Even with the addition of computers in the classroom, teaching and school structures largely remain unchanged. There are many changes that could and should be made. In general, there continue to be ongoing challenges of access, adequacy and equity of technology in schools(<a href="http://www.nea.org/assets/docs/PB19_Technology08.pdf">source</a>). In this post, I want to focus on K-12 computer science education.</p>
 
 <p>In a 2013 report entitled &ldquo;Bugs in the System: Computer Science Teacher Certification in the U.S.&rdquo;, the Computer Science Teachers Association (CSTA) and the Association for Computing Machinery (ACM) describe a disconnect between the number of US jobs in computing and teacher credentialing in K-12 computer science education. They reference the Bureau of Labor and Statistics which found that by 2020 there will be 9.2 million jobs in the areas of Science, Technology, Engineering, and Mathematics (STEM) with more than half of these jobs in computing. They claim, &ldquo;The economic well-being of of the United States depends on computing, which in turns depends on a robust computing workforce&rdquo;(<a href="http://csta.acm.org/ComputerScienceTeacherCertification/sub/CSTA_BugsInTheSystem.pdf">source</a>). We need to provide all students with the opportunity to &ldquo;develop a fundamental understanding of the principles of Computer Science as a scientific discipline&rdquo; (<a href="http://csta.acm.org/ComputerScienceTeacherCertification/sub/CSTA_BugsInTheSystem.pdf">source</a>). In a recent report, a team at the University of Chicago found five major challenges to computer science education: a lack of shared understanding of what computer science is; a need for more comprehensive, quality instructional resources; a lack of prioritization of computer science in schools; a dearth of computer science teachers; and isolation fo computer science teachers (<a href="http://outlier.uchicago.edu/computerscience/OS4CS/challenges/">source</a>).</p>
 
-<p>While efforts could be made to include computer science in required coursework for high school graduation, preparing teachers for these courses deserves attention as well. Computer Science teacher certification/licensure requirements differ state-by-state, with some states lacking any requirements, or even a certification option, at all. Further, the report &ldquo;Bugs in the System&rdquo; calls it a â€œdeeply flawed systemâ€ with several problematic symptoms: confusion about Computer Science as a discipline, a dearth of clear and relevant certification/licensure requirements, and a lack of agreement about what teachers should know and understanding in order to be exemplary teachers (<a href="http://csta.acm.org/ComputerScienceTeacherCertification/sub/CSTA_BugsInTheSystem.pdf">source</a>). We need to provide all students with the opportunity to &ldquo;develop a fundamental understanding of the principles of Computer Science as a scientific discipline&rdquo; (<a href="http://csta.acm.org/ComputerScienceTeacherCertification/sub/CSTA_BugsInTheSystem.pdf">source</a>).</p>
+<p>While efforts could be made to include computer science in required coursework for high school graduation, preparing teachers for these courses deserves attention as well. Computer Science teacher certification/licensure requirements differ state-by-state, with some states lacking any requirements, or even a certification option, at all. Further, the report &ldquo;Bugs in the System&rdquo; calls it a &ldquo;deeply flawed system&rdquo; with several problematic symptoms: confusion about Computer Science as a discipline, a dearth of clear and relevant certification/licensure requirements, and a lack of agreement about what teachers should know and understanding in order to be exemplary teachers (<a href="http://csta.acm.org/ComputerScienceTeacherCertification/sub/CSTA_BugsInTheSystem.pdf">source</a>). We need to provide all students with the opportunity to &ldquo;develop a fundamental understanding of the principles of Computer Science as a scientific discipline&rdquo; (<a href="http://csta.acm.org/ComputerScienceTeacherCertification/sub/CSTA_BugsInTheSystem.pdf">source</a>).</p>
 
 <p>Let&rsquo;s say we convince K-12 school systems to require computer science coursework, based on present and future job demands, at least. How can we ensure there are well-prepared teachers for these courses? It would be a monumental task to try to change credentialing/licensure requirements nationwide, but it should likely begin sooner rather than later. We could also begin to consider the following to at least begin to counter the multitude of challenges with K-12 computer science education:</p>
 
@@ -889,23 +889,27 @@ Here is a class definition with one instance method for the class Welcome:</p>
 <li>Modify K-12 curricula to include critical thinking exercises and project-based learning opportunities.</li>
 <li>Work with localities and districts to reconfigure the work day to include consistent, effective professional development for teachers on technology.</li>
 <li>Partner teachers and school districts with tech companies.</li>
-<li>For the short term, the team at University of Chicago recommends there be strategies to help existing teachers become excellent CS teachers. Existing teachers could include teachers already teaching computer science or even those teaching related subject areas (math, science, etc.). Strategies could include consistent professional development or training opportunities (<a href="http://outlier.uchicago.edu/computerscience/OS4CS/challenges/">source</a>.</li>
+<li>For the short term, the team at University of Chicago recommends there be strategies to help existing teachers become excellent CS teachers. Existing teachers could include teachers already teaching computer science or even those teaching related subject areas (math, science, etc.). Strategies could include consistent professional development or training opportunities (<a href="http://outlier.uchicago.edu/computerscience/OS4CS/challenges/">source</a>).</li>
 </ul>
 
 
 <p><strong><em>Sources</em></strong></p>
 
-<p>1) Preparing Students for Their Technological Future: <a href="http://www.leadered.com/pdf/Preparing%20Students%20for%20Tech%20Future%20white%20paper.pdf">http://www.leadered.com/pdf/Preparing%20Students%20for%20Tech%20Future%20white%20paper.pdf</a>
-2) Technology in Schools: The Ongoing Challenge of Access, Adequacy and Equity: <a href="http://www.nea.org/assets/docs/PB19_Technology08.pdf">http://www.nea.org/assets/docs/PB19_Technology08.pdf</a>
-3) Bugs in the System: Computer Science Teacher Certification in the U.S: <a href="http://csta.acm.org/ComputerScienceTeacherCertification/sub/CSTA_BugsInTheSystem.pdf">http://csta.acm.org/ComputerScienceTeacherCertification/sub/CSTA_BugsInTheSystem.pdf</a>
-4) Building an Operating System for Computer Science Education: <a href="http://outlier.uchicago.edu/computerscience/OS4CS/challenges/">http://outlier.uchicago.edu/computerscience/OS4CS/challenges/</a></p>
+<p>1) Preparing Students for Their Technological Future: <a href="http://www.leadered.">http://www.leadered.</a>
+com/pdf/Preparing%20Students%20for%20Tech%20Future%20white%20paper.pdf</p>
+
+<p>2) Technology in Schools: The Ongoing Challenge of Access, Adequacy and Equity: <a href="http://www.nea.org/assets/docs/PB19_Technology08.pdf">http://www.nea.org/assets/docs/PB19_Technology08.pdf</a></p>
+
+<p>3) Bugs in the System: Computer Science Teacher Certification in the U.S: <a href="http://csta.acm.org/ComputerScienceTeacherCertification/sub/CSTA_BugsInTheSystem.pdf">http://csta.acm.org/ComputerScienceTeacherCertification/sub/CSTA_BugsInTheSystem.pdf</a></p>
+
+<p>4) Building an Operating System for Computer Science Education: <a href="http://outlier.uchicago.edu/computerscience/OS4CS/challenges/">http://outlier.uchicago.edu/computerscience/OS4CS/challenges/</a></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[comparing ruby and javascript]]></title>
     <link href="http://fma2.github.io/blog/2014/05/17/wk-4-technical-comparing-ruby-and-javascript/"/>
-    <updated>2014-05-17T17:54:01-05:00</updated>
+    <updated>2014-05-17T18:54:01-04:00</updated>
     <id>http://fma2.github.io/blog/2014/05/17/wk-4-technical-comparing-ruby-and-javascript</id>
     <content type="html"><![CDATA[<p>With hopes of better understanding both languages conceptually, I researched Ruby versus Javascript for this weeks&#8217; technical blog. Here are my findings!</p>
 
@@ -1031,7 +1035,7 @@ Next, check out how both languages rank on Hammer Principle: Programming Languag
   <entry>
     <title type="html"><![CDATA[dealing with conflict]]></title>
     <link href="http://fma2.github.io/blog/2014/05/17/wk-4-cultural-dealing-with-conflict/"/>
-    <updated>2014-05-17T17:53:37-05:00</updated>
+    <updated>2014-05-17T18:53:37-04:00</updated>
     <id>http://fma2.github.io/blog/2014/05/17/wk-4-cultural-dealing-with-conflict</id>
     <content type="html"><![CDATA[<p>When I began teaching several years ago, I was twenty-one years old. It was my first full-time job, and, unsurprisingly, I had trouble communicating with my supervisors Specifically, I found I was able to approach them to discuss students but drew back when I needed to discuss a personal issue.</p>
 
@@ -1046,7 +1050,7 @@ Next, check out how both languages rank on Hammer Principle: Programming Languag
   <entry>
     <title type="html"><![CDATA[what is so great about javascript anyway?]]></title>
     <link href="http://fma2.github.io/blog/2014/05/08/wk-3-technical-what-is-so-great-about-javascript-anyway/"/>
-    <updated>2014-05-08T17:47:42-05:00</updated>
+    <updated>2014-05-08T18:47:42-04:00</updated>
     <id>http://fma2.github.io/blog/2014/05/08/wk-3-technical-what-is-so-great-about-javascript-anyway</id>
     <content type="html"><![CDATA[<h5>Why is JavaScript so popular in web development?</h5>
 
@@ -1091,7 +1095,7 @@ Next, check out how both languages rank on Hammer Principle: Programming Languag
   <entry>
     <title type="html"><![CDATA[chefs in the kitchen]]></title>
     <link href="http://fma2.github.io/blog/2014/05/08/wk-3-cultural-chefs-in-the-kitchen/"/>
-    <updated>2014-05-08T17:44:02-05:00</updated>
+    <updated>2014-05-08T18:44:02-04:00</updated>
     <id>http://fma2.github.io/blog/2014/05/08/wk-3-cultural-chefs-in-the-kitchen</id>
     <content type="html"><![CDATA[<p>Based on the video, it seems the DBC experience will be as I had hoped. As an educator, I can appreciate DBC&rsquo;s educational philosophy of experimentation, attention to growth over achievement, opinions on pair programming, and use of problem- and project-based learning.</p>
 
@@ -1104,7 +1108,7 @@ Next, check out how both languages rank on Hammer Principle: Programming Languag
   <entry>
     <title type="html"><![CDATA[all about CSS positioning]]></title>
     <link href="http://fma2.github.io/blog/2014/05/03/wk-2-technical-all-about-css-positioning/"/>
-    <updated>2014-05-03T15:08:23-05:00</updated>
+    <updated>2014-05-03T16:08:23-04:00</updated>
     <id>http://fma2.github.io/blog/2014/05/03/wk-2-technical-all-about-css-positioning</id>
     <content type="html"><![CDATA[<p>This blog post will discuss the differences between relative, absolute, and fixed positioning.</p>
 
@@ -1140,7 +1144,7 @@ Next, check out how both languages rank on Hammer Principle: Programming Languag
   <entry>
     <title type="html"><![CDATA[comparing wireframes]]></title>
     <link href="http://fma2.github.io/blog/2014/04/27/comparing-wireframes/"/>
-    <updated>2014-04-27T17:55:35-05:00</updated>
+    <updated>2014-04-27T18:55:35-04:00</updated>
     <id>http://fma2.github.io/blog/2014/04/27/comparing-wireframes</id>
     <content type="html"><![CDATA[<p><p>Here I consider web pages on the websites Google Drive, Twitter, and Digg Reader. While each website has more than one page, I will look at each site&rsquo;s default page, the page that appears when you go to their basic URL.
 <ul>
@@ -1175,7 +1179,7 @@ Next, check out how both languages rank on Hammer Principle: Programming Languag
   <entry>
     <title type="html"><![CDATA[user experience and design analysis]]></title>
     <link href="http://fma2.github.io/blog/2014/04/27/wk-1-technical-user-experience-and-design-analysis/"/>
-    <updated>2014-04-27T12:49:25-05:00</updated>
+    <updated>2014-04-27T13:49:25-04:00</updated>
     <id>http://fma2.github.io/blog/2014/04/27/wk-1-technical-user-experience-and-design-analysis</id>
     <content type="html"><![CDATA[<p>For Week 1, I selected the following favorite websites:</p>
 
@@ -1220,9 +1224,9 @@ Next, check out how both languages rank on Hammer Principle: Programming Languag
   
   <entry>
     <title type="html"><![CDATA[identifying core values]]></title>
-    <link href="http://fma2.github.io/blog/2014/04/26/wk-1-cultural-identifying-core-values/"/>
-    <updated>2014-04-26T23:03:00-05:00</updated>
-    <id>http://fma2.github.io/blog/2014/04/26/wk-1-cultural-identifying-core-values</id>
+    <link href="http://fma2.github.io/blog/2014/04/27/wk-1-cultural-identifying-core-values/"/>
+    <updated>2014-04-27T00:03:00-04:00</updated>
+    <id>http://fma2.github.io/blog/2014/04/27/wk-1-cultural-identifying-core-values</id>
     <content type="html"><![CDATA[<p>When I think of times in my life I&rsquo;ve been the happiest, the proudest, or the most satisfied, I recall all of the following values:</p>
 
 <p>Activism AdventureAutonomy ChallengeCommunity CompetenceCooperation EfficiencyExcitement FairnessFreedom FriendshipsGrowth Helping other peopleHelping society HonestyIndependence Inner harmonyInsight IntrospectionJustice LeadershipMeaningful work MentorshipPersistance Personal developmentPublic service QualityResponsibility Self-knowledgeSelf-reliance SpiritualityTruth VibrancyWisdom</p>

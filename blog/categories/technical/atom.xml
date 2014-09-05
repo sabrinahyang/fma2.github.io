@@ -4,7 +4,7 @@
   <title><![CDATA[Category: technical | fmhub]]></title>
   <link href="http://fma2.github.io/blog/categories/technical/atom.xml" rel="self"/>
   <link href="http://fma2.github.io/"/>
-  <updated>2014-08-31T17:43:36-05:00</updated>
+  <updated>2014-09-05T13:08:49-04:00</updated>
   <id>http://fma2.github.io/</id>
   <author>
     <name><![CDATA[Farheen Malik]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[test-driven development]]></title>
     <link href="http://fma2.github.io/blog/2014/06/14/wk-8-technical-test-driven-development/"/>
-    <updated>2014-06-14T17:56:38-05:00</updated>
+    <updated>2014-06-14T18:56:38-04:00</updated>
     <id>http://fma2.github.io/blog/2014/06/14/wk-8-technical-test-driven-development</id>
     <content type="html"><![CDATA[<p>Test-driven development (TDD) is &ldquo;a software development process that relies on the repetition of a very short development cycle&rdquo;<sup>1</sup>.</p>
 
@@ -97,7 +97,7 @@ References:
   <entry>
     <title type="html"><![CDATA[optimizing sql queries]]></title>
     <link href="http://fma2.github.io/blog/2014/06/07/wk-7-technical-optimizing-sql-queries/"/>
-    <updated>2014-06-07T17:56:13-05:00</updated>
+    <updated>2014-06-07T18:56:13-04:00</updated>
     <id>http://fma2.github.io/blog/2014/06/07/wk-7-technical-optimizing-sql-queries</id>
     <content type="html"><![CDATA[<p>This post will discuss ways to optimize SQL queries. I will limit it to SQL query optimization options within my current scope of understanding of SQL syntax in an effort to apply the tips as soon as possible. However, I should note that, when researching the topic, I found various other SQL query optimization suggestions.</p>
 
@@ -399,7 +399,7 @@ References:
   <entry>
     <title type="html"><![CDATA[blocs, procs, and lambdas]]></title>
     <link href="http://fma2.github.io/blog/2014/05/31/wk-6-technical-blocs-procs-lambdas/"/>
-    <updated>2014-05-31T17:55:18-05:00</updated>
+    <updated>2014-05-31T18:55:18-04:00</updated>
     <id>http://fma2.github.io/blog/2014/05/31/wk-6-technical-blocs-procs-lambdas</id>
     <content type="html"><![CDATA[<p>This week&rsquo;s technical blog covers blocks, procs, and lambdas. I opted to research blocks, procs, and lambdas because, while I recall using them through Code Academy, I was not able to connect them to what I have learned in the past few weeks without some Googling.i</p>
 
@@ -521,7 +521,7 @@ Other Resources:
   <entry>
     <title type="html"><![CDATA[instance variable v. class variable]]></title>
     <link href="http://fma2.github.io/blog/2014/05/24/wk-5-technical-instance-variable-v-class-variable/"/>
-    <updated>2014-05-24T17:54:43-05:00</updated>
+    <updated>2014-05-24T18:54:43-04:00</updated>
     <id>http://fma2.github.io/blog/2014/05/24/wk-5-technical-instance-variable-v-class-variable</id>
     <content type="html"><![CDATA[<p>This post will discuss when and how to use instance variables and class variables with Class in Ruby.
 Ruby is an object-oriented language in which everything is an object. A class is the factory that builds an object. To create a class, define the characteristics of the class through methods. Then, make an instance of it; an object can be built by a certain class and is called &lsquo;an instance of that class.&rsquo;
@@ -576,7 +576,7 @@ Here is a class definition with one instance method for the class Welcome:</p>
   <entry>
     <title type="html"><![CDATA[comparing ruby and javascript]]></title>
     <link href="http://fma2.github.io/blog/2014/05/17/wk-4-technical-comparing-ruby-and-javascript/"/>
-    <updated>2014-05-17T17:54:01-05:00</updated>
+    <updated>2014-05-17T18:54:01-04:00</updated>
     <id>http://fma2.github.io/blog/2014/05/17/wk-4-technical-comparing-ruby-and-javascript</id>
     <content type="html"><![CDATA[<p>With hopes of better understanding both languages conceptually, I researched Ruby versus Javascript for this weeks&#8217; technical blog. Here are my findings!</p>
 
