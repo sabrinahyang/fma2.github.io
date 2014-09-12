@@ -63,12 +63,6 @@
   </url>
   
   <url>
-    <loc>http://fma2.github.io/blog/2014/05/17/wk-4-cultural-dealing-with-conflict/</loc>
-    <lastmod>2014-05-17T18:53:37-04:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
     <loc>http://fma2.github.io/blog/2014/05/08/wk-3-technical-what-is-so-great-about-javascript-anyway/</loc>
     <lastmod>2014-05-08T18:47:42-04:00</lastmod>
     <priority>0.8</priority>
@@ -98,44 +92,38 @@
     <priority>0.8</priority>
   </url>
   
-  <url>
-    <loc>http://fma2.github.io/blog/2014/04/27/wk-1-cultural-identifying-core-values/</loc>
-    <lastmod>2014-04-27T00:03:00-04:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
   
   <url>
     <loc>http://fma2.github.io/404.html</loc>
-    <lastmod>2014-09-09T22:31:02-04:00</lastmod>
+    <lastmod>2014-09-12T13:26:49-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/archives/</loc>
-    <lastmod>2014-09-09T22:31:02-04:00</lastmod>
+    <lastmod>2014-09-12T13:26:49-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/blog/archives/</loc>
-    <lastmod>2014-09-09T22:31:02-04:00</lastmod>
+    <lastmod>2014-09-12T13:26:49-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/blog/</loc>
-    <lastmod>2014-09-09T22:31:02-04:00</lastmod>
+    <lastmod>2014-09-12T13:26:49-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://fma2.github.io/</loc>
-    <lastmod>2014-09-09T22:31:02-04:00</lastmod>
+    <lastmod>2014-09-12T13:26:49-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
