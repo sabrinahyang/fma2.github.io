@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://fma2.github.io/sitemap.xml 
